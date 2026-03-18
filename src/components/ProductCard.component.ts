@@ -1,13 +1,14 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ImageComponent } from "@/components/Image.component";
 import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection";
 import type { Product } from "@/types/product.types";
-import { UserPreview } from "@/components/UserPreview.component";
+import type { UserPreview } from "@/types/userPreview.types";
 
 @Component({
   selector: "app-product-card",
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, ImageComponent, UserPreview],
   template: `
     <div
@@ -39,7 +40,7 @@ import { UserPreview } from "@/components/UserPreview.component";
         >
           <div class="grid grid-cols-3 h-16 items-center justify-center w-[5rem]">
             <user-preview
-              *ngFor="let user of product.users"
+              *ngFor="let user of product.users; trackBy: trackByUser"
               [id]="user.id"
               [imagePath]="user.imagePath"
               [name]="user.name"
@@ -80,6 +81,10 @@ import { UserPreview } from "@/components/UserPreview.component";
 export class ProductCardComponent {
   @Input() product!: Product;
   @Input() className: string = '';
+
+  trackByUser(index: number, user: UserPreview): string {
+    return user.id;
+  }
 
   getRandomLinkForRedirection() {
     return getRandomLinkForRedirection();

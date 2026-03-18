@@ -1,13 +1,14 @@
-import { Component, ChangeDetectorRef, AfterViewInit } from "@angular/core";
+import { Component, AfterViewInit, ChangeDetectionStrategy } from "@angular/core";
 import { ModalComponent } from "@/components/Modal.component";
 import { CommonModule } from "@angular/common";
-import { saveItemOnLocalStorage } from "@/utils/localStorageHandler";
+import { saveItemOnLocalStorage, getItemFromLocalStorage } from "@/utils/localStorageHandler";
 import { Router, RouterModule } from "@angular/router";
 import { ImageComponent } from "@/components/Image.component";
 
 @Component({
   selector: "intro-warning-modal",
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [ModalComponent, CommonModule, RouterModule, ImageComponent],
   template: `
     <app-modal
@@ -144,48 +145,59 @@ export class IntroWarningModalSection implements AfterViewInit {
   portfolioUrl = "https://persona-nextjs-chronicles-part-2.netlify.app/";
   figmaUsername = "@KamranAlime";
   figmaOriginalDesign = "1103820487891554272";
-  analyticsEnabled = true;
+  analyticsEnabled = false;
   isOpen = false;
 
   checkIfPageIsPrivacyPolicy() {
     return this.router.url === "/privacy-policy";
   }
 
-  constructor(private cdr: ChangeDetectorRef, private router: Router) {}
+  constructor(private router: Router) {}
 
-  ngAfterViewInit(): void {
-    Promise.resolve().then(() => {
-      saveItemOnLocalStorage("analyticsEnabled", String(this.analyticsEnabled));
-
-      if (this.checkIfPageIsPrivacyPolicy()) {
-        this.isOpen = false;
-      } else {
-        this.isOpen = true;
-      }
-
-      this.cdr.detectChanges();
-    });
+  ngOnInit(): void {
+    const savedAnalyticsPreference = getItemFromLocalStorage("analyticsEnabled");
+    
+    if (savedAnalyticsPreference !== null) {
+      this.analyticsEnabled = savedAnalyticsPreference === "true";
+    }
+    
+    if (this.checkIfPageIsPrivacyPolicy()) {
+      this.isOpen = false;
+    } else {
+      this.isOpen = true;
+    }
+    
+    if (this.analyticsEnabled) {
+      this.loadAnalyticsScript();
+    }
   }
 
   closeModal(): void {
-    Promise.resolve().then(() => {
-      this.isOpen = false;
-      this.cdr.detectChanges();
-    });
+    this.isOpen = false;
   }
 
   openModal(): void {
-    Promise.resolve().then(() => {
-      this.isOpen = true;
-      this.cdr.detectChanges();
-    });
+    this.isOpen = true;
   }
 
   toggleAnalytics(): void {
-    Promise.resolve().then(() => {
-      this.analyticsEnabled = !this.analyticsEnabled;
-      this.cdr.detectChanges();
-    });
+    this.analyticsEnabled = !this.analyticsEnabled;
+    saveItemOnLocalStorage("analyticsEnabled", String(this.analyticsEnabled));
+    
+    if (this.analyticsEnabled) {
+      this.loadAnalyticsScript();
+    }
+  }
+
+  loadAnalyticsScript(): void {
+    if (!document.querySelector('script[data-id="f30df6f3-776d-4154-959d-0210ac8a8325"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.counter.dev/script.js';
+      script.dataset.id = 'f30df6f3-776d-4154-959d-0210ac8a8325';
+      script.dataset.utcoffset = '-3';
+      script.async = true;
+      document.body.appendChild(script);
+    }
   }
 
   getToggleButtonClasses(): string {

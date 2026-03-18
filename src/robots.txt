@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.your-domain.com/sitemap.xml
+
+# Sitemap
+Sitemap: https://food-hut-angular-chronicles-1.netlify.app/sitemap.xml
+
+# Block unnecessary paths
+Disallow: /node_modules/

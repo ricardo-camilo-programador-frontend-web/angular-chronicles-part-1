@@ -31,7 +31,7 @@ export const routes: Routes = [
 
 @NgModule({
   imports: [BrowserModule, RouterModule.forRoot(routes, {
-    enableTracing: true,
+    enableTracing: false,
     preloadingStrategy: SelectivePreloadingStrategyService,
   })],
   exports: [RouterModule]

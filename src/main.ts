@@ -11,7 +11,7 @@ import { provideServiceWorker } from '@angular/service-worker';
 
 bootstrapApplication(AppComponent, {providers: [provideProtractorTestingSupport(), provideRouter(routes), provideServiceWorker('ngsw-worker.js', {
             enabled: !isDevMode(),
-            registrationStrategy: 'registerWhenStable:30000'
+            registrationStrategy: 'registerWhenStable:3000'
           })]}).catch((err) =>
   console.error(err),
 );

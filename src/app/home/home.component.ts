@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IntroSection } from '@/blocks/sections/intro.section';
 import { SpecialOffersSection } from '@/blocks/sections/specialOffers.section';
@@ -9,6 +9,7 @@ import { AppSection } from '@/blocks/sections/app.section';
 @Component({
   selector: 'home',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, IntroSection, SpecialOffersSection, AboutUsSection, MenuSection, AppSection],
   template: `
     <div class="grid grid-cols-1 gap-16 pt-[6rem]">

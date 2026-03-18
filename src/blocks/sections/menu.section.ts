@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ProductCardComponent } from "@/components/ProductCard.component";
 import { Product } from "@/types/product.types";
@@ -7,6 +7,7 @@ import { ButtonComponent } from "@/components/Button.component";
 @Component({
   selector: "menu-section",
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, ProductCardComponent, ButtonComponent],
   template: `
     <section
@@ -26,7 +27,7 @@ import { ButtonComponent } from "@/components/Button.component";
 
       <div class="flex flex-wrap justify-center gap-3 mb-12">
         <app-button
-          *ngFor="let category of categories"
+          *ngFor="let category of categories; trackBy: trackByCategory"
           [className]="
             'px-6 py-2 rounded-full text-sm transition-all ' +
             (selectedCategory === category.id
@@ -44,7 +45,7 @@ import { ButtonComponent } from "@/components/Button.component";
       >
         <ng-container *ngIf="filteredProducts.length > 0; else noProducts">
           <app-product-card
-            *ngFor="let product of filteredProducts"
+            *ngFor="let product of filteredProducts; trackBy: trackByProduct"
             [product]="product"
           ></app-product-card>
         </ng-container>
@@ -300,6 +301,14 @@ export class MenuSection {
       ],
     },
   ];
+
+  trackByCategory(index: number, category: Category): string {
+    return category.id;
+  }
+
+  trackByProduct(index: number, product: Product): string {
+    return product.id;
+  }
 
   get filteredProducts() {
     if (this.selectedCategory === null) {
