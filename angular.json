@@ -94,6 +94,20 @@
           },
           "defaultConfiguration": "development"
         },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": ["zone.js/testing"],
+            "tsConfig": "tsconfig.app.json",
+            "karmaConfig": "karma.conf.js",
+            "scripts": [],
+            "styles": ["src/styles.css"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ]
+          }
+        },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
