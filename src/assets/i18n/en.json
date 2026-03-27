@@ -1,0 +1,85 @@
+{
+  "header": {
+    "nav": {
+      "specialOffers": "Today Special Offers",
+      "whyFoodHut": "Why FoodHut",
+      "ourMenu": "Our Menu",
+      "popularFood": "Our Popular Food"
+    },
+    "downloadApp": "Download App",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close menu",
+    "navigationMenu": "Navigation menu"
+  },
+  "intro": {
+    "tag": "People Trust us",
+    "title": "We're {red} Serious {br} For {br} {red} Food {normal} & {gold} Delivery {normal}.",
+    "description": "Best cooks and best delivery guys all at your service. Hot tasty food will reach you in 60 minutes.",
+    "searchPlaceholder": "Search food",
+    "search": "Search",
+    "watchVideo": "Watch Video"
+  },
+  "specialOffers": {
+    "title": "Today {red} Special {normal} Offers",
+    "description": "Discover our handpicked selection of daily specials, featuring irresistible dishes at amazing prices. From savory kebabs to flavorful curries, treat yourself to exceptional meals that won't break the bank.",
+    "orderNow": "Order Now"
+  },
+  "aboutUs": {
+    "title": "We are {red} more {normal} than {br} {gold} multiple {normal} service",
+    "description": "This is a type of restaurant which typically serves food and drink, in addition to light refreshments such as baked goods or snacks. The term comes from the french word meaning food.",
+    "aboutUs": "About Us",
+    "services": {
+      "onlineOrder": "Online Order",
+      "service247": "24/7 Service",
+      "preReservation": "Pre-Reservation",
+      "organizedPlace": "Organized Foodhut Place",
+      "superChef": "Super Chef",
+      "cleanKitchen": "Clean Kitchen"
+    }
+  },
+  "menu": {
+    "title": "Menu That {red} Always {normal} {gold} Make You {normal}",
+    "subtitle": "Fall In {red} Love {normal}",
+    "noProducts": "Sorry, no products found in this category.",
+    "categories": {
+      "ramen": "Ramen",
+      "breakfast": "Breakfast",
+      "lunch": "Lunch",
+      "dinner": "Dinner",
+      "mexican": "Mexican",
+      "italian": "Italian",
+      "desserts": "Desserts",
+      "drinks": "Drinks"
+    }
+  },
+  "app": {
+    "title": "It's Now {red} More Easy {normal} to {br} {gold} Order {normal} by Our Mobile {red} App {normal}",
+    "description": "All you need to do is download one of the best delivery apps, make a and most companies are opting for mobile app development for food delivery"
+  },
+  "footer": {
+    "title": "Foodhut",
+    "description": "Discover delicious meals from local restaurants, delivered right to your doorstep with speed and care.",
+    "aboutUs": "About Us",
+    "serviceUs": "Service Us",
+    "contact": "Contact",
+    "company": "Company",
+    "partnership": "Partnership",
+    "termsOfUse": "Terms of Use",
+    "privacy": "Privacy",
+    "sitemap": "Sitemap",
+    "getInTouch": "Get in touch",
+    "newsletterDescription": "Subscribe to our newsletter for exclusive deals, new restaurants, and weekly special offers delivered to your inbox.",
+    "subscribe": "Subscribe",
+    "emailPlaceholder": "Email",
+    "copyright": "Copyright © {year} Foodhut."
+  },
+  "languageSelector": {
+    "label": "Language",
+    "en": "EN",
+    "ptBR": "PT-BR"
+  },
+  "common": {
+    "close": "Close",
+    "open": "Open"
+  }
+}

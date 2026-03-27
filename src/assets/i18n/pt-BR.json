@@ -1,0 +1,85 @@
+{
+  "header": {
+    "nav": {
+      "specialOffers": "Ofertas Especiais de Hoje",
+      "whyFoodHut": "Por que FoodHut",
+      "ourMenu": "Nosso Cardapio",
+      "popularFood": "Nossos Pratos Populares"
+    },
+    "downloadApp": "Baixe o App",
+    "openMenu": "Abrir menu de navegacao",
+    "closeMenu": "Fechar menu",
+    "navigationMenu": "Menu de navegacao"
+  },
+  "intro": {
+    "tag": "As Pessoas Confiam em Nos",
+    "title": "Somos {red} Serios {br} Sobre {br} {red} Comida {normal} & {gold} Entrega {normal}.",
+    "description": "Os melhores cozinheiros e entregadores ao seu dispor. Comida quente e saborosa chegara em 60 minutos.",
+    "searchPlaceholder": "Buscar comida",
+    "search": "Buscar",
+    "watchVideo": "Assistir Video"
+  },
+  "specialOffers": {
+    "title": "Ofertas {red} Especiais {normal} de Hoje",
+    "description": "Descubra nossa selecao cuidadosa de especiais diarios, com pratos irresistiveis a precos incriveis. De kebabs saborosos a curries apimentados, mimese com refeicoes excepcionais que nao vao pesar no bolso.",
+    "orderNow": "Pedir Agora"
+  },
+  "aboutUs": {
+    "title": "Somos {red} mais {normal} que {br} {gold} multiplos {normal} servicos",
+    "description": "Este e um tipo de restaurante que tipicamente serve comida e bebida, alem de refrescos leves como produtos de padaria ou lanches. O termo vem da palavra francesa que significa comida.",
+    "aboutUs": "Sobre Nos",
+    "services": {
+      "onlineOrder": "Pedido Online",
+      "service247": "Atendimento 24/7",
+      "preReservation": "Pre-Reserva",
+      "organizedPlace": "Local Organizado Foodhut",
+      "superChef": "Super Chef",
+      "cleanKitchen": "Cozinha Limpa"
+    }
+  },
+  "menu": {
+    "title": "Cardapio Que Sempre Te Faz {red} se Apaixonar {normal}",
+    "subtitle": "Se Apaixonar",
+    "noProducts": "Desculpe, nenhum produto encontrado nesta categoria.",
+    "categories": {
+      "ramen": "Ramen",
+      "breakfast": "Cafe da Manha",
+      "lunch": "Almoco",
+      "dinner": "Jantar",
+      "mexican": "Mexicano",
+      "italian": "Italiano",
+      "desserts": "Sobremesas",
+      "drinks": "Bebidas"
+    }
+  },
+  "app": {
+    "title": "Agora Fica {red} Mais Facil {normal} {br} Pedir pelo Nosso App {red} Mobile {normal}",
+    "description": "Tudo o que voce precisa fazer e baixar um dos melhores apps de entrega, e a maioria das empresas esta optando pelo desenvolvimento de apps mobile para entrega de comida"
+  },
+  "footer": {
+    "title": "Foodhut",
+    "description": "Descubra refeicoes deliciosas de restaurantes locais, entregues diretamente na sua porta com rapidez e cuidado.",
+    "aboutUs": "Sobre Nos",
+    "serviceUs": "Servicos",
+    "contact": "Contato",
+    "company": "Empresa",
+    "partnership": "Parceria",
+    "termsOfUse": "Termos de Uso",
+    "privacy": "Privacidade",
+    "sitemap": "Mapa do Site",
+    "getInTouch": "Fale Conosco",
+    "newsletterDescription": "Inscreva-se em nossa newsletter para ofertas exclusivas, novos restaurantes e ofertas semanais especiais entregues na sua caixa de entrada.",
+    "subscribe": "Inscrever",
+    "emailPlaceholder": "Email",
+    "copyright": "Copyright © {year} Foodhut."
+  },
+  "languageSelector": {
+    "label": "Idioma",
+    "en": "EN",
+    "ptBR": "PT-BR"
+  },
+  "common": {
+    "close": "Fechar",
+    "open": "Abrir"
+  }
+}
