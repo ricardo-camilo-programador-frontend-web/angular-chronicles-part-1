@@ -180,6 +180,12 @@ export class IntroWarningModalSection implements AfterViewInit {
     this.isOpen = true;
   }
 
+  ngAfterViewInit(): void {
+    if (!this.checkIfPageIsPrivacyPolicy()) {
+      this.loadAnalyticsScript();
+    }
+  }
+
   toggleAnalytics(): void {
     this.analyticsEnabled = !this.analyticsEnabled;
     saveItemOnLocalStorage("analyticsEnabled", String(this.analyticsEnabled));
@@ -193,8 +199,8 @@ export class IntroWarningModalSection implements AfterViewInit {
     if (!document.querySelector('script[data-id="f30df6f3-776d-4154-959d-0210ac8a8325"]')) {
       const script = document.createElement('script');
       script.src = 'https://cdn.counter.dev/script.js';
-      script.dataset.id = 'f30df6f3-776d-4154-959d-0210ac8a8325';
-      script.dataset.utcoffset = '-3';
+      script.dataset['id'] = 'f30df6f3-776d-4154-959d-0210ac8a8325';
+      script.dataset['utcoffset'] = '-3';
       script.async = true;
       document.body.appendChild(script);
     }

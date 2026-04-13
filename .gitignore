@@ -6,3 +6,5 @@ dist
 .env.local
 .env
 .angular
+# Workflow state
+dist/workflow/
