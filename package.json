@@ -5,7 +5,11 @@
     "ng": "ng",
     "start": "NG_BUILD_PARALLEL_TS=0 ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "security:scan": "python3 scripts/security/scan-invisible-chars.py",
+    "security:clean": "python3 scripts/security/clean-invisible-chars.py",
+    "security:quick": "python3 scripts/security/scan-invisible-chars.py --quick",
+    "security:report": "python3 scripts/security/scan-invisible-chars.py --output security-report"
   },
   "private": true,
   "dependencies": {
