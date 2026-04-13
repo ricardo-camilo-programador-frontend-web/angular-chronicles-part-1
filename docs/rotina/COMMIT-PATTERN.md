@@ -23,7 +23,7 @@ O formato padrao para mensagens de commit e:
 
 1. **Scan de caracteres invisíveis**:
    ```bash
-   python scripts/scan-invisible-chars.py
+   npx tsx scripts/security/security-scan.ts
    ```
 
 2. **Verificar diff**:

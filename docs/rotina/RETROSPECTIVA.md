@@ -811,7 +811,7 @@ Analise dos ultimos 30 dias revelou padrao consistente:
 | **Responsavel** | Senior-Coder |
 | **Prazo** | 2026-04-15 |
 | **Impacto Esperado** | Eliminar commits com caracteres maliciosos |
-| **Arquivos Afetados** | `.husky/pre-commit`, `scripts/scan-invisible-chars.py` |
+| **Arquivos Afetados** | `.husky/pre-commit`, `scripts/security/security-scan.ts` |
 | **Status** | pending |
 
 ---

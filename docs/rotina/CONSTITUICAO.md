@@ -116,8 +116,8 @@ Novos diretórios nao sao criados sem justificativa e atualizacao desta secao.
 ## 4. Seguranca de Codigo
 
 - Caracteres Unicode invisiveis sao **PROIBIDOS** no codigo-fonte.
-- Scan obrigatorio antes de commits: `python scripts/scan-invisible-chars.py`
-- Limpeza disponivel: `python scripts/clean-invisible-chars.py`
+- Scan obrigatorio antes de commits: `npx tsx scripts/security/security-scan.ts`
+- Limpeza disponivel: `npx tsx scripts/security/security-clean.ts`
 - Detalhes completos: `SEGURANCA-CODIGO.md`
 
 ---

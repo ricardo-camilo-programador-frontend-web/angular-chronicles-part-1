@@ -66,7 +66,7 @@ Antes de cada commit, execute:
 
 ```bash
 # Verificar caracteres invisíveis
-python scripts/scan-invisible-chars.py
+npx tsx scripts/security/security-scan.ts
 
 # Ou usar grep
 grep -P "[\x{FE00}-\x{FE0F}\x{E0100}-\x{E01EF}\x{200B}-\x{200F}\x{202A}-\x{202E}]" -r src/
@@ -114,10 +114,10 @@ jobs:
       - uses: actions/checkout@v3
       
       - name: Scan for invisible characters
-        run: python scripts/scan-invisible-chars.py
+        run: npx tsx scripts/security/security-scan.ts
         
       - name: Fail if invisible characters found
-        run: test $(python scripts/scan-invisible-chars.py | wc -l) -eq 0
+        run: test $(npx tsx scripts/security/security-scan.ts | wc -l) -eq 0
 ```
 
 ---

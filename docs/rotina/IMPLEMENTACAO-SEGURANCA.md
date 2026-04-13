@@ -27,12 +27,12 @@ Prevenir, detectar e remover automaticamente caracteres Unicode que podem ser us
    - Scripts de verificação e limpeza
    - Procedimentos de incidente
 
-2. **`scripts/scan-invisible-chars.py`**
+2. **`scripts/security/security-scan.ts`**
    - Script de varredura de caracteres proibidos
    - Detecta 6 faixas de caracteres perigosos
    - Retorna código de saída para CI/CD (0 = limpo, 1 = problemas)
 
-3. **`scripts/clean-invisible-chars.py`**
+3. **`scripts/security/security-clean.ts`**
    - Script de limpeza automática
    - Suporte a dry-run para visualização
    - Remove caracteres proibidos preservando código legítimo
@@ -95,10 +95,10 @@ Prevenir, detectar e remover automaticamente caracteres Unicode que podem ser us
 pnpm run security:scan
 
 # Ou diretamente
-python scripts/scan-invisible-chars.py
+npx tsx scripts/security/security-scan.ts
 
 # Scan em diretório específico
-python scripts/scan-invisible-chars.py src/
+npx tsx scripts/security/security-scan.ts src/
 ```
 
 **Retorno:**
@@ -115,7 +115,7 @@ pnpm run security:clean -- --dry-run
 pnpm run security:clean
 
 # Limpeza de diretório específico
-python scripts/clean-invisible-chars.py src/
+npx tsx scripts/security/security-clean.ts src/
 ```
 
 ---
@@ -144,13 +144,13 @@ python scripts/clean-invisible-chars.py src/
 
 ```bash
 # 1. Scan de segurança
-python scripts/scan-invisible-chars.py
+npx tsx scripts/security/security-scan.ts
 
 # 2. Se detectar, limpar
-python scripts/clean-invisible-chars.py
+npx tsx scripts/security/security-clean.ts
 
 # 3. Validar limpeza
-python scripts/scan-invisible-chars.py
+npx tsx scripts/security/security-scan.ts
 
 # 4. Commit
 git commit -m ":emoji: tipo(REF): descrição"
@@ -172,10 +172,10 @@ jobs:
           python-version: '3.x'
       
       - name: Scan for invisible characters
-        run: python scripts/scan-invisible-chars.py
+        run: npx tsx scripts/security/security-scan.ts
         
       - name: Fail if invisible characters found
-        run: test $(python scripts/scan-invisible-chars.py | wc -l) -eq 0
+        run: test $(npx tsx scripts/security/security-scan.ts | wc -l) -eq 0
 ```
 
 ### Code Review

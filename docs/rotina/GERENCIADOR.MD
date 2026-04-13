@@ -181,10 +181,10 @@ Se ocorrer erro em qualquer passo:
 
 ```bash
 # Scan de segurança
-python scripts/scan-invisible-chars.py
+npx tsx scripts/security/security-scan.ts
 
 # Limpeza automática
-python scripts/clean-invisible-chars.py
+npx tsx scripts/security/security-clean.ts
 ```
 
 ### Regra de Bloqueio

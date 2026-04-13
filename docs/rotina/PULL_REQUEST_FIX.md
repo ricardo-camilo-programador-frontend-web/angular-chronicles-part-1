@@ -14,11 +14,11 @@ Regras de execução
 
 1. **Scan de segurança**:
    ```bash
-   python scripts/scan-invisible-chars.py
+   npx tsx scripts/security/security-scan.ts
    ```
 
 2. **Se detectar caracteres proibidos**:
-   - 🧹 Executar limpeza: `python scripts/clean-invisible-chars.py`
+   - 🧹 Executar limpeza: `npx tsx scripts/security/security-clean.ts`
    - ✅ Validar código limpo
    - 📝 Registrar no commit se for relevante
 

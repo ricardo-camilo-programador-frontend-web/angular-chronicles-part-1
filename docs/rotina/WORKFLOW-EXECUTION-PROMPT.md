@@ -63,7 +63,7 @@ gh auth status
 
  3. 🔒 VALIDAÇÃO DE SEGURANÇA (NOVO):
     - Executar scan de caracteres invisíveis
-    - python scripts/scan-invisible-chars.py
+    - npx tsx scripts/security/security-scan.ts
     - Se detectar: limpar antes de continuar
     - Registrar em log de segurança
 

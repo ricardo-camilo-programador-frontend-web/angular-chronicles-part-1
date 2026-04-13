@@ -31,7 +31,7 @@ Considere especialmente:
 
 1. **Scan automático**:
    ```bash
-   python scripts/scan-invisible-chars.py
+   npx tsx scripts/security/security-scan.ts
    ```
 
 2. **Verificação manual no diff**:
@@ -66,7 +66,7 @@ Linha: múltiplas ocorrências
 - U+200B (Zero Width Space) na linha Y
 
 **Ação requerida:**
-1. Executar: `python scripts/clean-invisible-chars.py`
+1. Executar: `npx tsx scripts/security/security-clean.ts`
 2. Validar código limpo
 3. Re-executar scan para confirmar limpeza
 
