@@ -162,7 +162,7 @@ export class SpecialOffersSection {
     },
   ];
 
-  trackByProduct(index: number, product: Product): string {
-    return product.id;
+  trackByProduct(_index: number, product: Product): string {
+    return String(product.id);
   }
 }

@@ -302,12 +302,12 @@ export class MenuSection {
     },
   ];
 
-  trackByCategory(index: number, category: Category): string {
+  trackByCategory(_index: number, category: { id: string }): string {
     return category.id;
   }
 
-  trackByProduct(index: number, product: Product): string {
-    return product.id;
+  trackByProduct(_index: number, product: Product): string {
+    return String(product.id);
   }
 
   get filteredProducts() {

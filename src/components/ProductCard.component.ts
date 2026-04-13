@@ -1,9 +1,9 @@
 import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ImageComponent } from "@/components/Image.component";
+import { UserPreview } from "@/components/UserPreview.component";
 import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection";
 import type { Product } from "@/types/product.types";
-import type { UserPreview } from "@/types/userPreview.types";
 
 @Component({
   selector: "app-product-card",
@@ -82,7 +82,7 @@ export class ProductCardComponent {
   @Input() product!: Product;
   @Input() className: string = '';
 
-  trackByUser(index: number, user: UserPreview): string {
+  trackByUser(_index: number, user: { id: string }): string {
     return user.id;
   }
 
