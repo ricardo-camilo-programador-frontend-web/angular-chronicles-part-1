@@ -2,13 +2,14 @@ import { NgFor } from "@angular/common";
 import { Component } from "@angular/core";
 import { LogoComponent } from "@/components/Logo.component";
 import { DownloadShortcutBlock } from "@/blocks/downloadShortcut/DownloadShortcut.block";
+import { LanguageSelectorComponent } from "@/components/LanguageSelector.component";
 import { HEADER_NAVIGATION_ITEMS } from "@/constants/navigation.constants";
 import type { NavigationItem } from "@/types/navigation.types";
 
 @Component({
   selector: "app-header",
   standalone: true,
-  imports: [NgFor, LogoComponent, DownloadShortcutBlock],
+  imports: [NgFor, LogoComponent, DownloadShortcutBlock, LanguageSelectorComponent],
   template: `
     <header
       class="w-screen mx-auto flex justify-between items-center  px-4 py-4 fixed top-0 left-0 right-0 z-[9]  bg-gradient-to-b from-white via-white to-[#FFF9F3]/20"
@@ -25,7 +26,10 @@ import type { NavigationItem } from "@/types/navigation.types";
           </a>
         </nav>
 
-        <download-shortcut [className]="'hidden lg:block'"></download-shortcut>
+        <div class="flex items-center gap-3">
+          <app-language-selector></app-language-selector>
+          <download-shortcut [className]="'hidden lg:block'"></download-shortcut>
+        </div>
       </div>
 
       <div class="lg:hidden">

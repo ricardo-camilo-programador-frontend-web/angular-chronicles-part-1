@@ -18,7 +18,7 @@ import { ImageComponent } from "./Image.component";
         <div>
           <p class="font-medium">{{ name }}</p>
           <div class="flex items-center space-x-2">
-            @for (star of stars; track star) {
+            @for (star of stars; track $index) {
             <app-image
               [src]="
                 star ? '/assets/svg/star.svg' : '/assets/svg/starEmpty.svg'

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ImageComponent } from "@/components/Image.component";
 import { ButtonComponent } from "@/components/Button.component";
 import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection";
@@ -25,7 +25,7 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
 
           <div class="flex space-x-4">
             <a
-              [href]="[getRandomLinkForRedirection()]"
+              [href]="redirectLinks[0]"
               class="text-[#FDB100] hover:opacity-80"
               rel="noopener"
               target="_blank"
@@ -37,7 +37,7 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
               />
             </a>
             <a
-              [href]="[getRandomLinkForRedirection()]"
+              [href]="redirectLinks[1]"
               class="text-[#FDB100] hover:opacity-80"
               rel="noopener"
               target="_blank"
@@ -49,7 +49,7 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
               />
             </a>
             <a
-              [href]="[getRandomLinkForRedirection()]"
+              [href]="redirectLinks[2]"
               class="text-[#FDB100] hover:opacity-80"
               rel="noopener"
               target="_blank"
@@ -71,7 +71,7 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
             <ul class="space-y-2">
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  [href]="redirectLinks[3]"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
@@ -81,7 +81,7 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
               </li>
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  [href]="redirectLinks[4]"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
@@ -91,7 +91,7 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
               </li>
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  [href]="redirectLinks[5]"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
@@ -101,7 +101,7 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
               </li>
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  [href]="redirectLinks[6]"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
@@ -127,7 +127,7 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
               </li>
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  [href]="redirectLinks[7]"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
@@ -146,7 +146,7 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
               </li>
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  [href]="redirectLinks[8]"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
@@ -190,7 +190,7 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
 
       <div class="mt-12 text-center text-gray-600">
         <a
-          [href]="[getRandomLinkForRedirection()]"
+          [href]="redirectLinks[9]"
           class="hover:text-red-500"
           rel="noopener"
           target="_blank"
@@ -201,10 +201,11 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
     </footer>
   `,
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
   currentYear = new Date().getFullYear();
+  redirectLinks: string[] = [];
 
-  getRandomLinkForRedirection() {
-    return getRandomLinkForRedirection();
+  ngOnInit(): void {
+    this.redirectLinks = Array.from({ length: 10 }, () => getRandomLinkForRedirection());
   }
 }

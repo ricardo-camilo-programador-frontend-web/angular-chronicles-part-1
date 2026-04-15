@@ -1,0 +1,38 @@
+{
+  "header": {
+    "specialOffers": "Ofertas Especiais",
+    "viewSpecialOffers": "Ver Ofertas Especiais",
+    "whyFoodHut": "Por que FoodHut",
+    "learnAboutFoodHut": "Saiba mais sobre o FoodHut",
+    "ourMenu": "Nosso Cardápio",
+    "browseMenu": "Navegar no Cardápio",
+    "popularFood": "Comida Popular",
+    "seePopularDishes": "Ver Pratos Populares",
+    "downloadApp": "Baixe o App"
+  },
+  "footer": {
+    "companyName": "Food Hut",
+    "description": "Descubra sabores autênticos brasileiros com nossos ingredientes premium e receitas tradicionais.",
+    "services": "Nossos Serviços",
+    "qualityIngredients": "Ingredientes de Qualidade",
+    "expertChefs": "Chefes Especialistas",
+    "fastDelivery": "Entrega Rápida",
+    "customerSupport": "Suporte ao Cliente",
+    "partnership": "Parceria",
+    "termsOfUse": "Termos de Uso",
+    "privacyPolicy": "Política de Privacidade",
+    "sitemap": "Mapa do Site",
+    "getInTouch": "Fale Conosco",
+    "newsletterDescription": "Inscreva-se em nossa newsletter para receber ofertas exclusivas, novos restaurantes e ofertas semanais em sua caixa de entrada.",
+    "subscribe": "Inscrever-se",
+    "copyright": "Todos os direitos reservados."
+  },
+  "languageSelector": {
+    "ariaLabel": "Seletor de Idioma",
+    "english": "Inglês",
+    "portuguese": "Português"
+  },
+  "downloadShortcut": {
+    "buttonText": "Baixe o App"
+  }
+}

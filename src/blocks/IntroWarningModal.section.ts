@@ -159,6 +159,9 @@ export class IntroWarningModalSection implements AfterViewInit {
     
     if (savedAnalyticsPreference !== null) {
       this.analyticsEnabled = savedAnalyticsPreference === "true";
+    } else {
+      this.analyticsEnabled = true;
+      saveItemOnLocalStorage("analyticsEnabled", "true");
     }
     
     if (this.checkIfPageIsPrivacyPolicy()) {
@@ -202,6 +205,7 @@ export class IntroWarningModalSection implements AfterViewInit {
       script.dataset['id'] = 'f30df6f3-776d-4154-959d-0210ac8a8325';
       script.dataset['utcoffset'] = '-3';
       script.async = true;
+      script.onerror = () => script.remove();
       document.body.appendChild(script);
     }
   }

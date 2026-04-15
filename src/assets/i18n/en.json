@@ -1,0 +1,38 @@
+{
+  "header": {
+    "specialOffers": "Special Offers",
+    "viewSpecialOffers": "View Special Offers",
+    "whyFoodHut": "Why FoodHut",
+    "learnAboutFoodHut": "Learn about FoodHut",
+    "ourMenu": "Our Menu",
+    "browseMenu": "Browse Menu",
+    "popularFood": "Popular Food",
+    "seePopularDishes": "See Popular Dishes",
+    "downloadApp": "Download App"
+  },
+  "footer": {
+    "companyName": "Food Hut",
+    "description": "Discover authentic Brazilian flavors with our premium ingredients and traditional recipes.",
+    "services": "Our Services",
+    "qualityIngredients": "Quality Ingredients",
+    "expertChefs": "Expert Chefs",
+    "fastDelivery": "Fast Delivery",
+    "customerSupport": "Customer Support",
+    "partnership": "Partnership",
+    "termsOfUse": "Terms of Use",
+    "privacyPolicy": "Privacy Policy",
+    "sitemap": "Sitemap",
+    "getInTouch": "Get in touch",
+    "newsletterDescription": "Subscribe to our newsletter for exclusive deals, new restaurants, and weekly special offers delivered to your inbox.",
+    "subscribe": "Subscribe",
+    "copyright": "All rights reserved."
+  },
+  "languageSelector": {
+    "ariaLabel": "Language Selector",
+    "english": "English",
+    "portuguese": "Português"
+  },
+  "downloadShortcut": {
+    "buttonText": "Download App"
+  }
+}
