@@ -7,7 +7,7 @@ Descricao clara e concisa do que esta PR faz.
 
 - [ ] 🐛 Bug fix (correcao de problema)
 - [ ] ✨ Feature (nova funcionalidade)
-- [ ] ♻️ Refactor (refatoracao)
+- [ ] ♻ Refactor (refatoracao)
 - [ ] 📚 Documentacao
 - [ ] 🎨 Styling (mudancas visuais)
 - [ ] 🌐 i18n/Content (traducao/conteudo)

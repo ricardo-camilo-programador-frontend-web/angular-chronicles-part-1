@@ -10691,7 +10691,7 @@ function getSanitizer() {
 }
 var COMMENT_DISALLOWED = /^>|^->|<!--|-->|--!>|<!-$/g;
 var COMMENT_DELIMITER = /(<|>)/g;
-var COMMENT_DELIMITER_ESCAPED = "​$1​";
+var COMMENT_DELIMITER_ESCAPED = "$1";
 function escapeCommentText(value) {
   return value.replace(COMMENT_DISALLOWED, (text) => text.replace(COMMENT_DELIMITER, COMMENT_DELIMITER_ESCAPED));
 }
@@ -10840,7 +10840,7 @@ function ɵɵresolveDocument(element) {
 function ɵɵresolveBody(element) {
   return element.ownerDocument.body;
 }
-var INTERPOLATION_DELIMITER = `�`;
+var INTERPOLATION_DELIMITER = ``;
 function maybeUnwrapFn(value) {
   if (value instanceof Function) {
     return value();
@@ -21696,13 +21696,13 @@ var OpCodeParser = class {
     return value;
   }
 };
-var BINDING_REGEXP = /�(\d+):?\d*�/gi;
-var ICU_REGEXP = /({\s*�\d+:?\d*�\s*,\s*\S{6}\s*,[\s\S]*})/gi;
-var NESTED_ICU = /�(\d+)�/;
-var ICU_BLOCK_REGEXP = /^\s*(�\d+:?\d*�)\s*,\s*(select|plural)\s*,/;
-var MARKER = `�`;
-var SUBTEMPLATE_REGEXP = /�\/?\*(\d+:\d+)�/gi;
-var PH_REGEXP = /�(\/?[#*]\d+):?\d*�/gi;
+var BINDING_REGEXP = /(\d+):?\d*/gi;
+var ICU_REGEXP = /({\s*\d+:?\d*\s*,\s*\S{6}\s*,[\s\S]*})/gi;
+var NESTED_ICU = /(\d+)/;
+var ICU_BLOCK_REGEXP = /^\s*(\d+:?\d*)\s*,\s*(select|plural)\s*,/;
+var MARKER = ``;
+var SUBTEMPLATE_REGEXP = /\/?\*(\d+:\d+)/gi;
+var PH_REGEXP = /(\/?[#*]\d+):?\d*/gi;
 var NGSP_UNICODE_REGEXP = /\uE500/g;
 function replaceNgsp(value) {
   return value.replace(NGSP_UNICODE_REGEXP, " ");
@@ -21946,7 +21946,7 @@ function icuStart(ast, tView, lView, updateOpCodes, parentIdx, icuExpression, an
       const value = valueArr[j];
       if (typeof value !== "string") {
         const icuIndex = nestedIcus.push(value) - 1;
-        valueArr[j] = `<!--�${icuIndex}�-->`;
+        valueArr[j] = `<!--${icuIndex}-->`;
       }
     }
     const caseAst = [];
@@ -22164,11 +22164,11 @@ function addCreateAttribute(create, newIndex, attr) {
   create.push(newIndex << 1 | 1, attr.name, attr.value);
 }
 var ROOT_TEMPLATE_ID = 0;
-var PP_MULTI_VALUE_PLACEHOLDERS_REGEXP = /\[(�.+?�?)\]/;
-var PP_PLACEHOLDERS_REGEXP = /\[(�.+?�?)\]|(�\/?\*\d+:\d+�)/g;
+var PP_MULTI_VALUE_PLACEHOLDERS_REGEXP = /\[(.+??)\]/;
+var PP_PLACEHOLDERS_REGEXP = /\[(.+??)\]|(\/?\*\d+:\d+)/g;
 var PP_ICU_VARS_REGEXP = /({\s*)(VAR_(PLURAL|SELECT)(_\d+)?)(\s*,)/g;
 var PP_ICU_PLACEHOLDERS_REGEXP = /{([A-Z0-9_]+)}/g;
-var PP_ICUS_REGEXP = /�I18N_EXP_(ICU(_\d+)?)�/g;
+var PP_ICUS_REGEXP = /I18N_EXP_(ICU(_\d+)?)/g;
 var PP_CLOSE_TEMPLATE_REGEXP = /\/\*/;
 var PP_TEMPLATE_ID_REGEXP = /\d+\:(\d+)/;
 function i18nPostprocess(message, replacements = {}) {
@@ -27907,7 +27907,7 @@ function numberAttribute(value, fallbackValue = NaN) {
   const isNumberValue = !isNaN(parseFloat(value)) && !isNaN(Number(value));
   return isNumberValue ? Number(value) : fallbackValue;
 }
-var PERFORMANCE_MARK_PREFIX = "🅰️";
+var PERFORMANCE_MARK_PREFIX = "🅰";
 var enablePerfLogging = false;
 function startMeasuring(label) {
   if (!enablePerfLogging) {

@@ -14,14 +14,14 @@ import { CommonModule } from "@angular/common";
 
         <div class="prose dark:prose-invert max-w-none space-y-6">
           <p>
-            Your privacy is important to us. It is 🍽️ Food Hut - Angular Chronicles
+            Your privacy is important to us. It is 🍽 Food Hut - Angular Chronicles
             - Part 1's policy to respect your privacy regarding any information we
             may collect from you on the
             <a
               href="https://food-hut-angular-chronicles-1.netlify.app/"
               target="_blank"
             >
-              🍽️ Food Hut - Angular Chronicles - Part 1
+              🍽 Food Hut - Angular Chronicles - Part 1
             </a>
             website, and other sites we own and operate.
           </p>
@@ -68,7 +68,7 @@ import { CommonModule } from "@angular/common";
 
       <section class="text-gray-700 dark:text-gray-300">
         <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-          Security and Trust of 🍽️ Food Hut - Angular Chronicles - Part 1 Website
+          Security and Trust of 🍽 Food Hut - Angular Chronicles - Part 1 Website
         </h2>
 
         <div class="prose dark:prose-invert max-w-none">
@@ -96,7 +96,7 @@ import { CommonModule } from "@angular/common";
 
       <section class="text-gray-700 dark:text-gray-300">
         <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-          Cookie Policy 🍽️ Food Hut - Angular Chronicles - Part 1
+          Cookie Policy 🍽 Food Hut - Angular Chronicles - Part 1
         </h2>
 
         <div class="space-y-6">
@@ -239,7 +239,7 @@ import { CommonModule } from "@angular/common";
       <section class="text-gray-700 dark:text-gray-300 space-y-6">
         <h3 class="text-xl font-medium text-gray-900 dark:text-white">User Commitment</h3>
         <p>
-          The user commits to using the content and information provided by 🍽️ Food Hut - Angular Chronicles - Part 1
+          The user commits to using the content and information provided by 🍽 Food Hut - Angular Chronicles - Part 1
           on the site in an uninfringed manner, without any of the following:
         </p>
         <ul class="list-disc pl-6 space-y-2">
@@ -254,7 +254,7 @@ import { CommonModule } from "@angular/common";
           </li>
           <li>
             C) Causing damage to the physical (hardware) or logical (software)
-            systems of 🍽️ Food Hut - Angular Chronicles - Part 1, its suppliers
+            systems of 🍽 Food Hut - Angular Chronicles - Part 1, its suppliers
             or third parties, to introduce or disseminate computer viruses or
             any other systems of hardware or software that may cause damage
             previously mentioned.
