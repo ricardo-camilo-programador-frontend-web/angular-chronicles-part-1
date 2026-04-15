@@ -1,10 +1,11 @@
 import { Component, Input } from "@angular/core";
 import { ImageComponent } from "@/components/Image.component";
+import { TranslatePipe } from "@/pipes/translate.pipe";
 
 @Component({
   selector: "app-customer-badge",
   standalone: true,
-  imports: [ImageComponent],
+  imports: [ImageComponent, TranslatePipe],
   template: `
     <div class="{{ className }}">
       <div
@@ -22,7 +23,7 @@ import { ImageComponent } from "@/components/Image.component";
 
         <div class="flex flex-col">
           <span class="text-xs lg:text-normal font-medium text-gray-800">{{
-            title
+            title || ('customerBadge.title' | translate)
           }}</span>
           <div class="flex items-center gap-1">
             <app-image
@@ -31,7 +32,7 @@ import { ImageComponent } from "@/components/Image.component";
               [className]="'w-3 lg:w-6 h-auto object-contain'"
             ></app-image>
             <span class="text-xs lg:text-normal text-gray-700 font-medium">{{ rating }}</span>
-            <span class="text-xs text-gray-500 lg:text-sm">({{ reviews }} Reviews)</span>
+            <span class="text-xs text-gray-500 lg:text-sm">({{ reviews }} {{ 'customerBadge.reviews' | translate }})</span>
           </div>
         </div>
       </div>
@@ -41,6 +42,6 @@ import { ImageComponent } from "@/components/Image.component";
 export class CustomerBadgeComponent {
   @Input() rating: number = 4.9;
   @Input() reviews: number = 1989;
-  @Input() title: string = "Our Happy Customer";
+  @Input() title: string = '';
   @Input() className: string = "";
 }

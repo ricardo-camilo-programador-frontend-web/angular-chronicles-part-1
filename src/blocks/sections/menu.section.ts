@@ -1,14 +1,16 @@
-import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { Component, ChangeDetectionStrategy, inject } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ProductCardComponent } from "@/components/ProductCard.component";
 import { Product } from "@/types/product.types";
 import { ButtonComponent } from "@/components/Button.component";
+import { TranslatePipe } from "@/pipes/translate.pipe";
+import { I18nService } from "@/services/i18n.service";
 
 @Component({
   selector: "menu-section",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, ProductCardComponent, ButtonComponent],
+  imports: [CommonModule, ProductCardComponent, ButtonComponent, TranslatePipe],
   template: `
     <section
       id="menu-section"
@@ -16,12 +18,12 @@ import { ButtonComponent } from "@/components/Button.component";
     >
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold">
-          Menu That
-          <span class="text-red-500">Always</span>
-          <span class="text-amber-400">Make You</span>
+          {{ 'menu.heading1' | translate }}
+          <span class="text-red-500">{{ 'menu.heading2' | translate }}</span>
+          <span class="text-amber-400">{{ 'menu.heading3' | translate }}</span>
         </h2>
         <h3 class="text-3xl font-bold">
-          Fall In <span class="text-red-500">Love</span>
+          {{ 'menu.heading4' | translate }} <span class="text-red-500">{{ 'menu.heading5' | translate }}</span>
         </h3>
       </div>
 
@@ -36,7 +38,7 @@ import { ButtonComponent } from "@/components/Button.component";
           "
           (click)="selectCategory(category.id)"
         >
-          {{ category.name }}
+          {{ category.name | translate }}
         </app-button>
       </div>
 
@@ -62,7 +64,7 @@ import { ButtonComponent } from "@/components/Button.component";
       <ng-template #noProducts>
         <div class="col-span-full text-center py-8">
           <p class="text-gray-500 text-lg">
-            Sorry, no products found in this category.
+            {{ 'menu.noProducts' | translate }}
           </p>
         </div>
       </ng-template>
@@ -70,234 +72,133 @@ import { ButtonComponent } from "@/components/Button.component";
   `,
 })
 export class MenuSection {
+  private i18nService = inject(I18nService);
+  private locale = this.i18nService.getLocaleSignal();
+
   selectedCategory: string | null = null;
 
   categories = [
-    { id: "ramen", name: "Ramen" },
-    { id: "breakfast", name: "Breakfast" },
-    { id: "lunch", name: "Lunch" },
-    { id: "dinner", name: "Dinner" },
-    { id: "mexican", name: "Mexican" },
-    { id: "italian", name: "Italian" },
-    { id: "desserts", name: "Desserts" },
-    { id: "drinks", name: "Drinks" },
+    { id: "ramen", name: "menu.categories.ramen" },
+    { id: "breakfast", name: "menu.categories.breakfast" },
+    { id: "lunch", name: "menu.categories.lunch" },
+    { id: "dinner", name: "menu.categories.dinner" },
+    { id: "mexican", name: "menu.categories.mexican" },
+    { id: "italian", name: "menu.categories.italian" },
+    { id: "desserts", name: "menu.categories.desserts" },
+    { id: "drinks", name: "menu.categories.drinks" },
   ];
 
   products: Product[] = [
     {
       id: 1,
-      name: "Berry Banana French Toast",
+      name: "menu.products.berryBananaFrenchToast.name",
       image: "/assets/images/berry-banana-french-toast.webp",
       rating: 4.8,
-      description:
-        "Fluffy French toast topped with fresh berries, sliced bananas, and maple syrup drizzle",
+      description: "menu.products.berryBananaFrenchToast.description",
       price: 12.99,
       category: "breakfast",
       users: [
-        {
-          id: "1",
-          imagePath: "default-avatar.webp",
-          name: "Ava Thompson",
-        },
-        {
-          id: "2",
-          imagePath: "default-avatar.webp",
-          name: "Ethan Patel",
-        },
-        {
-          id: "3",
-          imagePath: "default-avatar.webp",
-          name: "Lily Chen",
-        },
+        { id: "1", imagePath: "default-avatar.webp", name: "Ava Thompson" },
+        { id: "2", imagePath: "default-avatar.webp", name: "Ethan Patel" },
+        { id: "3", imagePath: "default-avatar.webp", name: "Lily Chen" },
       ],
     },
     {
       id: 2,
-      name: "Buddha Bowl",
+      name: "menu.products.buddhaBowl.name",
       image: "/assets/images/buddha-bowl-sauce.webp",
       rating: 4.7,
-      description:
-        "Nutritious bowl with quinoa, roasted vegetables, avocado, and signature tahini sauce",
+      description: "menu.products.buddhaBowl.description",
       price: 14.99,
       category: "lunch",
       users: [
-        {
-          id: "4",
-          imagePath: "default-avatar.webp",
-          name: "Oliver Brown",
-        },
-        {
-          id: "5",
-          imagePath: "default-avatar.webp",
-          name: "Sophia Lee",
-        },
-        {
-          id: "6",
-          imagePath: "default-avatar.webp",
-          name: "Mason Davis",
-        },
+        { id: "4", imagePath: "default-avatar.webp", name: "Oliver Brown" },
+        { id: "5", imagePath: "default-avatar.webp", name: "Sophia Lee" },
+        { id: "6", imagePath: "default-avatar.webp", name: "Mason Davis" },
       ],
     },
     {
       id: 3,
-      name: "Cheese Bacon Burger",
+      name: "menu.products.cheeseBaconBurger.name",
       image: "/assets/images/cheese-bacon-burger.webp",
       rating: 4.6,
-      description:
-        "Premium beef patty with melted cheddar, crispy bacon, fresh vegetables, and special sauce",
+      description: "menu.products.cheeseBaconBurger.description",
       price: 16.99,
       category: "dinner",
       users: [
-        {
-          id: "7",
-          imagePath: "default-avatar.webp",
-          name: "Isabella Garcia",
-        },
-        {
-          id: "8",
-          imagePath: "default-avatar.webp",
-          name: "Alexander Martin",
-        },
-        {
-          id: "9",
-          imagePath: "default-avatar.webp",
-          name: "Charlotte Hall",
-        },
+        { id: "7", imagePath: "default-avatar.webp", name: "Isabella Garcia" },
+        { id: "8", imagePath: "default-avatar.webp", name: "Alexander Martin" },
+        { id: "9", imagePath: "default-avatar.webp", name: "Charlotte Hall" },
       ],
     },
     {
       id: 4,
-      name: "Crispy Chicken Burger",
+      name: "menu.products.crispyChickenBurger.name",
       image: "/assets/images/crispy-chicken-burger.webp",
       rating: 4.5,
-      description:
-        "Crunchy breaded chicken fillet with lettuce, tomato, and honey mustard sauce",
+      description: "menu.products.crispyChickenBurger.description",
       price: 15.99,
       category: "lunch",
       users: [
-        {
-          id: "10",
-          imagePath: "default-avatar.webp",
-          name: "Julian Sanchez",
-        },
-        {
-          id: "11",
-          imagePath: "default-avatar.webp",
-          name: "Emily Taylor",
-        },
-        {
-          id: "12",
-          imagePath: "default-avatar.webp",
-          name: "Benjamin White",
-        },
+        { id: "10", imagePath: "default-avatar.webp", name: "Julian Sanchez" },
+        { id: "11", imagePath: "default-avatar.webp", name: "Emily Taylor" },
+        { id: "12", imagePath: "default-avatar.webp", name: "Benjamin White" },
       ],
     },
     {
       id: 5,
-      name: "Grilled Chicken Plate",
+      name: "menu.products.grilledChickenPlate.name",
       image: "/assets/images/grilled-chicken-plate.webp",
       rating: 4.4,
-      description:
-        "Herb-marinated grilled chicken breast served with seasonal vegetables and rice",
+      description: "menu.products.grilledChickenPlate.description",
       price: 17.99,
       category: "dinner",
       users: [
-        {
-          id: "13",
-          imagePath: "default-avatar.webp",
-          name: "Hannah Brooks",
-        },
-        {
-          id: "14",
-          imagePath: "default-avatar.webp",
-          name: "Caleb Walker",
-        },
-        {
-          id: "15",
-          imagePath: "default-avatar.webp",
-          name: "Abigail Lewis",
-        },
+        { id: "13", imagePath: "default-avatar.webp", name: "Hannah Brooks" },
+        { id: "14", imagePath: "default-avatar.webp", name: "Caleb Walker" },
+        { id: "15", imagePath: "default-avatar.webp", name: "Abigail Lewis" },
       ],
     },
     {
       id: 6,
-      name: "Grilled Salmon & Vegetables",
+      name: "menu.products.grilledSalmonVegetables.name",
       image: "/assets/images/grilled-salmon-vegetables.webp",
       rating: 4.9,
-      description:
-        "Fresh Atlantic salmon fillet with grilled asparagus and roasted vegetables",
+      description: "menu.products.grilledSalmonVegetables.description",
       price: 24.99,
       category: "dinner",
       users: [
-        {
-          id: "16",
-          imagePath: "default-avatar.webp",
-          name: "Gabriel Harris",
-        },
-        {
-          id: "17",
-          imagePath: "default-avatar.webp",
-          name: "Samantha Johnson",
-        },
-        {
-          id: "18",
-          imagePath: "default-avatar.webp",
-          name: "Michael Brown",
-        },
+        { id: "16", imagePath: "default-avatar.webp", name: "Gabriel Harris" },
+        { id: "17", imagePath: "default-avatar.webp", name: "Samantha Johnson" },
+        { id: "18", imagePath: "default-avatar.webp", name: "Michael Brown" },
       ],
     },
     {
       id: 7,
-      name: "Mixed Grill Platter",
+      name: "menu.products.mixedGrillPlatter.name",
       image: "/assets/images/mixed-grill.webp",
       rating: 4.7,
-      description:
-        "Assortment of grilled meats including chicken, beef, and lamb with grilled vegetables",
+      description: "menu.products.mixedGrillPlatter.description",
       price: 28.99,
       category: "dinner",
       users: [
-        {
-          id: "19",
-          imagePath: "default-avatar.webp",
-          name: "Olivia Williams",
-        },
-        {
-          id: "20",
-          imagePath: "default-avatar.webp",
-          name: "Logan Davis",
-        },
-        {
-          id: "21",
-          imagePath: "default-avatar.webp",
-          name: "Ava Rodriguez",
-        },
+        { id: "19", imagePath: "default-avatar.webp", name: "Olivia Williams" },
+        { id: "20", imagePath: "default-avatar.webp", name: "Logan Davis" },
+        { id: "21", imagePath: "default-avatar.webp", name: "Ava Rodriguez" },
       ],
     },
     {
       id: 8,
-      name: "Shrimp Scampi",
+      name: "menu.products.shrimpScampi.name",
       image: "/assets/images/shrimp-scampi.webp",
       rating: 4.7,
-      description:
-        "Succulent shrimp sautéed in garlic butter white wine sauce over linguine pasta",
+      description: "menu.products.shrimpScampi.description",
       price: 22.99,
       category: "italian",
       users: [
-        {
-          id: "22",
-          imagePath: "default-avatar.webp",
-          name: "Ethan Hall",
-        },
-        {
-          id: "23",
-          imagePath: "default-avatar.webp",
-          name: "Lily Martin",
-        },
-        {
-          id: "24",
-          imagePath: "default-avatar.webp",
-          name: "Ava Patel",
-        },
+        { id: "22", imagePath: "default-avatar.webp", name: "Ethan Hall" },
+        { id: "23", imagePath: "default-avatar.webp", name: "Lily Martin" },
+        { id: "24", imagePath: "default-avatar.webp", name: "Ava Patel" },
       ],
     },
   ];

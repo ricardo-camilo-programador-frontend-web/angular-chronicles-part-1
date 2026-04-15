@@ -1,14 +1,16 @@
-import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { Component, ChangeDetectionStrategy, inject } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ProductCardComponent } from "@/components/ProductCard.component";
 import { ImageComponent } from "@/components/Image.component";
 import { Product } from "@/types/product.types";
+import { TranslatePipe } from "@/pipes/translate.pipe";
+import { I18nService } from "@/services/i18n.service";
 
 @Component({
   selector: "special-offers-section",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, ProductCardComponent, ImageComponent],
+  imports: [CommonModule, ProductCardComponent, ImageComponent, TranslatePipe],
   template: `
     <section id="special-offers-section" class="py-12 px-4 max-w-7xl mx-auto min-h-[38rem] flex flex-col justify-center items-center gap-24 relative">
       <app-image
@@ -25,10 +27,10 @@ import { Product } from "@/types/product.types";
 
       <div class="text-center mb-10">
         <h2 class="text-3xl font-bold">
-          Today <span class="text-red-500">Special</span> Offers
+          {{ 'specialOffers.heading1' | translate }} <span class="text-red-500">{{ 'specialOffers.heading2' | translate }}</span> {{ 'specialOffers.heading3' | translate }}
         </h2>
         <p class="text-gray-600 mt-2 max-w-2xl mx-auto">
-          Discover our handpicked selection of daily specials, featuring irresistible dishes at amazing prices. From savory kebabs to flavorful curries, treat yourself to exceptional meals that won't break the bank.
+          {{ 'specialOffers.description' | translate }}
         </p>
       </div>
 
@@ -51,113 +53,68 @@ import { Product } from "@/types/product.types";
 })
 
 export class SpecialOffersSection {
+  private i18nService = inject(I18nService);
+  private locale = this.i18nService.getLocaleSignal();
+
   products: Product[] = [
     {
       id: 1,
-      name: "Kebab",
+      name: "specialOffers.products.kebab.name",
       image: "/assets/images/kebab.webp",
       rating: 4.5,
       description:
-        "A delicious dish made from meat, often served with vegetables and rice.",
+        "specialOffers.products.kebab.description",
       price: 15.99,
       category: "dinner",
       users: [
-        {
-          id: "1",
-          imagePath: "default-avatar.webp",
-          name: "Ethan Thompson",
-        },
-        {
-          id: "2",
-          imagePath: "default-avatar.webp",
-          name: "Lily Patel",
-        },
-        {
-          id: "3",
-          imagePath: "default-avatar.webp",
-          name: "Oliver Lee",
-        },
+        { id: "1", imagePath: "default-avatar.webp", name: "Ethan Thompson" },
+        { id: "2", imagePath: "default-avatar.webp", name: "Lily Patel" },
+        { id: "3", imagePath: "default-avatar.webp", name: "Oliver Lee" },
       ],
     },
     {
       id: 2,
-      name: "Chicken Tikka",
+      name: "specialOffers.products.chickenTikka.name",
       image: "/assets/images/chicken-tikka.webp",
       rating: 4.8,
       description:
-        "A popular Indian dish made from chunks of chicken marinated in spices and yogurt.",
+        "specialOffers.products.chickenTikka.description",
       price: 12.99,
       category: "dinner",
       users: [
-        {
-          id: "4",
-          imagePath: "default-avatar.webp",
-          name: "Ava Martin",
-        },
-        {
-          id: "5",
-          imagePath: "default-avatar.webp",
-          name: "Noah Brown",
-        },
-        {
-          id: "6",
-          imagePath: "default-avatar.webp",
-          name: "Sophia Davis",
-        },
+        { id: "4", imagePath: "default-avatar.webp", name: "Ava Martin" },
+        { id: "5", imagePath: "default-avatar.webp", name: "Noah Brown" },
+        { id: "6", imagePath: "default-avatar.webp", name: "Sophia Davis" },
       ],
     },
     {
       id: 3,
-      name: "Desi Chowmein",
+      name: "specialOffers.products.desiChowmein.name",
       image: "/assets/images/chowmein.webp",
       rating: 4.2,
       description:
-        "A Chinese stir-fried noodle dish that is popular in India.",
+        "specialOffers.products.desiChowmein.description",
       price: 10.99,
       category: "dinner",
       users: [
-        {
-          id: "7",
-          imagePath: "default-avatar.webp",
-          name: "Mia Taylor",
-        },
-        {
-          id: "8",
-          imagePath: "default-avatar.webp",
-          name: "Isabella Johnson",
-        },
-        {
-          id: "9",
-          imagePath: "default-avatar.webp",
-          name: "Alexander Smith",
-        },
+        { id: "7", imagePath: "default-avatar.webp", name: "Mia Taylor" },
+        { id: "8", imagePath: "default-avatar.webp", name: "Isabella Johnson" },
+        { id: "9", imagePath: "default-avatar.webp", name: "Alexander Smith" },
       ],
     },
     {
       id: 4,
-      name: "Chicken Chawarma",
+      name: "specialOffers.products.chickenChawarma.name",
       image: "/assets/images/chawarma.webp",
       rating: 4.6,
       description:
-        "A Middle Eastern dish made from meat, often served with pita bread.",
+        "specialOffers.products.chickenChawarma.description",
       price: 13.99,
       category: "dinner",
       users: [
-        {
-          id: "10",
-          imagePath: "default-avatar.webp",
-          name: "Charlotte Williams",
-        },
-        {
-          id: "11",
-          imagePath: "default-avatar.webp",
-          name: "Benjamin Jones",
-        },
-        {
-          id: "12",
-          imagePath: "default-avatar.webp",
-          name: "Abigail Brown",
-        },
+        { id: "10", imagePath: "default-avatar.webp", name: "Charlotte Williams" },
+        { id: "11", imagePath: "default-avatar.webp", name: "Benjamin Jones" },
+        { id: "12", imagePath: "default-avatar.webp", name: "Abigail Brown" },
       ],
     },
   ];

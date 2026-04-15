@@ -3,13 +3,14 @@ import { Component } from "@angular/core";
 import { LogoComponent } from "@/components/Logo.component";
 import { DownloadShortcutBlock } from "@/blocks/downloadShortcut/DownloadShortcut.block";
 import { LanguageSelectorComponent } from "@/components/LanguageSelector.component";
+import { TranslatePipe } from "@/pipes/translate.pipe";
 import { HEADER_NAVIGATION_ITEMS } from "@/constants/navigation.constants";
 import type { NavigationItem } from "@/types/navigation.types";
 
 @Component({
   selector: "app-header",
   standalone: true,
-  imports: [NgFor, LogoComponent, DownloadShortcutBlock, LanguageSelectorComponent],
+  imports: [NgFor, LogoComponent, DownloadShortcutBlock, LanguageSelectorComponent, TranslatePipe],
   template: `
     <header
       class="w-screen mx-auto flex justify-between items-center  px-4 py-4 fixed top-0 left-0 right-0 z-[9]  bg-gradient-to-b from-white via-white to-[#FFF9F3]/20"
@@ -20,9 +21,10 @@ import type { NavigationItem } from "@/types/navigation.types";
           <a
             *ngFor="let item of menuItems"
             [href]="item.link"
+            [attr.aria-label]="item.ariaLabel! | translate"
             class="text-gray-700 hover:text-red-500 transition-colors"
           >
-            {{ item.label }}
+            {{ item.label | translate }}
           </a>
         </nav>
 
@@ -33,11 +35,11 @@ import type { NavigationItem } from "@/types/navigation.types";
       </div>
 
       <div class="lg:hidden">
-        Menu
+        {{ 'header.menu' | translate }}
       </div>
     </header>
   `,
 })
 export class HeaderComponent {
-  menuItems: NavigationItem[]   = HEADER_NAVIGATION_ITEMS;
+  menuItems: NavigationItem[] = HEADER_NAVIGATION_ITEMS;
 }

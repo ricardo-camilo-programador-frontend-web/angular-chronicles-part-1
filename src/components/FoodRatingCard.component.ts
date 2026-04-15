@@ -1,5 +1,6 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, inject } from "@angular/core";
 import { ImageComponent } from "./Image.component";
+import { I18nService } from "@/services/i18n.service";
 
 @Component({
   selector: "app-food-rating-card",
@@ -25,7 +26,7 @@ import { ImageComponent } from "./Image.component";
               "
               [alt]="star ? 'Star' : 'Star empty'"
               [className]="'w-4 h-4'"
-              title="Note of the food is {{ rating }}"
+              [title]="foodRatingTitle"
             />
             }
           </div>
@@ -38,11 +39,17 @@ import { ImageComponent } from "./Image.component";
 })
 
 export class FoodRatingCardComponent {
+  private i18nService = inject(I18nService);
+
   @Input() imageSrc: string = "";
   @Input() name: string = "";
   @Input() rating: number = 0;
   @Input() price: number = 0;
   @Input() className: string = "";
+
+  get foodRatingTitle(): string {
+    return this.i18nService.translate('foodRatingCard.title').replace('{{ rating }}', String(this.rating));
+  }
 
   get stars(): boolean[] {
     return Array(5)

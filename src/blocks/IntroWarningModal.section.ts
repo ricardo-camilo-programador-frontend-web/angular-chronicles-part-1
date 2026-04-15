@@ -4,16 +4,17 @@ import { CommonModule } from "@angular/common";
 import { saveItemOnLocalStorage, getItemFromLocalStorage } from "@/utils/localStorageHandler";
 import { Router, RouterModule } from "@angular/router";
 import { ImageComponent } from "@/components/Image.component";
+import { TranslatePipe } from "@/pipes/translate.pipe";
 
 @Component({
   selector: "intro-warning-modal",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ModalComponent, CommonModule, RouterModule, ImageComponent],
+  imports: [ModalComponent, CommonModule, RouterModule, ImageComponent, TranslatePipe],
   template: `
     <app-modal
       [id]="'intro-warning-modal'"
-      [title]="'🍽️ Food Hut - Angular Chronicles'"
+      [title]="'introWarningModal.title' | translate"
       [isOpen]="isOpen"
       [class]="'w-screen h-screen overflow-hidden overflow-y-scroll z-[9999]'"
       (closeModal)="closeModal()"
@@ -23,7 +24,7 @@ import { ImageComponent } from "@/components/Image.component";
           class="p-4 rounded-lg shadow-md bg-gradient-to-r from-red-600 to-red-100"
         >
           <p class="text-lg font-medium text-center text-white">
-            Welcome to my study project! 🚀
+            {{ 'introWarningModal.welcome' | translate }}
           </p>
         </div>
 
@@ -31,7 +32,7 @@ import { ImageComponent } from "@/components/Image.component";
           <div
             class="flex items-center justify-between p-2 rounded-lg bg-gray-50"
           >
-            <span class="text-gray-700"> Allow Analytics Tools </span>
+            <span class="text-gray-700"> {{ 'introWarningModal.allowAnalytics' | translate }} </span>
             <button
               (click)="toggleAnalytics()"
               [class]="getToggleButtonClasses()"
@@ -49,15 +50,14 @@ import { ImageComponent } from "@/components/Image.component";
             rel="noopener noreferrer"
           >
             <span class="font-medium">
-              Privacy Policy
+              {{ 'introWarningModal.privacyPolicy' | translate }}
             </span>
           </a>
         </div>
 
         <div class="p-4 rounded-lg bg-gray-50">
           <p class="leading-relaxed text-center text-gray-700">
-            This is a demonstration of my frontend development skills, focusing
-            on modern web technologies and best practices.
+            {{ 'introWarningModal.description' | translate }}
           </p>
         </div>
 
@@ -84,7 +84,7 @@ import { ImageComponent } from "@/components/Image.component";
               ></app-image>
 
               <span class="font-medium text-gray-700">
-                Check out my portfolio
+                {{ 'introWarningModal.portfolio' | translate }}
               </span>
             </a>
           </div>
@@ -106,14 +106,14 @@ import { ImageComponent } from "@/components/Image.component";
               />
             </svg>
             <span class="font-medium text-blue-600">
-              Connect with me on LinkedIn
+              {{ 'introWarningModal.linkedin' | translate }}
             </span>
           </a>
         </div>
 
         <div class="pt-4 mt-4 border-t">
           <p class="text-sm text-center text-gray-500">
-            Design Credits:
+            {{ 'introWarningModal.designCredits' | translate }}
             <a
               [href]="'https://www.figma.com/' + figmaUsername"
               target="_blank"
@@ -132,7 +132,7 @@ import { ImageComponent } from "@/components/Image.component";
               rel="noopener noreferrer"
               class="text-green-600 hover:text-green-700"
             >
-              View original design
+              {{ 'introWarningModal.viewOriginalDesign' | translate }}
             </a>
           </p>
         </div>

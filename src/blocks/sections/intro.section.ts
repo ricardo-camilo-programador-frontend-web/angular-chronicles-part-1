@@ -6,6 +6,7 @@ import { ImageComponent } from "@/components/Image.component";
 import { DownloadShortcutBlock } from "@/blocks/downloadShortcut/DownloadShortcut.block";
 import { CustomerBadgeComponent } from "@/components/CustomerBadge.component";
 import { FoodRatingCardComponent } from '@/components/FoodRatingCard.component';
+import { TranslatePipe } from "@/pipes/translate.pipe";
 
 @Component({
   selector: "intro-section",
@@ -18,6 +19,7 @@ import { FoodRatingCardComponent } from '@/components/FoodRatingCard.component';
     DownloadShortcutBlock,
     CustomerBadgeComponent,
     FoodRatingCardComponent,
+    TranslatePipe,
   ],
   template: `
     <section
@@ -66,21 +68,21 @@ import { FoodRatingCardComponent } from '@/components/FoodRatingCard.component';
               [alt]="'Heart circle'"
               [className]="'w-4 h-4 mr-2'"
             ></app-image>
-            People Trust us
+            {{ 'intro.tag' | translate }}
           </app-tag>
         </div>
 
         <h1
           class="text-3xl lg:text-5xl font-bold mb-6 max-w-[400px] lg:max-w-none relative"
         >
-          <span>We're</span>
-          <span class="text-red-500"> Serious</span>
+          <span>{{ 'intro.heading1' | translate }}</span>
+          <span class="text-red-500"> {{ 'intro.heading2' | translate }}</span>
           <br class="lg:hidden" />
-          <span>For</span>
+          <span>{{ 'intro.heading3' | translate }}</span>
           <br />
-          <span class="text-red-500">Food</span>
+          <span class="text-red-500">{{ 'intro.heading4' | translate }}</span>
           <span> &</span>
-          <span class="text-yellow-500"> Delivery</span>
+          <span class="text-yellow-500"> {{ 'intro.heading5' | translate }}</span>
           <span>.</span>
           <app-image
             [src]="'assets/svg/redBrushStroke.svg'"
@@ -90,18 +92,17 @@ import { FoodRatingCardComponent } from '@/components/FoodRatingCard.component';
         </h1>
 
         <p class="text-gray-600 mb-8 w-full max-w-sm text-left">
-          Best cooks and best delivery guys all at your service. Hot tasty food
-          will reach you in 60 minutes.
+          {{ 'intro.description' | translate }}
         </p>
 
         <div
           class="flex items-center justify-center lg:justify-start space-x-4 mb-8"
         >
-          <app-input-text placeholder="Search food" class="w-full lg:w-96">
+          <app-input-text [placeholder]="'intro.searchPlaceholder' | translate" class="w-full lg:w-96">
             <button
               class="absolute right-2 top-[1.46rem] -translate-y-1/2 p-2 bg-yellow-400 rounded-full hover:bg-yellow-500 transition-colors"
             >
-              <span class="sr-only">Search</span>
+              <span class="sr-only">{{ 'intro.searchSrOnly' | translate }}</span>
               <app-image
                 [src]="'assets/svg/searchIcon.svg'"
                 [alt]="'Search'"
@@ -120,8 +121,8 @@ import { FoodRatingCardComponent } from '@/components/FoodRatingCard.component';
             [className]="
               'flex flex-row-reverse items-center justify-center gap-2 text-gray-700 hover:bg-gray-100 hover:text-yellow-500 h-12 truncate'
             "
-            [title]="'Watch Video'"
-            [label]="'Watch Video'"
+            [title]="'intro.watchVideo' | translate"
+            [label]="'intro.watchVideo' | translate"
           >
             <app-image
               [src]="'assets/svg/arrowRight.svg'"
@@ -233,7 +234,7 @@ import { FoodRatingCardComponent } from '@/components/FoodRatingCard.component';
 
         <app-food-rating-card
           [imageSrc]="'assets/images/pizza.webp'"
-          [name]="'Italian Pizza'"
+          [name]="'intro.italianPizza' | translate"
           [rating]="3"
           [price]="10.50"
           [className]="'absolute bottom-0 left-0'"

@@ -17,11 +17,12 @@ import { CommonModule } from "@angular/common";
 import {
   saveItemOnLocalStorage,
 } from "@/utils/localStorageHandler";
+import { TranslatePipe } from "@/pipes/translate.pipe";
 
 @Component({
   selector: "tracking-consent",
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   template: `
     <div
       *ngIf="showModal"
@@ -32,17 +33,16 @@ import {
         role="dialog"
         aria-modal="true"
       >
-        <h2 class="text-xl font-semibold mb-4">🔒 Tracking Consent</h2>
+        <h2 class="text-xl font-semibold mb-4">{{ 'trackingConsent.title' | translate }}</h2>
 
         <p class="mb-4 text-gray-600">
-          We would like to use analytics tools to improve your experience. To
-          learn more, please see our
+          {{ 'trackingConsent.description' | translate }}
           <a
             href="/privacy-policy"
             class="text-blue-600 hover:text-blue-800 underline"
             target="_blank"
           >
-            Privacy Policy </a
+            {{ 'trackingConsent.privacyPolicy' | translate }} </a
           >.
         </p>
 
@@ -50,16 +50,16 @@ import {
           <button
             (click)="handleConsent(false)"
             class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100 transition-colors"
-            aria-label="Decline tracking"
+            [attr.aria-label]="'trackingConsent.declineAria' | translate"
           >
-            Decline
+            {{ 'trackingConsent.decline' | translate }}
           </button>
           <button
             (click)="handleConsent(true)"
             class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-            aria-label="Accept tracking"
+            [attr.aria-label]="'trackingConsent.acceptAria' | translate"
           >
-            Accept
+            {{ 'trackingConsent.accept' | translate }}
           </button>
         </div>
       </div>
