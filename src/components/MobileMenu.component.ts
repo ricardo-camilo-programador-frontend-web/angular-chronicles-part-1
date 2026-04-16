@@ -23,7 +23,7 @@ import type { NavigationItem } from "@/types/navigation.types";
     <!-- Menu Panel -->
     <nav
       #menuPanel
-      class="fixed top-0 left-0 h-full w-[85vw] max-w-[320px] bg-[#0f0f23] shadow-2xl z-[50] flex flex-col transform transition-transform duration-300 ease-in-out overflow-hidden"
+      class="fixed top-0 left-0 h-full w-[85vw] max-w-[320px] bg-[#0f0f23] shadow-2xl z-[999] flex flex-col transform transition-transform duration-300 ease-in-out overflow-hidden"
       [class.-translate-x-full]="!isOpen"
       [class.translate-x-0]="isOpen"
       [attr.aria-hidden]="!isOpen"
