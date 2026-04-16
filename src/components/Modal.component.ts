@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from "@angular/core";
+import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { isClickOutsideElement } from "@/utils/isClickOutsideElement";
 import { TranslatePipe } from "@/pipes/translate.pipe";
@@ -83,5 +83,12 @@ export class ModalComponent {
 
   isClickOutside(event: MouseEvent) {
     return isClickOutsideElement(this.modalRef.nativeElement, event);
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    if (this.isOpen) {
+      this.close();
+    }
   }
 }

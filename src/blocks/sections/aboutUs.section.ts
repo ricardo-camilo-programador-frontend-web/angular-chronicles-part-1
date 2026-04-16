@@ -29,7 +29,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
 
       <app-image
         [src]="'assets/svg/yellow-circle-overlay.svg'"
-        [alt]="'Yellow overlay'"
+        [alt]="'alt.yellowOverlay' | translate"
         [className]="'w-[36rem] h-[26rem] absolute lg:-bottom-[2rem] top-16 lg:-left-36 z-[-1] scale-150'"
       ></app-image>
 

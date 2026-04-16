@@ -8,7 +8,7 @@ declare global {
 
 declare global {
   interface Window {
-    dataLayer: any[];
+    dataLayer: Record<string, unknown>[];
   }
 }
 
@@ -77,8 +77,6 @@ export class TrackingConsentComponent implements OnInit {
 
     if (hasChosen !== "true") {
       this.showModal = true;
-      saveItemOnLocalStorage(this.CONSENT_KEY, "true");
-      this.initializeClarity();
       return;
     }
 
@@ -91,9 +89,10 @@ export class TrackingConsentComponent implements OnInit {
     this.showModal = false;
 
     saveItemOnLocalStorage(this.HAS_CHOSEN_KEY, "true");
+    saveItemOnLocalStorage(this.CONSENT_KEY, String(consent));
 
-    if (!consent) {
-      saveItemOnLocalStorage(this.CONSENT_KEY, "false");
+    if (consent) {
+      this.initializeClarity();
     }
   }
 

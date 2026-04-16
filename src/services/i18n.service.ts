@@ -1,13 +1,14 @@
 import { Injectable, Signal, PLATFORM_ID, inject, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { SupportedLocale, TranslationDict } from '../types/i18n.types';
+import type { I18nServiceContract } from '../types/i18n.types';
 import enTranslations from '@/assets/i18n/en.json';
 import ptBrTranslations from '@/assets/i18n/pt-BR.json';
 
 @Injectable({
   providedIn: 'root'
 })
-export class I18nService {
+export class I18nService implements I18nServiceContract {
   private readonly platformId = inject(PLATFORM_ID);
   private translations: Record<SupportedLocale, TranslationDict> = {
     en: enTranslations,
@@ -52,8 +53,8 @@ export class I18nService {
       this.currentTranslations.set(this.translations[locale]);
       if (isPlatformBrowser(this.platformId)) {
         localStorage.setItem('locale', locale);
+        document.documentElement.lang = locale;
       }
-      document.documentElement.lang = locale;
     }
   }
 

@@ -1,5 +1,4 @@
 import { Component, ChangeDetectionStrategy } from "@angular/core";
-import { CommonModule } from "@angular/common";
 import { ProductCardComponent } from "@/components/ProductCard.component";
 import { ImageComponent } from "@/components/Image.component";
 import { Product } from "@/types/product.types";
@@ -9,7 +8,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
   selector: "special-offers-section",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, ProductCardComponent, ImageComponent, TranslatePipe],
+  imports: [ProductCardComponent, ImageComponent, TranslatePipe],
   template: `
     <section id="special-offers-section" class="py-12 px-4 max-w-7xl mx-auto min-h-[38rem] flex flex-col justify-center items-center gap-24 relative">
       <app-image
@@ -34,10 +33,11 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
       </div>
 
       <div class="hidden md:flex flex-wrap lg:flex-nowrap gap-6 gap-y-14 items-center justify-center">
-        <app-product-card
-          *ngFor="let product of products; trackBy: trackByProduct"
-          [product]="product"
-        ></app-product-card>
+        @for (product of products; track product.id) {
+          <app-product-card
+            [product]="product"
+          ></app-product-card>
+        }
       </div>
 
       <div class="flex md:hidden flex-nowrap gap-6 gap-y-14 items-center justify-center overflow-hidden min-h-[35rem]">
@@ -115,7 +115,4 @@ export class SpecialOffersSection {
     },
   ];
 
-  trackByProduct(_index: number, product: Product): string {
-    return String(product.id);
-  }
 }

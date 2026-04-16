@@ -1,5 +1,4 @@
 import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
-import { CommonModule } from "@angular/common";
 import { ImageComponent } from "@/components/Image.component";
 import { UserPreview } from "@/components/UserPreview.component";
 import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection";
@@ -10,7 +9,7 @@ import type { Product } from "@/types/product.types";
   selector: "app-product-card",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, ImageComponent, UserPreview, TranslatePipe],
+  imports: [ImageComponent, UserPreview, TranslatePipe],
   template: `
     <div
       class="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow w-[19rem] h-[33rem] relative bg-gradient-to-b from-white via-white  to-red-500/30 {{ className }}"
@@ -40,12 +39,13 @@ import type { Product } from "@/types/product.types";
           class="flex items-center justify-center gap-1 px-2 py-1 rounded-full text-sm mx-auto w-full max-w-[17rem]"
         >
           <div class="grid grid-cols-3 h-16 items-center justify-center w-[5rem]">
-            <user-preview
-              *ngFor="let user of product.users; trackBy: trackByUser"
-              [id]="user.id"
-              [imagePath]="user.imagePath"
-              [name]="user.name"
-            ></user-preview>
+            @for (user of product.users; track user.id) {
+              <user-preview
+                [id]="user.id"
+                [imagePath]="user.imagePath"
+                [name]="user.name"
+              ></user-preview>
+            }
           </div>
 
           <div class="flex items-center gap-1">
@@ -82,10 +82,6 @@ import type { Product } from "@/types/product.types";
 export class ProductCardComponent {
   @Input() product!: Product;
   @Input() className: string = '';
-
-  trackByUser(_index: number, user: { id: string }): string {
-    return user.id;
-  }
 
   getRandomLinkForRedirection() {
     return getRandomLinkForRedirection();

@@ -1,4 +1,4 @@
-import { Component, Input, inject } from "@angular/core";
+import { Component, Input, inject, computed } from "@angular/core";
 import { ImageComponent } from "./Image.component";
 import { I18nService } from "@/services/i18n.service";
 import { TranslatePipe } from "@/pipes/translate.pipe";
@@ -32,7 +32,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
             }
           </div>
 
-          <p class="text-sm text-gray-600">{{ i18nService.translate('currency.symbol') + price }}</p>
+          <p class="text-sm text-gray-600">{{ priceLabel() }}</p>
         </div>
       </div>
     </div>
@@ -40,13 +40,15 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
 })
 
 export class FoodRatingCardComponent {
-  i18nService = inject(I18nService);
+  private i18nService = inject(I18nService);
 
   @Input() imageSrc: string = "";
   @Input() name: string = "";
   @Input() rating: number = 0;
   @Input() price: number = 0;
   @Input() className: string = "";
+
+  priceLabel = computed(() => this.i18nService.translate('currency.symbol') + this.price);
 
   get foodRatingTitle(): string {
     return this.i18nService.translate('foodRatingCard.title').replace('{{ rating }}', String(this.rating));
