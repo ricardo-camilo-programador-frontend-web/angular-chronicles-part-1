@@ -1,16 +1,17 @@
 import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { TranslatePipe } from "@/pipes/translate.pipe";
 
 @Component({
   selector: "user-preview",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   template: `
     <img
       [src]="'assets/images/' + imagePath"
-      [alt]="'user-avatar of ' + name"
-      [title]="'user-avatar of ' + name"
+      [alt]="'userPreview.avatarOf' | translate"
+      [title]="'userPreview.avatarOf' | translate"
       class="min-w-4 w-[6rem] scale-150 rounded-full object-cover border-4 border-white bg-blue-500"
     />
   `,

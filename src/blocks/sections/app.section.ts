@@ -1,11 +1,12 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ImageComponent } from "@/components/Image.component";
+import { TranslatePipe } from "@/pipes/translate.pipe";
 
 @Component({
   selector: "app-section",
   standalone: true,
-  imports: [CommonModule, ImageComponent],
+  imports: [CommonModule, ImageComponent, TranslatePipe],
   template: `
     <section
       id="app-section"
@@ -17,29 +18,27 @@ import { ImageComponent } from "@/components/Image.component";
         >
           <div class="w-full lg:w-1/2 z-10 md:ml-16">
             <h2 class="text-4xl font-bold leading-tight mb-6">
-              It's Now <span class="text-red-500">More Easy</span> to
-              <span class="text-amber-400">Order</span><br />
-              by Our Mobile <span class="text-red-500">App</span>
+              {{ 'app.heading1' | translate }} <span class="text-red-500">{{ 'app.heading2' | translate }}</span> {{ 'app.heading3' | translate }}
+              <span class="text-amber-400">{{ 'app.heading4' | translate }}</span><br />
+              {{ 'app.heading5' | translate }} <span class="text-red-500">{{ 'app.heading6' | translate }}</span>
             </h2>
 
             <p class="text-gray-600 mb-8 max-w-lg">
-              All you need to do is download one of the best delivery apps, make
-              a and most companies are opting for mobile app development for
-              food delivery
+              {{ 'app.description' | translate }}
             </p>
 
             <div class="flex  w-full justify-center gap-4 min-h-10 relative min-w-[17rem] max-w-[20rem]">
               <a href="#" class="transition-transform hover:scale-105 h-14 w-full ">
                 <app-image
                   [src]="'assets/svg/google-play-badge.svg'"
-                  [alt]="'Get it on Google Play'"
+                  [alt]="'alt.getItOnGooglePlay' | translate"
                   [className]="'h-full  w-full object-contain scale-[1.12]'"
                 />
               </a>
               <a href="#" class="transition-transform hover:scale-105 h-14 w-full">
                 <app-image
                   [src]="'assets/svg/app-store-badge.svg'"
-                  [alt]="'Download on App Store'"
+                  [alt]="'alt.downloadOnAppStore' | translate"
                   [className]="'h-full  w-full object-contain'"
                 />
               </a>
@@ -62,7 +61,7 @@ import { ImageComponent } from "@/components/Image.component";
               >
                 <app-image
                   [src]="'assets/svg/semicircle.svg'"
-                  [alt]="'Dashed arrow path'"
+                  [alt]="'alt.semicircle' | translate"
                   [className]="
                     'w-full h-auto inset-0 lg:top-16 object-contain max-h-[31rem] left-12 -bottom-[8rem]'
                   "
@@ -74,7 +73,7 @@ import { ImageComponent } from "@/components/Image.component";
               >
                 <app-image
                   [src]="'/assets/images/chef-presenting-app.webp'"
-                  [alt]="'Chef presenting app'"
+                  [alt]="'alt.chefPresentingApp' | translate"
                   [className]="
                     'absolute inset-0 w-full  object-contain rounded-b-full z-[6]'
                   "
@@ -84,7 +83,7 @@ import { ImageComponent } from "@/components/Image.component";
 
             <app-image
               [src]="'assets/svg/scattered-spices.svg'"
-              [alt]="'Scattered spices'"
+              [alt]="'alt.scatteredSpices' | translate"
               [className]="
                 'w-[10rem] mx-auto absolute left-[33rem] lg:left-[25rem] -top-[4rem] z-[50] rotate-60 scale-150'
               "
@@ -92,7 +91,7 @@ import { ImageComponent } from "@/components/Image.component";
 
             <app-image
               [src]="'assets/images/coriander-leaves.webp'"
-              [alt]="'Coriander leaves'"
+              [alt]="'alt.corianderLeaves' | translate"
               [className]="
                 'absolute -bottom-[13rem] right-[15rem] w-32 scale-150  z-[4]'
               "
@@ -100,7 +99,7 @@ import { ImageComponent } from "@/components/Image.component";
 
             <app-image
               [src]="'assets/svg/wave-lines-abstract.svg'"
-              [alt]="'Wave lines abstract'"
+              [alt]="'alt.waveLinesAbstract' | translate"
               [className]="
                 'hidden md:block absolute -bottom-[20rem] -right-[25rem] w-full scale-150  z-[3]'
               "

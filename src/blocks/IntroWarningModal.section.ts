@@ -4,16 +4,17 @@ import { CommonModule } from "@angular/common";
 import { saveItemOnLocalStorage, getItemFromLocalStorage } from "@/utils/localStorageHandler";
 import { Router, RouterModule } from "@angular/router";
 import { ImageComponent } from "@/components/Image.component";
+import { TranslatePipe } from "@/pipes/translate.pipe";
 
 @Component({
   selector: "intro-warning-modal",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ModalComponent, CommonModule, RouterModule, ImageComponent],
+  imports: [ModalComponent, CommonModule, RouterModule, ImageComponent, TranslatePipe],
   template: `
     <app-modal
       [id]="'intro-warning-modal'"
-      [title]="'🍽️ Food Hut - Angular Chronicles'"
+      [title]="'introWarningModal.title' | translate"
       [isOpen]="isOpen"
       [class]="'w-screen h-screen overflow-hidden overflow-y-scroll z-[9999]'"
       (closeModal)="closeModal()"
@@ -23,7 +24,7 @@ import { ImageComponent } from "@/components/Image.component";
           class="p-4 rounded-lg shadow-md bg-gradient-to-r from-red-600 to-red-100"
         >
           <p class="text-lg font-medium text-center text-white">
-            Welcome to my study project! 🚀
+            {{ 'introWarningModal.welcome' | translate }}
           </p>
         </div>
 
@@ -31,7 +32,7 @@ import { ImageComponent } from "@/components/Image.component";
           <div
             class="flex items-center justify-between p-2 rounded-lg bg-gray-50"
           >
-            <span class="text-gray-700"> Allow Analytics Tools </span>
+            <span class="text-gray-700"> {{ 'introWarningModal.allowAnalytics' | translate }} </span>
             <button
               (click)="toggleAnalytics()"
               [class]="getToggleButtonClasses()"
@@ -49,15 +50,14 @@ import { ImageComponent } from "@/components/Image.component";
             rel="noopener noreferrer"
           >
             <span class="font-medium">
-              Privacy Policy
+              {{ 'introWarningModal.privacyPolicy' | translate }}
             </span>
           </a>
         </div>
 
         <div class="p-4 rounded-lg bg-gray-50">
           <p class="leading-relaxed text-center text-gray-700">
-            This is a demonstration of my frontend development skills, focusing
-            on modern web technologies and best practices.
+            {{ 'introWarningModal.description' | translate }}
           </p>
         </div>
 
@@ -79,12 +79,12 @@ import { ImageComponent } from "@/components/Image.component";
                 [src]="
                   'assets/images/ricardo-camilo-frontend-developer-frontend-engineer-software-engineer-web-developer-vuejs-vue-reactjs-react-javascript-typescript-component-architecture.webp'
                 "
-                [alt]="'Heart circle'"
+                [alt]="'alt.heartCircle' | translate"
                 [className]="'w-8 h-8 mr-2'"
               ></app-image>
 
               <span class="font-medium text-gray-700">
-                Check out my portfolio
+                {{ 'introWarningModal.portfolio' | translate }}
               </span>
             </a>
           </div>
@@ -106,14 +106,14 @@ import { ImageComponent } from "@/components/Image.component";
               />
             </svg>
             <span class="font-medium text-blue-600">
-              Connect with me on LinkedIn
+              {{ 'introWarningModal.linkedin' | translate }}
             </span>
           </a>
         </div>
 
         <div class="pt-4 mt-4 border-t">
           <p class="text-sm text-center text-gray-500">
-            Design Credits:
+            {{ 'introWarningModal.designCredits' | translate }}
             <a
               [href]="'https://www.figma.com/' + figmaUsername"
               target="_blank"
@@ -132,7 +132,7 @@ import { ImageComponent } from "@/components/Image.component";
               rel="noopener noreferrer"
               class="text-green-600 hover:text-green-700"
             >
-              View original design
+              {{ 'introWarningModal.viewOriginalDesign' | translate }}
             </a>
           </p>
         </div>
@@ -142,7 +142,7 @@ import { ImageComponent } from "@/components/Image.component";
 })
 export class IntroWarningModalSection implements AfterViewInit {
   linkedinUsername = "ricardo-camilo-programador-frontend-web-developer";
-  portfolioUrl = "https://persona-nextjs-chronicles-part-2.netlify.app/";
+  portfolioUrl = "https://ricardo-camilo-dev-frontend-web.netlify.app/";
   figmaUsername = "@KamranAlime";
   figmaOriginalDesign = "1103820487891554272";
   analyticsEnabled = false;
@@ -159,6 +159,9 @@ export class IntroWarningModalSection implements AfterViewInit {
     
     if (savedAnalyticsPreference !== null) {
       this.analyticsEnabled = savedAnalyticsPreference === "true";
+    } else {
+      this.analyticsEnabled = true;
+      saveItemOnLocalStorage("analyticsEnabled", "true");
     }
     
     if (this.checkIfPageIsPrivacyPolicy()) {
@@ -202,6 +205,7 @@ export class IntroWarningModalSection implements AfterViewInit {
       script.dataset['id'] = 'f30df6f3-776d-4154-959d-0210ac8a8325';
       script.dataset['utcoffset'] = '-3';
       script.async = true;
+      script.onerror = () => script.remove();
       document.body.appendChild(script);
     }
   }

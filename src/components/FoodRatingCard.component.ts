@@ -1,10 +1,12 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, inject, computed } from "@angular/core";
 import { ImageComponent } from "./Image.component";
+import { I18nService } from "@/services/i18n.service";
+import { TranslatePipe } from "@/pipes/translate.pipe";
 
 @Component({
   selector: "app-food-rating-card",
   standalone: true,
-  imports: [ImageComponent],
+  imports: [ImageComponent, TranslatePipe],
   template: `
     <div class="absolute inset-0 bg-transparent p-2 mt-[3rem] lg:mt-[5rem] -ml-24 lg:-ml-9 {{ className }}">
       <div
@@ -18,19 +20,19 @@ import { ImageComponent } from "./Image.component";
         <div>
           <p class="font-medium">{{ name }}</p>
           <div class="flex items-center space-x-2">
-            @for (star of stars; track star) {
+            @for (star of stars; track $index) {
             <app-image
               [src]="
                 star ? '/assets/svg/star.svg' : '/assets/svg/starEmpty.svg'
               "
-              [alt]="star ? 'Star' : 'Star empty'"
+              [alt]="star ? ('alt.star' | translate) : ('alt.starEmpty' | translate)"
               [className]="'w-4 h-4'"
-              title="Note of the food is {{ rating }}"
+              [title]="foodRatingTitle"
             />
             }
           </div>
 
-          <p class="text-sm text-gray-600">{{ "$" + price }}</p>
+          <p class="text-sm text-gray-600">{{ priceLabel() }}</p>
         </div>
       </div>
     </div>
@@ -38,11 +40,19 @@ import { ImageComponent } from "./Image.component";
 })
 
 export class FoodRatingCardComponent {
+  private i18nService = inject(I18nService);
+
   @Input() imageSrc: string = "";
   @Input() name: string = "";
   @Input() rating: number = 0;
   @Input() price: number = 0;
   @Input() className: string = "";
+
+  priceLabel = computed(() => this.i18nService.translate('currency.symbol') + this.price);
+
+  get foodRatingTitle(): string {
+    return this.i18nService.translate('foodRatingCard.title').replace('{{ rating }}', String(this.rating));
+  }
 
   get stars(): boolean[] {
     return Array(5)
