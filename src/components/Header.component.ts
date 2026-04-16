@@ -12,7 +12,7 @@ import type { NavigationItem } from "@/types/navigation.types";
   imports: [LogoComponent, DownloadShortcutBlock, LanguageSelectorComponent, TranslatePipe],
   template: `
     <header
-      class="w-screen mx-auto flex justify-between items-center  px-4 py-4 fixed top-0 left-0 right-0 z-[9]  bg-gradient-to-b from-white via-white to-[#FFF9F3]/20"
+      class="w-screen mx-auto flex justify-between items-center z-[999] px-4 py-4 fixed top-0 left-0 right-0 bg-gradient-to-b from-white via-white to-[#FFF9F3]/20"
     >
       <div class="md:max-w-[900px] lg:max-w-[1400px] mx-auto flex justify-between items-center w-full">
         <app-logo></app-logo>
