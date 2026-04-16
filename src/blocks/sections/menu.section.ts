@@ -1,10 +1,9 @@
-import { Component, ChangeDetectionStrategy, inject } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ProductCardComponent } from "@/components/ProductCard.component";
 import { Product } from "@/types/product.types";
 import { ButtonComponent } from "@/components/Button.component";
 import { TranslatePipe } from "@/pipes/translate.pipe";
-import { I18nService } from "@/services/i18n.service";
 
 @Component({
   selector: "menu-section",
@@ -72,9 +71,6 @@ import { I18nService } from "@/services/i18n.service";
   `,
 })
 export class MenuSection {
-  private i18nService = inject(I18nService);
-  private locale = this.i18nService.getLocaleSignal();
-
   selectedCategory: string | null = null;
 
   categories = [

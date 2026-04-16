@@ -78,15 +78,11 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
         <h1
           class="text-3xl lg:text-5xl font-bold mb-6 max-w-[400px] lg:max-w-none relative"
         >
-          <span>{{ 'intro.heading1' | translate }}</span>
-          <span class="text-red-500"> {{ 'intro.heading2' | translate }}</span>
+          <span>{{ 'intro.headingPart1' | translate }}</span>
+          <span class="text-red-500"> {{ 'intro.headingAccent' | translate }}</span>
           <br class="lg:hidden" />
-          <span>{{ 'intro.heading3' | translate }}</span>
           <br />
-          <span class="text-red-500">{{ 'intro.heading4' | translate }}</span>
-          <span> {{ 'intro.conjunction' | translate }}</span>
-          <span class="text-yellow-500"> {{ 'intro.heading5' | translate }}</span>
-          <span>{{ 'intro.period' | translate }}</span>
+          <span class="text-yellow-500">{{ 'intro.headingPart2' | translate }}</span>
           <app-image
             [src]="'assets/svg/redBrushStroke.svg'"
             [alt]="'alt.redBrushStroke' | translate"

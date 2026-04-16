@@ -1,10 +1,9 @@
-import { Component, ChangeDetectionStrategy, inject } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ProductCardComponent } from "@/components/ProductCard.component";
 import { ImageComponent } from "@/components/Image.component";
 import { Product } from "@/types/product.types";
 import { TranslatePipe } from "@/pipes/translate.pipe";
-import { I18nService } from "@/services/i18n.service";
 
 @Component({
   selector: "special-offers-section",
@@ -53,9 +52,6 @@ import { I18nService } from "@/services/i18n.service";
 })
 
 export class SpecialOffersSection {
-  private i18nService = inject(I18nService);
-  private locale = this.i18nService.getLocaleSignal();
-
   products: Product[] = [
     {
       id: 1,
