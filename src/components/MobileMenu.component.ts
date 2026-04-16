@@ -1,14 +1,14 @@
-import { CommonModule } from "@angular/common";
 import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild } from "@angular/core";
 import { LogoComponent } from "@/components/Logo.component";
 import { DownloadShortcutBlock } from "@/blocks/downloadShortcut/DownloadShortcut.block";
+import { TranslatePipe } from "@/pipes/translate.pipe";
 import { HEADER_NAVIGATION_ITEMS } from "@/constants/navigation.constants";
 import type { NavigationItem } from "@/types/navigation.types";
 
 @Component({
   selector: "app-mobile-menu",
   standalone: true,
-  imports: [CommonModule, LogoComponent, DownloadShortcutBlock],
+  imports: [LogoComponent, DownloadShortcutBlock, TranslatePipe],
   template: `
     <!-- Backdrop -->
     <div
@@ -64,27 +64,29 @@ import type { NavigationItem } from "@/types/navigation.types";
       <!-- Navigation Items -->
       <div class="flex-1 overflow-y-auto">
         <ul class="flex flex-col divide-y divide-gray-800">
-          <li *ngFor="let item of menuItems; let i = index">
-            <a
-              [href]="item.link"
-              [attr.aria-label]="item.ariaLabel || 'Navigate to ' + item.label"
-              class="group block text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 py-4 px-6 text-base font-medium flex items-center justify-between"
-              (click)="onMenuItemClick($event, item)"
-              [attr.tabindex]="isOpen ? '0' : '-1'"
-            >
-              <span>{{ item.label }}</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-4 h-4 text-gray-500 group-hover:text-red-500 transition-colors"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
+          @for (item of menuItems; track item.link) {
+            <li>
+              <a
+                [href]="item.link"
+                [attr.aria-label]="item.ariaLabel! | translate"
+                class="group block text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 py-4 px-6 text-base font-medium flex items-center justify-between"
+                (click)="onMenuItemClick($event, item)"
+                [attr.tabindex]="isOpen ? '0' : '-1'"
               >
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
-          </li>
+                <span>{{ item.label | translate }}</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4 text-gray-500 group-hover:text-red-500 transition-colors"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </li>
+          }
         </ul>
       </div>
 

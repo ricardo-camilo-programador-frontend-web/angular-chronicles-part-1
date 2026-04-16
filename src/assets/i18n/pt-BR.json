@@ -1,0 +1,303 @@
+{
+  "header": {
+    "specialOffers": "Ofertas Especiais de Hoje",
+    "viewSpecialOffers": "Ver as ofertas especiais de hoje",
+    "whyFoodHut": "Por que FoodHut",
+    "learnAboutFoodHut": "Saiba mais sobre o FoodHut",
+    "ourMenu": "Nosso Cardápio",
+    "browseMenu": "Navegar no cardápio",
+    "popularFood": "Nossas Comidas Populares",
+    "seePopularDishes": "Ver nossos pratos populares",
+    "downloadApp": "Baixe o App",
+    "menu": "Menu"
+  },
+  "footer": {
+    "companyName": "Foodhut",
+    "description": "Descubra refeições deliciosas de restaurantes locais, entregues na sua porta com rapidez e cuidado.",
+    "aboutUs": "Sobre Nós",
+    "serviceUs": "Nossos Serviços",
+    "contact": "Contato",
+    "company": "Empresa",
+    "partnership": "Parceria",
+    "termsOfUse": "Termos de Uso",
+    "privacyPolicy": "Privacidade",
+    "sitemap": "Mapa do Site",
+    "getInTouch": "Fale Conosco",
+    "newsletterDescription": "Inscreva-se em nossa newsletter para receber ofertas exclusivas, novos restaurantes e ofertas semanais em sua caixa de entrada.",
+    "email": "Email",
+    "subscribe": "Inscrever-se",
+    "copyright": "Todos os direitos reservados."
+  },
+  "languageSelector": {
+    "ariaLabel": "Seletor de Idioma"
+  },
+  "downloadShortcut": {
+    "buttonText": "Baixe o App",
+    "ariaLabel": "Ir para seção de download do aplicativo"
+  },
+  "productCard": {
+    "orderNow": "Pedir Agora"
+  },
+  "customerBadge": {
+    "title": "Nosso Cliente Feliz",
+    "reviews": "Avaliações"
+  },
+  "foodRatingCard": {
+    "title": "Nota da comida é {{ rating }}"
+  },
+  "logo": {
+    "srOnly": "Food Hut"
+  },
+  "modal": {
+    "close": "Fechar modal"
+  },
+  "button": {
+    "fallback": "Botão"
+  },
+  "currency": {
+    "symbol": "R$"
+  },
+  "buyMeCoffee": {
+    "message": "Me pague um café"
+  },
+  "userPreview": {
+    "avatarOf": "avatar de "
+  },
+  "alt": {
+    "dashedArrowPath": "Caminho de seta tracejada",
+    "curvedLines": "Linhas curvas",
+    "citrusSlice": "Fatia de cítrico",
+    "verticalProgressIndicator": "Indicador de progresso vertical",
+    "yellowOverlay": "Sobreposição amarela",
+    "heartCircle": "Círculo de coração",
+    "redBrushStroke": "Traço de pincel vermelho",
+    "search": "Buscar",
+    "arrowRight": "Seta para direita",
+    "fire": "Fogo",
+    "corianderLeaves": "Folhas de coentro",
+    "leafOutline": "Contorno de folha",
+    "happyCustomer": "Cliente feliz",
+    "grilledChickenPlate": "Prato de frango grelhado",
+    "salmonSaladPlate": "Prato de salada de salmão",
+    "grilledSalmonVegetables": "Salmão grelhado com legumes",
+    "buddhaBowlSauce": "Buddha bowl com molho",
+    "semicircle": "Semicírculo",
+    "heartCurvedPath": "Caminho curvo de coração",
+    "dottedArrowUp": "Seta pontilhada para cima",
+    "circularDotsPattern": "Padrão de pontos circular",
+    "scatteredSpices": "Especiarias espalhadas",
+    "curvedDottedArrow": "Seta pontilhada curva",
+    "helixCurve": "Curva hélice",
+    "chefPresentingDish": "Chef apresentando prato",
+    "star": "Estrela",
+    "starEmpty": "Estrela vazia",
+    "rating": "Avaliação",
+    "pineBranch": "Galho de pinheiro",
+    "blackTransparentBackground": "Fundo preto transparente",
+    "getItOnGooglePlay": "Disponível no Google Play",
+    "downloadOnAppStore": "Baixe na App Store",
+    "chefPresentingApp": "Chef apresentando app",
+    "waveLinesAbstract": "Linhas onduladas abstratas",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "happyFace": "Cara feliz",
+    "foodHut": "Food Hut"
+  },
+  "intro": {
+    "tag": "As Pessoas Confiam em Nós",
+    "headingPart1": "Nós Somos",
+    "headingAccent": "Sérios Quanto a",
+    "headingPart2": "Comida & Entrega.",
+    "description": "Os melhores cozinheiros e entregadores ao seu serviço. Comida quente e saborosa chegará em 60 minutos.",
+    "searchPlaceholder": "Buscar comida",
+    "searchSrOnly": "Buscar",
+    "watchVideo": "Assistir Vídeo",
+    "italianPizza": "Pizza Italiana"
+  },
+  "aboutUs": {
+    "heading1": "Nós somos",
+    "heading2": "mais",
+    "conjunction": "que",
+    "heading3": "múltiplos",
+    "heading4": "serviços",
+    "description": "Este é um tipo de restaurante que normalmente serve comida e bebida, além de refrescos leves como produtos de padaria ou lanches. O termo vem da palavra francesa que significa comida.",
+    "cta": "Sobre Nós",
+    "services": {
+      "onlineOrder": "Pedido Online",
+      "service247": "Atendimento 24/7",
+      "preReservation": "Pré-Reserva",
+      "organizedPlace": "Local Organizado Foodhut",
+      "superChef": "Super Chef",
+      "cleanKitchen": "Cozinha Limpa"
+    }
+  },
+  "app": {
+    "heading1": "Agora é",
+    "heading2": "Mais Fácil",
+    "heading3": "de",
+    "heading4": "Pedir",
+    "heading5": "pelo Nosso App",
+    "heading6": "Móvel",
+    "description": "Tudo o que você precisa fazer é baixar um dos melhores aplicativos de entrega, e a maioria das empresas está optando pelo desenvolvimento de aplicativos móveis para entrega de comida"
+  },
+  "specialOffers": {
+    "heading1": "Hoje",
+    "heading2": "Ofertas",
+    "heading3": "Especiais",
+    "description": "Descubra nossa seleção especial de promoções diárias, com pratos irresistíveis a preços incríveis. De kebabs saborosos a curries apetitosos, presenteie-se com refeições excepcionais que não vão pesar no bolso.",
+    "products": {
+      "kebab": {
+        "name": "Kebab",
+        "description": "Um prato delicioso feito de carne, frequentemente servido com legumes e arroz."
+      },
+      "chickenTikka": {
+        "name": "Frango Tikka",
+        "description": "Um prato indiano popular feito de pedaços de frango marinados em especiarias e iogurte."
+      },
+      "desiChowmein": {
+        "name": "Chowmein Desi",
+        "description": "Um prato de macarrão frito no estilo chinês que é popular na Índia."
+      },
+      "chickenChawarma": {
+        "name": "Frango Chawarma",
+        "description": "Um prato do Oriente Médio feito de carne, frequentemente servido com pão pita."
+      }
+    }
+  },
+  "menu": {
+    "heading1": "Cardápio que",
+    "heading2": "Sempre",
+    "heading3": "Faz Você",
+    "heading4": "Se Apaixonar",
+    "heading5": "por",
+    "noProducts": "Desculpe, nenhum produto encontrado nesta categoria.",
+    "categories": {
+      "ramen": "Ramen",
+      "breakfast": "Café da Manhã",
+      "lunch": "Almoço",
+      "dinner": "Jantar",
+      "mexican": "Mexicano",
+      "italian": "Italiano",
+      "desserts": "Sobremesas",
+      "drinks": "Bebidas"
+    },
+    "products": {
+      "berryBananaFrenchToast": {
+        "name": "Toast Francês com Frutas Vermelhas e Banana",
+        "description": "Toast francês fofo coberto com frutas vermelhas frescas, bananas fatiadas e calda de bordo"
+      },
+      "buddhaBowl": {
+        "name": "Buddha Bowl",
+        "description": "Tigela nutritiva com quinoa, legumes assados, abacate e molho tahine especial"
+      },
+      "cheeseBaconBurger": {
+        "name": "Hambúrguer de Queijo com Bacon",
+        "description": "Hambúrguer premium de carne com cheddar derretido, bacon crocante, legumes frescos e molho especial"
+      },
+      "crispyChickenBurger": {
+        "name": "Hambúrguer de Frango Crocante",
+        "description": "Filé de frango empanado crocante com alface, tomate e molho mostarda e mel"
+      },
+      "grilledChickenPlate": {
+        "name": "Prato de Frango Grelhado",
+        "description": "Peito de frango grelhado marinado com ervas, servido com legumes da estação e arroz"
+      },
+      "grilledSalmonVegetables": {
+        "name": "Salmão Grelhado com Legumes",
+        "description": "Filé de salmão do Atlântico fresco com aspargos grelhados e legumes assados"
+      },
+      "mixedGrillPlatter": {
+        "name": "Churrasco Misto",
+        "description": "Seleção de carnes grelhadas incluindo frango, carne e cordeiro com legumes grelhados"
+      },
+      "shrimpScampi": {
+        "name": "Camarão Scampi",
+        "description": "Camarões suculentos salteados em molho de manteiga de alho e vinho branco sobre macarrão linguine"
+      }
+    }
+  },
+  "trackingConsent": {
+    "title": "🔒 Consentimento de Rastreamento",
+    "description": "Gostaríamos de usar ferramentas de análise para melhorar sua experiência. Para saber mais, consulte nossa",
+    "privacyPolicy": "Política de Privacidade",
+    "decline": "Recusar",
+    "accept": "Aceitar",
+    "declineAria": "Recusar rastreamento",
+    "acceptAria": "Aceitar rastreamento"
+  },
+  "introWarningModal": {
+    "title": "🍽 Food Hut - Angular Chronicles",
+    "welcome": "Bem-vindo ao meu projeto de estudo! 🚀",
+    "allowAnalytics": "Permitir Ferramentas de Análise",
+    "privacyPolicy": "Política de Privacidade",
+    "description": "Esta é uma demonstração das minhas habilidades de desenvolvimento frontend, com foco em tecnologias web modernas e melhores práticas.",
+    "portfolio": "Confira meu portfólio",
+    "linkedin": "Conecte-se comigo no LinkedIn",
+    "designCredits": "Créditos de Design:",
+    "viewOriginalDesign": "Ver design original"
+  },
+  "privacyPolicy": {
+    "title": "Política de Privacidade",
+    "p1": "Sua privacidade é importante para nós. É política da 🍽 Food Hut - Angular Chronicles - Parte 1 respeitar sua privacidade em relação a qualquer informação que possamos coletar de você no",
+    "siteLink": "🍽 Food Hut - Angular Chronicles - Parte 1",
+    "p1End": "site, e outros sites que possuímos e operamos.",
+    "p2": "Só solicitamos informações pessoais quando realmente precisamos delas para lhe fornecer um serviço. Coletamos de forma justa e legal, com seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado.",
+    "p3": "Só retemos informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Protegemos os dados armazenados usando meios comercialmente aceitáveis para evitar perda e roubo, bem como acesso não autorizado, divulgação, cópia, uso ou modificação.",
+    "p4": "Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.",
+    "p5": "Nosso site pode conter links para sites externos que não operamos. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas",
+    "privacyPolicies": "políticas de privacidade",
+    "p6": "Você é livre para recusar nossa solicitação de informações pessoais, entendendo que podemos não conseguir fornecer alguns dos serviços desejados.",
+    "p7": "O uso continuado do nosso site será considerado como aceitação de nossas práticas em relação à privacidade e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com dados de usuários e informações pessoais, entre em contato conosco.",
+    "securityTitle": "Segurança e Confiança do Site 🍽 Food Hut - Angular Chronicles - Parte 1",
+    "securityP": "O site é confiável e seguro para navegação conforme confirmado por",
+    "verification": "Verificação",
+    "securityPMid": ". A página verifica informações do site para identificar possíveis problemas de segurança. Navegação verificada por",
+    "googleSecurityTool": "ferramenta de segurança do Google",
+    "securityPEnd": "mostra que o site é seguro.",
+    "cookieTitle": "Política de Cookies 🍽 Food Hut - Angular Chronicles - Parte 1",
+    "whatAreCookies": "O que são cookies?",
+    "cookiesP": "Como é prática comum com quase todos os sites profissionais, este site usa cookies, que são pequenos arquivos baixados para o seu computador, para melhorar sua experiência. Esta página descreve quais informações eles coletam, como usamos e por que às vezes precisamos armazenar esses cookies. Também compartilharemos como você pode evitar que esses cookies sejam armazenados, no entanto, isso pode degradar ou 'quebrar' certos elementos da funcionalidade do site.",
+    "cookiesWeSet": "Cookies que Definimos",
+    "cookieAccount": "Cookies relacionados à conta",
+    "cookieAccountP": "Se você criar uma conta conosco, usaremos cookies para o gerenciamento do processo de cadastro e administração geral. Esses cookies geralmente serão excluídos quando você sair, no entanto, em alguns casos, podem permanecer para lembrar suas preferências do site quando desconectado.",
+    "cookieLogin": "Cookies relacionados ao login",
+    "cookieLoginP": "Usamos cookies quando você está conectado para lembrar esse fato. Isso evita que você precise fazer login toda vez que visitar uma nova página. Esses cookies são tipicamente removidos ou limpos quando você sai para garantir que só acesse recursos e áreas restritas quando conectado.",
+    "cookieNewsletter": "Cookies relacionados a newsletters por email",
+    "cookieNewsletterP": "Este site oferece serviços de assinatura de newsletter ou email e cookies podem ser usados para lembrar se você já está registrado e deve mostrar notificações válidas apenas para usuários inscritos/não inscritos.",
+    "cookieShopping": "Cookies relacionados a compras",
+    "cookieShoppingP": "Este site oferece facilidades de e-commerce ou pagamento e alguns cookies são essenciais para garantir que seu pedido seja lembrado entre as páginas para que possamos processá-lo corretamente.",
+    "cookieSearch": "Cookies relacionados a buscas",
+    "cookieSearchP": "Periodicamente, realizamos pesquisas e questionários para fornecer informações interessantes, ferramentas úteis ou para entender melhor nossa base de usuários. Essas pesquisas podem usar cookies para lembrar quem participou de uma pesquisa ou para fornecer resultados precisos após mudanças de página.",
+    "cookieForms": "Cookies relacionados a formulários",
+    "cookieFormsP": "Quando você envia dados através de um formulário como formulários de contato ou comentários, cookies podem ser definidos para lembrar detalhes do usuário para correspondência futura.",
+    "cookiePreferences": "Cookies de preferências do site",
+    "cookiePreferencesP": "Para proporcionar a melhor experiência possível neste site, permitimos que você defina suas preferências de como este site opera quando você o utiliza. Para lembrar suas preferências, precisamos definir cookies para que essas configurações possam ser chamadas sempre que você interagir com uma página afetada por suas preferências.",
+    "thirdPartyCookies": "Cookies de terceiros",
+    "thirdPartyP": "Em alguns casos, também usamos cookies fornecidos por terceiros confiáveis. A seção a seguir detalha quais cookies de terceiros você pode encontrar neste site.",
+    "googleAnalytics": "Google Analytics",
+    "googleAnalyticsP": ", que é uma das soluções de análise de site mais amplamente usadas e confiáveis na web, para nos ajudar a entender como você usa o site e como podemos melhorar sua experiência. Esses cookies rastreiam itens como quanto tempo você gasta no site, as páginas que visita e como chegou ao site, para que possamos continuar produzindo conteúdo envolvente.",
+    "gaMoreInfoP": "Para mais informações sobre os cookies do Google Analytics, visite a página oficial do Google Analytics.",
+    "tpAnalyticsP": "Análises de terceiros são usadas para rastrear e medir o uso deste site, para que possamos continuar produzindo conteúdo atraente. Esses cookies rastreiam itens como o tempo que você gasta no site ou as páginas que visita, o que nos ajuda a entender como podemos melhorar o site para você.",
+    "tpFeaturesP": "Periodicamente, testamos novos recursos e fazemos mudanças sutis na forma como o site é apresentado. Quando ainda estamos testando novos recursos, esses cookies podem ser usados para garantir que você receba uma experiência consistente enquanto estiver no site, conforme entendemos quais otimizações nossos usuários mais apreciam.",
+    "tpProductsP": "Como vendemos produtos, é importante para nós entender estatísticas sobre quantos visitantes do nosso site realmente compram e, portanto, este é o tipo de dados que esses cookies rastreiam. Isso é importante para você porque significa que podemos fazer previsões comerciais precisas que nos permitem analisar nossos custos de publicidade e produtos para garantir o melhor preço possível.",
+    "thisSiteUses": "Este site usa o",
+    "userCommitment": "Compromisso do Usuário",
+    "userCommitmentP": "O usuário se compromete a usar o conteúdo e informações fornecidas pela 🍽 Food Hut - Angular Chronicles - Parte 1 no site de maneira não infringente, sem nenhuma das seguintes ações:",
+    "commitmentA": "A) Praticar atividades ilegais ou contrárias à boa-fé ou à ordem pública;",
+    "commitmentB": "B) Difundir propaganda ou conteúdo de natureza racista, xenófoba ou ligada a jogos de azar, qualquer tipo de pornografia ilegal, ou incitação ao terrorismo ou violações de direitos humanos;",
+    "commitmentC": "C) Causar danos aos sistemas físicos (hardware) ou lógicos (software) da 🍽 Food Hut - Angular Chronicles - Parte 1, seus fornecedores ou terceiros, introduzir ou disseminar vírus de computador ou qualquer outro sistema de hardware ou software que possa causar os danos mencionados anteriormente.",
+    "blockCookies": "Bloquear cookies:",
+    "blockCookiesP": "Você pode impedir que os cookies sejam definidos ajustando as configurações do seu navegador (veja a seção de Ajuda do seu navegador para saber como fazer isso). Esteja ciente de que desabilitar cookies pode afetar a funcionalidade e os recursos deste e de muitos outros sites que você visita. Desabilitar cookies geralmente resulta na desativação de certas funcionalidades e recursos deste site. Portanto, recomenda-se que você não desabilite os cookies.",
+    "chrome": "Google Chrome",
+    "firefox": "Firefox",
+    "edge": "Microsoft Edge",
+    "opera": "Opera",
+    "safari": "Safari",
+    "moreInfo": "Mais Informações",
+    "moreInfoP": "Esperamos que isso tenha esclarecido as coisas para você e, como mencionado antes, se houver algo que você não tem certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados caso interajam com um dos recursos que você usa no nosso site.",
+    "effectiveAs": "Esta política está em vigor a partir de",
+    "month": "Jan",
+    "year": "2025"
+  }
+}

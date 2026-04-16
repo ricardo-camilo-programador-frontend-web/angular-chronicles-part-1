@@ -2,23 +2,23 @@ import { NavigationItem } from '@/types/navigation.types';
 
 export const HEADER_NAVIGATION_ITEMS: NavigationItem[] = [
   {
-    label: "Today Special Offers",
+    label: "header.specialOffers",
     link: "#special-offers-section",
-    ariaLabel: "View today's special offers"
+    ariaLabel: "header.viewSpecialOffers"
   },
   {
-    label: "Why FoodHut",
+    label: "header.whyFoodHut",
     link: "#about-us-section",
-    ariaLabel: "Learn more about FoodHut"
+    ariaLabel: "header.learnAboutFoodHut"
   },
   {
-    label: "Our Menu",
+    label: "header.ourMenu",
     link: "#menu-section",
-    ariaLabel: "Browse our menu"
+    ariaLabel: "header.browseMenu"
   },
   {
-    label: "Our Popular Food",
+    label: "header.popularFood",
     link: "#menu-section",
-    ariaLabel: "See our popular dishes"
+    ariaLabel: "header.seePopularDishes"
   }
 ];
