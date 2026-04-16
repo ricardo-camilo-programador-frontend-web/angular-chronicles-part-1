@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
+import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 import { TagComponent } from "@/components/Tag.component";
 import { ButtonComponent } from "@/components/Button.component";
 import { InputTextComponent } from "@/components/InputText.component";
@@ -6,6 +7,7 @@ import { ImageComponent } from "@/components/Image.component";
 import { DownloadShortcutBlock } from "@/blocks/downloadShortcut/DownloadShortcut.block";
 import { CustomerBadgeComponent } from "@/components/CustomerBadge.component";
 import { FoodRatingCardComponent } from '@/components/FoodRatingCard.component';
+import { ModalComponent } from "@/components/Modal.component";
 import { TranslatePipe } from "@/pipes/translate.pipe";
 
 @Component({
@@ -19,6 +21,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
     DownloadShortcutBlock,
     CustomerBadgeComponent,
     FoodRatingCardComponent,
+    ModalComponent,
     TranslatePipe,
   ],
   template: `
@@ -123,6 +126,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
             "
             [title]="'intro.watchVideo' | translate"
             [label]="'intro.watchVideo' | translate"
+            (click)="isVideoModalOpen = true"
           >
             <app-image
               [src]="'assets/svg/arrowRight.svg'"
@@ -241,6 +245,31 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
         ></app-food-rating-card>
       </div>
     </section>
+
+    <app-modal
+      [id]="'video-modal'"
+      [title]="'intro.watchVideo' | translate"
+      [isOpen]="isVideoModalOpen"
+      [class]="'w-screen h-screen'"
+      (closeModal)="isVideoModalOpen = false"
+    >
+      <div class="aspect-video w-full">
+        <iframe
+          class="w-full h-full rounded-lg"
+          [src]="videoUrl"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </app-modal>
   `,
 })
-export class IntroSection {}
+export class IntroSection {
+  isVideoModalOpen = false;
+
+  private sanitizer = inject(DomSanitizer);
+  videoUrl: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+    'https://www.youtube.com/embed/cKmv-1xcKDk'
+  );
+}

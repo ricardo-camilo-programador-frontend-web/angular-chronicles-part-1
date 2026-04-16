@@ -2,7 +2,7 @@ export function getRandomLinkForRedirection() {
   const links = [
     'https://www.linkedin.com/in/ricardo-camilo-programador-frontend-web-developer/',
     'https://www.instagram.com/ricardo.camilo.dev/',
-    'https://persona-nextjs-chronicles-part-2.netlify.app/sitemap.xml',
+    'https://ricardo-camilo-dev-frontend-web.netlify.app/',
   ];
 
   return links[Math.floor(Math.random() * links.length)];
