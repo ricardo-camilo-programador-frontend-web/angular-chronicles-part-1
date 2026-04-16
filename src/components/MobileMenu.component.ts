@@ -3,6 +3,7 @@ import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewC
 import { LogoComponent } from "@/components/Logo.component";
 import { DownloadShortcutBlock } from "@/blocks/downloadShortcut/DownloadShortcut.block";
 import { HEADER_NAVIGATION_ITEMS } from "@/constants/navigation.constants";
+import type { NavigationItem } from "@/types/navigation.types";
 
 @Component({
   selector: "app-mobile-menu",
@@ -11,7 +12,7 @@ import { HEADER_NAVIGATION_ITEMS } from "@/constants/navigation.constants";
   template: `
     <!-- Backdrop -->
     <div
-      class="fixed inset-0 bg-black/50 transition-opacity duration-300 z-[8]"
+      class="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ease-in-out z-[40]"
       [class.opacity-0]="!isOpen"
       [class.opacity-100]="isOpen"
       [class.pointer-events-none]="!isOpen"
@@ -22,20 +23,26 @@ import { HEADER_NAVIGATION_ITEMS } from "@/constants/navigation.constants";
     <!-- Menu Panel -->
     <nav
       #menuPanel
-      class="fixed top-0 left-0 h-full w-[80vw] max-w-[300px] bg-[#1a1a2e] z-[10] flex flex-col transform transition-transform duration-300 ease-in-out overflow-y-auto"
+      class="fixed top-0 left-0 h-full w-[85vw] max-w-[320px] bg-[#0f0f23] shadow-2xl z-[50] flex flex-col transform transition-transform duration-300 ease-in-out overflow-hidden"
       [class.-translate-x-full]="!isOpen"
       [class.translate-x-0]="isOpen"
       [attr.aria-hidden]="!isOpen"
+      [attr.aria-modal]="isOpen"
       role="dialog"
-      aria-label="Navigation menu"
+      aria-label="Mobile navigation menu"
+      [attr.inert]="!isOpen"
     >
       <!-- Header with logo and close button -->
-      <div class="flex items-center justify-between p-4 border-b border-white/10">
-        <app-logo></app-logo>
+      <div class="flex items-center justify-between p-5 border-b border-gray-800 bg-gradient-to-r from-[#0f0f23] to-[#1a1a2e]">
+        <div class="flex items-center space-x-3">
+          <app-logo class="w-8 h-8"></app-logo>
+          <span class="text-white font-semibold text-lg">Food Hut</span>
+        </div>
         <button
           (click)="close()"
-          class="text-white/70 hover:text-red-500 transition-colors p-1"
-          aria-label="Close menu"
+          class="text-gray-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-gray-800/50 focus:outline-none focus:ring-2 focus:ring-red-500"
+          aria-label="Close navigation menu"
+          [attr.aria-pressed]="isOpen"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -43,11 +50,11 @@ import { HEADER_NAVIGATION_ITEMS } from "@/constants/navigation.constants";
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            stroke-width="2"
           >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2"
               d="M6 18L18 6M6 6l12 12"
             ></path>
           </svg>
@@ -55,22 +62,35 @@ import { HEADER_NAVIGATION_ITEMS } from "@/constants/navigation.constants";
       </div>
 
       <!-- Navigation Items -->
-      <ul class="flex flex-col gap-1 p-4 flex-1">
-        <li *ngFor="let item of menuItems">
-          <a
-            [href]="item.link"
-            [attr.aria-label]="item.ariaLabel"
-            class="block text-lg text-white/80 hover:text-red-500 transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
-            (click)="close()"
-          >
-            {{ item.label }}
-          </a>
-        </li>
-      </ul>
+      <div class="flex-1 overflow-y-auto">
+        <ul class="flex flex-col divide-y divide-gray-800">
+          <li *ngFor="let item of menuItems; let i = index">
+            <a
+              [href]="item.link"
+              [attr.aria-label]="item.ariaLabel || 'Navigate to ' + item.label"
+              class="group block text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 py-4 px-6 text-base font-medium flex items-center justify-between"
+              (click)="onMenuItemClick($event, item)"
+              [attr.tabindex]="isOpen ? '0' : '-1'"
+            >
+              <span>{{ item.label }}</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4 text-gray-500 group-hover:text-red-500 transition-colors"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
 
       <!-- Download Section -->
-      <div class="p-4 border-t border-white/10">
-        <download-shortcut [className]="'w-full justify-center'"></download-shortcut>
+      <div class="p-5 border-t border-gray-800 bg-gray-900/50">
+        <download-shortcut [className]="'w-full justify-center py-3 px-4 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-colors duration-200'"></download-shortcut>
       </div>
     </nav>
   `
@@ -87,10 +107,63 @@ export class MobileMenuComponent {
     this.closeMenu.emit()
   }
 
+  onMenuItemClick(event: Event, item: NavigationItem): void {
+    event.preventDefault()
+    
+    // Smooth scroll to section
+    const targetElement = document.querySelector(item.link)
+    if (targetElement) {
+      targetElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+    
+    this.close()
+  }
+
   @HostListener("document:keydown.escape")
   onEscape(): void {
     if (this.isOpen) {
       this.close()
     }
+  }
+
+  @HostListener("document:keydown", ["$event"])
+  onKeyDown(event: KeyboardEvent): void {
+    if (!this.isOpen) return
+
+    // Trap focus within the menu when open
+    if (event.key === 'Tab') {
+      const focusableElements = this.getFocusableElements()
+      const firstElement = focusableElements[0]
+      const lastElement = focusableElements[focusableElements.length - 1]
+
+      if (event.shiftKey) {
+        if (document.activeElement === firstElement) {
+          event.preventDefault()
+          lastElement?.focus()
+        }
+      } else {
+        if (document.activeElement === lastElement) {
+          event.preventDefault()
+          firstElement?.focus()
+        }
+      }
+    }
+  }
+
+  private getFocusableElements(): HTMLElement[] {
+    if (!this.menuPanel) return []
+    
+    const focusableSelectors = [
+      'a[href]',
+      'button:not([disabled])',
+      '[tabindex]:not([tabindex="-1"])'
+    ].join(', ')
+    
+    return Array.from(
+      this.menuPanel.nativeElement.querySelectorAll(focusableSelectors)
+    ) as HTMLElement[]
   }
 }

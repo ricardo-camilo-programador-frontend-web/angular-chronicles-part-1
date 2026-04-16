@@ -12,36 +12,44 @@ import type { NavigationItem } from "@/types/navigation.types";
   imports: [NgFor, LogoComponent, DownloadShortcutBlock, MobileMenuComponent],
   template: `
     <header
-      class="w-screen mx-auto flex justify-between items-center  px-4 py-4 fixed top-0 left-0 right-0 z-[9]  bg-gradient-to-b from-white via-white to-[#FFF9F3]/20"
+      class="w-screen mx-auto flex justify-between items-center px-4 py-4 fixed top-0 left-0 right-0 z-[30] bg-gradient-to-b from-white via-white to-[#FFF9F3]/20 backdrop-blur-sm"
     >
       <div class="md:max-w-[900px] lg:max-w-[1400px] mx-auto flex justify-between items-center w-full">
         <app-logo></app-logo>
-        <nav class="hidden lg:flex space-x-8">
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-8">
           <a
             *ngFor="let item of menuItems"
             [href]="item.link"
-            class="text-gray-700 hover:text-red-500 transition-colors"
+            [attr.aria-label]="item.ariaLabel"
+            class="text-gray-700 hover:text-red-500 transition-colors font-medium text-base"
           >
             {{ item.label }}
           </a>
         </nav>
 
+        <!-- Desktop Download Button -->
         <download-shortcut [className]="'hidden lg:block'"></download-shortcut>
       </div>
 
+      <!-- Mobile Menu Button -->
       <button
         (click)="toggleMobileMenu()"
-        class="lg:hidden p-2 z-[11]"
+        class="lg:hidden p-3 z-[31] text-gray-700 hover:text-red-500 transition-colors rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500"
         aria-label="Open navigation menu"
         [attr.aria-expanded]="isMobileMenuOpen"
+        [attr.aria-controls]="'mobile-menu'"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </header>
 
+    <!-- Mobile Menu Component -->
     <app-mobile-menu
+      id="mobile-menu"
       [isOpen]="isMobileMenuOpen"
       (closeMenu)="closeMobileMenu()"
     ></app-mobile-menu>
