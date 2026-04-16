@@ -30,7 +30,7 @@ import type { NavigationItem } from "@/types/navigation.types";
       [attr.aria-modal]="isOpen"
       role="dialog"
       aria-label="Mobile navigation menu"
-      [attr.inert]="!isOpen"
+      [inert]="!isOpen"
     >
       <!-- Header with logo and close button -->
       <div class="flex items-center justify-between p-5 border-b border-gray-800 bg-gradient-to-r from-[#0f0f23] to-[#1a1a2e]">
