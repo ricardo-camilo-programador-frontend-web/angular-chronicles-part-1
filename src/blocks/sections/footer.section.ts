@@ -1,16 +1,16 @@
-import { Component, inject } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ImageComponent } from "@/components/Image.component";
 import { ButtonComponent } from "@/components/Button.component";
 import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection";
 import { InputTextComponent } from "@/components/InputText.component";
 import { RouterModule } from "@angular/router";
 import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
-import { I18nService } from "@/services/i18n.service";
+import { TranslatePipe } from "@/pipes/translate.pipe";
 
 @Component({
   selector: "app-footer",
   standalone: true,
-  imports: [ImageComponent, ButtonComponent, InputTextComponent, RouterModule, BuyMeCoffeeComponent],
+  imports: [ImageComponent, ButtonComponent, InputTextComponent, RouterModule, BuyMeCoffeeComponent, TranslatePipe],
   template: `
     <footer
       class="bg-white py-12 px-4 mt-auto bottom-0 w-full max-w-[1300px] mx-auto flex flex-col items-center justify-center pt-[15rem] md:pt-[5rem]"
@@ -19,14 +19,14 @@ import { I18nService } from "@/services/i18n.service";
         class="flex flex-col md:flex-row w-full justify-between gap-8"
       >
         <div class="w-full md:max-w-[21rem] flex flex-col gap-4">
-          <h2 class="text-red-500 text-2xl font-bold">{{ title }}</h2>
+          <h2 class="text-red-500 text-2xl font-bold">{{ 'footer.companyName' | translate }}</h2>
           <p class="text-gray-600 max-w-xs">
-            {{ description }}
+            {{ 'footer.description' | translate }}
           </p>
 
           <div class="flex space-x-4">
             <a
-              [href]="[getRandomLinkForRedirection()]"
+              [href]="redirectLinks[0]"
               class="text-[#FDB100] hover:opacity-80"
               rel="noopener"
               target="_blank"
@@ -38,7 +38,7 @@ import { I18nService } from "@/services/i18n.service";
               />
             </a>
             <a
-              [href]="[getRandomLinkForRedirection()]"
+              [href]="redirectLinks[1]"
               class="text-[#FDB100] hover:opacity-80"
               rel="noopener"
               target="_blank"
@@ -50,7 +50,7 @@ import { I18nService } from "@/services/i18n.service";
               />
             </a>
             <a
-              [href]="[getRandomLinkForRedirection()]"
+              [href]="redirectLinks[2]"
               class="text-[#FDB100] hover:opacity-80"
               rel="noopener"
               target="_blank"
@@ -68,72 +68,72 @@ import { I18nService } from "@/services/i18n.service";
           class="flex flex-col sm:flex-row md:flex-nowrap justify-between w-full md:max-w-[20rem] gap-8 md:gap-4"
         >
           <div class="min-w-[10rem]">
-            <h3 class="text-red-500 text-xl font-semibold">{{ aboutUs }}</h3>
+            <h3 class="text-red-500 text-xl font-semibold">{{ 'footer.aboutUs' | translate }}</h3>
             <ul class="space-y-2">
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  [href]="redirectLinks[3]"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
                 >
-                  {{ aboutUs }}
+                  {{ 'footer.aboutUs' | translate }}
                 </a>
               </li>
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  [href]="redirectLinks[4]"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
                 >
-                  {{ serviceUs }}
+                  {{ 'footer.serviceUs' | translate }}
                 </a>
               </li>
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  [href]="redirectLinks[5]"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
                 >
-                  {{ contact }}
+                  {{ 'footer.contact' | translate }}
                 </a>
               </li>
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  [href]="redirectLinks[6]"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
                 >
-                  {{ company }}
+                  {{ 'footer.company' | translate }}
                 </a>
               </li>
             </ul>
           </div>
 
           <div class="min-w-[10rem]">
-            <h3 class="text-red-500 text-xl font-semibold">{{ company }}</h3>
+            <h3 class="text-red-500 text-xl font-semibold">{{ 'footer.company' | translate }}</h3>
             <ul class="space-y-2">
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  href="#"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
                 >
-                  {{ partnership }}
+                  {{ 'footer.partnership' | translate }}
                 </a>
               </li>
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  [href]="redirectLinks[7]"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
                 >
-                  {{ termsOfUse }}
+                  {{ 'footer.termsOfUse' | translate }}
                 </a>
               </li>
               <li>
@@ -142,16 +142,16 @@ import { I18nService } from "@/services/i18n.service";
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
-                  >{{ privacy }}</a
+                  >{{ 'footer.privacyPolicy' | translate }}</a
                 >
               </li>
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  [href]="redirectLinks[8]"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
-                  >{{ sitemap }}</a
+                  >{{ 'footer.sitemap' | translate }}</a
                 >
               </li>
             </ul>
@@ -161,10 +161,10 @@ import { I18nService } from "@/services/i18n.service";
         <div class="w-full md:max-w-[20rem] flex flex-col gap-4">
           <div class="flex flex-col gap-4 mr-auto">
             <h3 class="text-red-500 text-xl font-semibold">
-              {{ getInTouch }}
+              {{ 'footer.getInTouch' | translate }}
             </h3>
             <p class="text-gray-600">
-              {{ newsletterDescription }}
+              {{ 'footer.newsletterDescription' | translate }}
             </p>
           </div>
 
@@ -174,7 +174,7 @@ import { I18nService } from "@/services/i18n.service";
             <app-input-text
               [inputClassName]="'min-w-[12rem] w-full px-4 py-2 rounded-full bg-gray-200'"
               type="email"
-              [placeholder]="emailPlaceholder"
+              [placeholder]="'footer.email' | translate"
               class="min-w-[12rem] w-full px-4 py-2 rounded-lg "
             />
 
@@ -182,8 +182,8 @@ import { I18nService } from "@/services/i18n.service";
               [className]="
                 'w-full sm:w-auto px-6 py-2 bg-red-500 text-white hover:bg-[#ff4542] transition-colors rounded-full'
               "
-              [label]="subscribe"
             >
+              {{ 'footer.subscribe' | translate }}
             </app-button>
           </div>
         </div>
@@ -191,39 +191,22 @@ import { I18nService } from "@/services/i18n.service";
 
       <div class="mt-12 text-center text-gray-600">
         <a
-          [href]="[getRandomLinkForRedirection()]"
+          [href]="redirectLinks[9]"
           class="hover:text-red-500"
           rel="noopener"
           target="_blank"
         >
-          {{ copyright }}
+          {{ 'footer.copyright' | translate }} © {{ currentYear }} {{ 'footer.companyName' | translate }}.
         </a>
       </div>
     </footer>
   `,
 })
-export class FooterComponent {
-  private i18nService = inject(I18nService);
-
+export class FooterComponent implements OnInit {
   currentYear = new Date().getFullYear();
+  redirectLinks: string[] = [];
 
-  get title() { return this.i18nService.translations().footer.title }
-  get description() { return this.i18nService.translations().footer.description }
-  get aboutUs() { return this.i18nService.translations().footer.aboutUs }
-  get serviceUs() { return this.i18nService.translations().footer.serviceUs }
-  get contact() { return this.i18nService.translations().footer.contact }
-  get company() { return this.i18nService.translations().footer.company }
-  get partnership() { return this.i18nService.translations().footer.partnership }
-  get termsOfUse() { return this.i18nService.translations().footer.termsOfUse }
-  get privacy() { return this.i18nService.translations().footer.privacy }
-  get sitemap() { return this.i18nService.translations().footer.sitemap }
-  get getInTouch() { return this.i18nService.translations().footer.getInTouch }
-  get newsletterDescription() { return this.i18nService.translations().footer.newsletterDescription }
-  get subscribe() { return this.i18nService.translations().footer.subscribe }
-  get emailPlaceholder() { return this.i18nService.translations().footer.emailPlaceholder }
-  get copyright() { return this.i18nService.translations().footer.copyright.replace('{year}', String(this.currentYear)) }
-
-  getRandomLinkForRedirection() {
-    return getRandomLinkForRedirection();
+  ngOnInit(): void {
+    this.redirectLinks = Array.from({ length: 10 }, () => getRandomLinkForRedirection());
   }
 }

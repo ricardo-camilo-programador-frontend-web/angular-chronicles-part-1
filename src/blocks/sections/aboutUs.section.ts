@@ -4,6 +4,7 @@ import { ImageComponent } from "@/components/Image.component";
 import { ServiceGridComponent } from "@/components/ServiceGrid.component";
 import { ServiceItem } from "@/types/ServiceItem.types";
 import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection";
+import { TranslatePipe } from "@/pipes/translate.pipe";
 
 @Component({
   selector: "about-us-section",
@@ -13,6 +14,7 @@ import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection
     ImageComponent,
     ServiceGridComponent,
     ImageComponent,
+    TranslatePipe,
   ],
   template: `
     <section
@@ -106,14 +108,12 @@ import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection
 
           <div class="w-full md:w-1/2 max-w-[43rem] text-black pt-32">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">
-              We are <span class="text-red-500">more</span> than<br />
-              <span class="text-amber-400">multiple</span> service
+              {{ 'aboutUs.heading1' | translate }} <span class="text-red-500">{{ 'aboutUs.heading2' | translate }}</span> than<br />
+              <span class="text-amber-400">{{ 'aboutUs.heading3' | translate }}</span> {{ 'aboutUs.heading4' | translate }}
             </h2>
 
             <p class="text-gray-400 mb-8">
-              This is a type of restaurant which typically serves food and
-              drink, in addition to light refreshments such as baked goods or
-              snacks. The term comes from the french word meaning food.
+              {{ 'aboutUs.description' | translate }}
             </p>
 
             <app-service-grid [serviceItems]="services"></app-service-grid>
@@ -124,7 +124,7 @@ import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection
               rel="noopener"
               target="_blank"
             >
-              About Us
+              {{ 'aboutUs.cta' | translate }}
             </a>
           </div>
         </div>
@@ -137,27 +137,27 @@ export class AboutUsSection {
   services: ServiceItem[] = [
     {
       path: "/assets/svg/shopping-cart.svg",
-      text: "Online Order",
+      text: "aboutUs.services.onlineOrder",
     },
     {
       path: "/assets/svg/clock.svg",
-      text: "24/7 Service",
+      text: "aboutUs.services.service247",
     },
     {
       path: "/assets/svg/calendar-check.svg",
-      text: "Pre-Reservation",
+      text: "aboutUs.services.preReservation",
     },
     {
       path: "/assets/svg/calendar-check.svg",
-      text: "Organized Foodhut Place",
+      text: "aboutUs.services.organizedPlace",
     },
     {
       path: "/assets/svg/calendar-check.svg",
-      text: "Super Chef",
+      text: "aboutUs.services.superChef",
     },
     {
       path: "/assets/svg/calendar-check.svg",
-      text: "Clean Kitchen",
+      text: "aboutUs.services.cleanKitchen",
     },
   ];
 

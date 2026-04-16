@@ -1,33 +1,79 @@
 {
   "header": {
-    "nav": {
-      "specialOffers": "Today Special Offers",
-      "whyFoodHut": "Why FoodHut",
-      "ourMenu": "Our Menu",
-      "popularFood": "Our Popular Food"
-    },
+    "specialOffers": "Today Special Offers",
+    "viewSpecialOffers": "View today's special offers",
+    "whyFoodHut": "Why FoodHut",
+    "learnAboutFoodHut": "Learn more about FoodHut",
+    "ourMenu": "Our Menu",
+    "browseMenu": "Browse our menu",
+    "popularFood": "Our Popular Food",
+    "seePopularDishes": "See our popular dishes",
     "downloadApp": "Download App",
-    "openMenu": "Open navigation menu",
-    "closeMenu": "Close menu",
-    "navigationMenu": "Navigation menu"
+    "menu": "Menu"
+  },
+  "footer": {
+    "companyName": "Foodhut",
+    "description": "Discover delicious meals from local restaurants, delivered right to your doorstep with speed and care.",
+    "aboutUs": "About Us",
+    "serviceUs": "Service Us",
+    "contact": "Contact",
+    "company": "Company",
+    "partnership": "Partnership",
+    "termsOfUse": "Terms of Use",
+    "privacyPolicy": "Privacy",
+    "sitemap": "Sitemap",
+    "getInTouch": "Get in touch",
+    "newsletterDescription": "Subscribe to our newsletter for exclusive deals, new restaurants, and weekly special offers delivered to your inbox.",
+    "email": "Email",
+    "subscribe": "Subscribe",
+    "copyright": "All rights reserved."
+  },
+  "languageSelector": {
+    "ariaLabel": "Language Selector"
+  },
+  "downloadShortcut": {
+    "buttonText": "Download App",
+    "ariaLabel": "Go to download application section"
+  },
+  "productCard": {
+    "orderNow": "Order Now"
+  },
+  "customerBadge": {
+    "title": "Our Happy Customer",
+    "reviews": "Reviews"
+  },
+  "foodRatingCard": {
+    "title": "Note of the food is {{ rating }}"
+  },
+  "logo": {
+    "srOnly": "Food Hut"
+  },
+  "modal": {
+    "close": "Close modal"
+  },
+  "button": {
+    "fallback": "Button"
   },
   "intro": {
     "tag": "People Trust us",
-    "title": "We're {red} Serious {br} For {br} {red} Food {normal} & {gold} Delivery {normal}.",
+    "heading1": "We're",
+    "heading2": "Serious",
+    "heading3": "For",
+    "heading4": "Food",
+    "heading5": "Delivery",
     "description": "Best cooks and best delivery guys all at your service. Hot tasty food will reach you in 60 minutes.",
     "searchPlaceholder": "Search food",
-    "search": "Search",
-    "watchVideo": "Watch Video"
-  },
-  "specialOffers": {
-    "title": "Today {red} Special {normal} Offers",
-    "description": "Discover our handpicked selection of daily specials, featuring irresistible dishes at amazing prices. From savory kebabs to flavorful curries, treat yourself to exceptional meals that won't break the bank.",
-    "orderNow": "Order Now"
+    "searchSrOnly": "Search",
+    "watchVideo": "Watch Video",
+    "italianPizza": "Italian Pizza"
   },
   "aboutUs": {
-    "title": "We are {red} more {normal} than {br} {gold} multiple {normal} service",
+    "heading1": "We are",
+    "heading2": "more",
+    "heading3": "multiple",
+    "heading4": "service",
     "description": "This is a type of restaurant which typically serves food and drink, in addition to light refreshments such as baked goods or snacks. The term comes from the french word meaning food.",
-    "aboutUs": "About Us",
+    "cta": "About Us",
     "services": {
       "onlineOrder": "Online Order",
       "service247": "24/7 Service",
@@ -37,9 +83,45 @@
       "cleanKitchen": "Clean Kitchen"
     }
   },
+  "app": {
+    "heading1": "It's Now",
+    "heading2": "More Easy",
+    "heading3": "to",
+    "heading4": "Order",
+    "heading5": "by Our Mobile",
+    "heading6": "App",
+    "description": "All you need to do is download one of the best delivery apps, make a and most companies are opting for mobile app development for food delivery"
+  },
+  "specialOffers": {
+    "heading1": "Today",
+    "heading2": "Special",
+    "heading3": "Offers",
+    "description": "Discover our handpicked selection of daily specials, featuring irresistible dishes at amazing prices. From savory kebabs to flavorful curries, treat yourself to exceptional meals that won't break the bank.",
+    "products": {
+      "kebab": {
+        "name": "Kebab",
+        "description": "A delicious dish made from meat, often served with vegetables and rice."
+      },
+      "chickenTikka": {
+        "name": "Chicken Tikka",
+        "description": "A popular Indian dish made from chunks of chicken marinated in spices and yogurt."
+      },
+      "desiChowmein": {
+        "name": "Desi Chowmein",
+        "description": "A Chinese stir-fried noodle dish that is popular in India."
+      },
+      "chickenChawarma": {
+        "name": "Chicken Chawarma",
+        "description": "A Middle Eastern dish made from meat, often served with pita bread."
+      }
+    }
+  },
   "menu": {
-    "title": "Menu That {red} Always {normal} {gold} Make You {normal}",
-    "subtitle": "Fall In {red} Love {normal}",
+    "heading1": "Menu That",
+    "heading2": "Always",
+    "heading3": "Make You",
+    "heading4": "Fall In",
+    "heading5": "Love",
     "noProducts": "Sorry, no products found in this category.",
     "categories": {
       "ramen": "Ramen",
@@ -50,36 +132,123 @@
       "italian": "Italian",
       "desserts": "Desserts",
       "drinks": "Drinks"
+    },
+    "products": {
+      "berryBananaFrenchToast": {
+        "name": "Berry Banana French Toast",
+        "description": "Fluffy French toast topped with fresh berries, sliced bananas, and maple syrup drizzle"
+      },
+      "buddhaBowl": {
+        "name": "Buddha Bowl",
+        "description": "Nutritious bowl with quinoa, roasted vegetables, avocado, and signature tahini sauce"
+      },
+      "cheeseBaconBurger": {
+        "name": "Cheese Bacon Burger",
+        "description": "Premium beef patty with melted cheddar, crispy bacon, fresh vegetables, and special sauce"
+      },
+      "crispyChickenBurger": {
+        "name": "Crispy Chicken Burger",
+        "description": "Crunchy breaded chicken fillet with lettuce, tomato, and honey mustard sauce"
+      },
+      "grilledChickenPlate": {
+        "name": "Grilled Chicken Plate",
+        "description": "Herb-marinated grilled chicken breast served with seasonal vegetables and rice"
+      },
+      "grilledSalmonVegetables": {
+        "name": "Grilled Salmon & Vegetables",
+        "description": "Fresh Atlantic salmon fillet with grilled asparagus and roasted vegetables"
+      },
+      "mixedGrillPlatter": {
+        "name": "Mixed Grill Platter",
+        "description": "Assortment of grilled meats including chicken, beef, and lamb with grilled vegetables"
+      },
+      "shrimpScampi": {
+        "name": "Shrimp Scampi",
+        "description": "Succulent shrimp sautéed in garlic butter white wine sauce over linguine pasta"
+      }
     }
   },
-  "app": {
-    "title": "It's Now {red} More Easy {normal} to {br} {gold} Order {normal} by Our Mobile {red} App {normal}",
-    "description": "All you need to do is download one of the best delivery apps, make a and most companies are opting for mobile app development for food delivery"
+  "trackingConsent": {
+    "title": "🔒 Tracking Consent",
+    "description": "We would like to use analytics tools to improve your experience. To learn more, please see our",
+    "privacyPolicy": "Privacy Policy",
+    "decline": "Decline",
+    "accept": "Accept",
+    "declineAria": "Decline tracking",
+    "acceptAria": "Accept tracking"
   },
-  "footer": {
-    "title": "Foodhut",
-    "description": "Discover delicious meals from local restaurants, delivered right to your doorstep with speed and care.",
-    "aboutUs": "About Us",
-    "serviceUs": "Service Us",
-    "contact": "Contact",
-    "company": "Company",
-    "partnership": "Partnership",
-    "termsOfUse": "Terms of Use",
-    "privacy": "Privacy",
-    "sitemap": "Sitemap",
-    "getInTouch": "Get in touch",
-    "newsletterDescription": "Subscribe to our newsletter for exclusive deals, new restaurants, and weekly special offers delivered to your inbox.",
-    "subscribe": "Subscribe",
-    "emailPlaceholder": "Email",
-    "copyright": "Copyright © {year} Foodhut."
+  "introWarningModal": {
+    "title": "🍽️ Food Hut - Angular Chronicles",
+    "welcome": "Welcome to my study project! 🚀",
+    "allowAnalytics": "Allow Analytics Tools",
+    "privacyPolicy": "Privacy Policy",
+    "description": "This is a demonstration of my frontend development skills, focusing on modern web technologies and best practices.",
+    "portfolio": "Check out my portfolio",
+    "linkedin": "Connect with me on LinkedIn",
+    "designCredits": "Design Credits:",
+    "viewOriginalDesign": "View original design"
   },
-  "languageSelector": {
-    "label": "Language",
-    "en": "EN",
-    "ptBR": "PT-BR"
-  },
-  "common": {
-    "close": "Close",
-    "open": "Open"
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "p1": "Your privacy is important to us. It is 🍽️ Food Hut - Angular Chronicles - Part 1's policy to respect your privacy regarding any information we may collect from you on the",
+    "siteLink": "🍽️ Food Hut - Angular Chronicles - Part 1",
+    "p1End": "website, and other sites we own and operate.",
+    "p2": "We only request personal information when we truly need it to provide you with a service. We collect it through fair and lawful means, with your knowledge and consent. We also inform you why we're collecting it and how it will be used.",
+    "p3": "We only retain collected information for as long as necessary to provide the requested service. We protect the stored data using commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying, use, or modification.",
+    "p4": "We don't share personally identifying information publicly or with third parties, except when required by law.",
+    "p5": "Our website may link to external sites that we don't operate. Please be aware that we have no control over the content and practices of these sites and cannot accept responsibility for their respective",
+    "privacyPolicies": "privacy policies",
+    "p6": "You are free to refuse our request for personal information, understanding that we may be unable to provide some of your desired services.",
+    "p7": "Your continued use of our website will be considered as acceptance of our practices around privacy and personal information. If you have any questions about how we handle user data and personal information, please contact us.",
+    "securityTitle": "Security and Trust of 🍽️ Food Hut - Angular Chronicles - Part 1 Website",
+    "securityP": "The website is reliable and safe for user navigation as confirmed by",
+    "verification": "Verification",
+    "securityPMid": ". The page verifies website information to identify potential security issues. Navigation verified by",
+    "googleSecurityTool": "Google's security tool",
+    "securityPEnd": "shows that the site is secure.",
+    "cookieTitle": "Cookie Policy 🍽️ Food Hut - Angular Chronicles - Part 1",
+    "whatAreCookies": "What are cookies?",
+    "cookiesP": "As is common practice with almost all professional websites, this site uses cookies, which are small files downloaded to your computer, to improve your experience. This page describes what information they collect, how we use it, and why we sometimes need to store these cookies. We will also share how you can prevent these cookies from being stored, however, this may downgrade or 'break' certain elements of the site's functionality.",
+    "cookiesWeSet": "Cookies We Set",
+    "cookieAccount": "Account-related cookies",
+    "cookieAccountP": "If you create an account with us, we will use cookies for the management of the signup process and general administration. These cookies will usually be deleted when you log out, however, in some cases, they may remain afterward to remember your site preferences when logged out.",
+    "cookieLogin": "Login-related cookies",
+    "cookieLoginP": "We use cookies when you are logged in to remember this fact. This prevents you from having to log in every time you visit a new page. These cookies are typically removed or cleared when you log out to ensure that you can only access restricted features and areas when logged in.",
+    "cookieNewsletter": "Cookies related to email newsletters",
+    "cookieNewsletterP": "This site offers newsletter subscription services or email and cookies may be used to remember if you are already registered and should show valid notifications only to subscribed/unsubscribed users.",
+    "cookieShopping": "Cookies related to shopping",
+    "cookieShoppingP": "This site offers e-commerce or payment facilities and some cookies are essential to ensure that your order is remembered between pages so that we can process it properly.",
+    "cookieSearch": "Cookies related to searches",
+    "cookieSearchP": "Periodically, we conduct surveys and questionnaires to provide interesting information, useful tools, or to better understand our user base. These surveys may use cookies to remember who has participated in a survey or to provide accurate results after page changes.",
+    "cookieForms": "Cookies related to forms",
+    "cookieFormsP": "When you submit data through a form like contact or comment forms, cookies may be set to remember user details for future correspondence.",
+    "cookiePreferences": "Site preferences cookies",
+    "cookiePreferencesP": "To provide you with the best possible experience on this site, we allow you to define your preferences for how this site operates when you use it. To remember your preferences, we need to set cookies so that these settings can be called whenever you interact with a page affected by your preferences.",
+    "thirdPartyCookies": "Third-party cookies",
+    "thirdPartyP": "In some cases, we also use cookies provided by trusted third parties. The following section details which third-party cookies you may find through this site.",
+    "googleAnalytics": "Google Analytics",
+    "googleAnalyticsP": ", which is one of the most widely used and trusted website analytics solutions on the web, to help us understand how you use the site and how we can improve your experience. These cookies track items such as how much time you spend on the site, the pages you visit, and how you arrived at the site, so we can continue to produce engaging content.",
+    "gaMoreInfoP": "For more information about Google Analytics cookies, please visit the official Google Analytics page.",
+    "tpAnalyticsP": "Third-party analytics are used to track and measure the use of this site, so we can continue to produce attractive content. These cookies track items such as the time you spend on the site or the pages you visit, which helps us understand how we can improve the site for you.",
+    "tpFeaturesP": "Periodically, we test new features and make subtle changes to the way the site is presented. When we are still testing new features, these cookies may be used to ensure that you receive a consistent experience while on the site, as we understand which optimizations our users appreciate the most.",
+    "tpProductsP": "As we sell products, it's important for us to understand statistics about how many visitors our site actually buys and, therefore, this is the type of data these cookies track. This is important for you because it means we can make accurate business predictions that allow us to analyze our advertising and product costs to ensure the best possible price.",
+    "thisSiteUses": "This site uses the",
+    "userCommitment": "User Commitment",
+    "userCommitmentP": "The user commits to using the content and information provided by 🍽️ Food Hut - Angular Chronicles - Part 1 on the site in an uninfringed manner, without any of the following:",
+    "commitmentA": "A) Engaging in illegal or contrary to good faith or public order activities;",
+    "commitmentB": "B) Disseminating propaganda or content of a racist, xenophobic, or gambling nature, any type of illegal pornography, or incitement to terrorism or human rights violations;",
+    "commitmentC": "C) Causing damage to the physical (hardware) or logical (software) systems of 🍽️ Food Hut - Angular Chronicles - Part 1, its suppliers or third parties, to introduce or disseminate computer viruses or any other systems of hardware or software that may cause damage previously mentioned.",
+    "blockCookies": "Block cookies:",
+    "blockCookiesP": "You can prevent cookies from being set by adjusting the settings of your browser (see the Help section of your browser for how to do this). Be aware that disabling cookies may affect the functionality and features of this and many other sites that you visit. Disabling cookies generally results in the deactivation of certain functionalities and features of this site. Therefore, it is recommended that you do not disable cookies.",
+    "chrome": "Google Chrome",
+    "firefox": "Firefox",
+    "edge": "Microsoft Edge",
+    "opera": "Opera",
+    "safari": "Safari",
+    "moreInfo": "More Information",
+    "moreInfoP": "Hopefully, this has clarified things for you and as mentioned before, if there is something that you aren't sure whether you need or not, it's usually safer to leave cookies enabled in case they interact with one of the features you use on our site.",
+    "effectiveAs": "This policy is effective as of",
+    "month": "Jan",
+    "year": "2025"
   }
 }

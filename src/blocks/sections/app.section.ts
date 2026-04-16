@@ -1,11 +1,12 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ImageComponent } from "@/components/Image.component";
+import { TranslatePipe } from "@/pipes/translate.pipe";
 
 @Component({
   selector: "app-section",
   standalone: true,
-  imports: [CommonModule, ImageComponent],
+  imports: [CommonModule, ImageComponent, TranslatePipe],
   template: `
     <section
       id="app-section"
@@ -17,15 +18,13 @@ import { ImageComponent } from "@/components/Image.component";
         >
           <div class="w-full lg:w-1/2 z-10 md:ml-16">
             <h2 class="text-4xl font-bold leading-tight mb-6">
-              It's Now <span class="text-red-500">More Easy</span> to
-              <span class="text-amber-400">Order</span><br />
-              by Our Mobile <span class="text-red-500">App</span>
+              {{ 'app.heading1' | translate }} <span class="text-red-500">{{ 'app.heading2' | translate }}</span> {{ 'app.heading3' | translate }}
+              <span class="text-amber-400">{{ 'app.heading4' | translate }}</span><br />
+              {{ 'app.heading5' | translate }} <span class="text-red-500">{{ 'app.heading6' | translate }}</span>
             </h2>
 
             <p class="text-gray-600 mb-8 max-w-lg">
-              All you need to do is download one of the best delivery apps, make
-              a and most companies are opting for mobile app development for
-              food delivery
+              {{ 'app.description' | translate }}
             </p>
 
             <div class="flex  w-full justify-center gap-4 min-h-10 relative min-w-[17rem] max-w-[20rem]">

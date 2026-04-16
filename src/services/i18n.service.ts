@@ -1,52 +1,65 @@
-import { Injectable, signal, effect } from '@angular/core';
-import type { I18nTranslations, SupportedLocale } from '@/types/i18n.types';
+import { Injectable, Signal, signal } from '@angular/core';
+import { SupportedLocale } from '../types/i18n.types';
 import enTranslations from '@/assets/i18n/en.json';
 import ptBrTranslations from '@/assets/i18n/pt-BR.json';
 
-const STORAGE_KEY = 'foodhut-locale';
-const DEFAULT_LOCALE: SupportedLocale = 'en';
-
-const translationsMap: Record<SupportedLocale, I18nTranslations> = {
-  en: enTranslations as unknown as I18nTranslations,
-  'pt-BR': ptBrTranslations as unknown as I18nTranslations,
-};
-
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class I18nService {
-  private readonly _locale = signal<SupportedLocale>(this.getSavedLocale());
-  private readonly _translations = signal<I18nTranslations>(translationsMap[this._locale()]);
+  private translations: Record<SupportedLocale, any> = {
+    en: enTranslations,
+    'pt-BR': ptBrTranslations
+  };
 
-  readonly locale = this._locale.asReadonly();
-  readonly translations = this._translations.asReadonly();
+  private locale = signal<SupportedLocale>('en');
+  private currentTranslations = signal<any>(enTranslations);
 
   constructor() {
-    effect(() => {
-      const locale = this._locale();
-      document.documentElement.lang = locale === 'pt-BR' ? 'pt-BR' : 'en';
-    });
+    this.restoreLocale();
+  }
+
+  private restoreLocale(): void {
+    const saved = localStorage.getItem('locale') as SupportedLocale;
+    if (saved === 'en' || saved === 'pt-BR') {
+      this.locale.set(saved);
+      this.currentTranslations.set(this.translations[saved]);
+    }
+    document.documentElement.lang = this.locale();
+  }
+
+  translate(key: string): string {
+    const keys = key.split('.');
+    let value: any = this.currentTranslations();
+
+    for (const k of keys) {
+      if (value === null || value === undefined) {
+        return key;
+      }
+      value = value[k];
+    }
+
+    return value !== null && value !== undefined ? String(value) : key;
   }
 
   setLocale(locale: SupportedLocale): void {
-    this._locale.set(locale);
-    this._translations.set(translationsMap[locale]);
-    localStorage.setItem(STORAGE_KEY, locale);
-  }
-
-  getAvailableLocales(): SupportedLocale[] {
-    return Object.keys(translationsMap) as SupportedLocale[];
-  }
-
-  private getSavedLocale(): SupportedLocale {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved && saved in translationsMap) {
-        return saved as SupportedLocale;
-      }
-    } catch {
-      // localStorage unavailable
+    if (this.locale() !== locale) {
+      this.locale.set(locale);
+      this.currentTranslations.set(this.translations[locale]);
+      localStorage.setItem('locale', locale);
+      document.documentElement.lang = locale;
     }
-    return DEFAULT_LOCALE;
+  }
+
+  getLocale(): SupportedLocale {
+    return this.locale();
+  }
+
+  getLocaleSignal(): Signal<SupportedLocale> {
+    return this.locale.asReadonly();
+  }
+
+  init(): void {
+    this.restoreLocale();
   }
 }

@@ -3,13 +3,14 @@ import { CommonModule } from "@angular/common";
 import { ImageComponent } from "@/components/Image.component";
 import { UserPreview } from "@/components/UserPreview.component";
 import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection";
+import { TranslatePipe } from "@/pipes/translate.pipe";
 import type { Product } from "@/types/product.types";
 
 @Component({
   selector: "app-product-card",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, ImageComponent, UserPreview],
+  imports: [CommonModule, ImageComponent, UserPreview, TranslatePipe],
   template: `
     <div
       class="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow w-[19rem] h-[33rem] relative bg-gradient-to-b from-white via-white  to-red-500/30 {{ className }}"
@@ -60,10 +61,10 @@ import type { Product } from "@/types/product.types";
 
       <div class="flex flex-col gap-2 items-center mt-6">
         <h3 class="font-semibold text-lg mb-2 text-red-500">
-          {{ product.name }}
+          {{ product.name | translate }}
         </h3>
         <p class="text-gray-600 text-sm mb-4 max-w-[15rem] text-center px-2">
-          {{ product.description }}
+          {{ product.description | translate }}
         </p>
       </div>
 
@@ -73,7 +74,7 @@ import type { Product } from "@/types/product.types";
         rel="noopener"
         target="_blank"
       >
-        Order Now
+        {{ 'productCard.orderNow' | translate }}
       </a>
     </div>
   `,
