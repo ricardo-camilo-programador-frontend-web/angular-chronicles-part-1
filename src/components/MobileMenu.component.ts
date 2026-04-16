@@ -23,7 +23,7 @@ import type { NavigationItem } from "@/types/navigation.types";
     <!-- Menu Panel -->
     <nav
       #menuPanel
-      class="fixed top-0 left-0 h-full w-[85vw] max-w-[320px] bg-[#0f0f23] shadow-2xl z-[999] flex flex-col transform transition-transform duration-300 ease-in-out overflow-hidden"
+      class="fixed top-0 left-0 h-full w-[85vw] max-w-[320px] bg-gradient-to-b from-[#2d0a0a] via-red-950 to-[#1a0505] shadow-2xl z-[999] flex flex-col transform transition-transform duration-300 ease-in-out overflow-hidden"
       [class.-translate-x-full]="!isOpen"
       [class.translate-x-0]="isOpen"
       [attr.aria-hidden]="!isOpen"
@@ -33,14 +33,14 @@ import type { NavigationItem } from "@/types/navigation.types";
       [inert]="!isOpen"
     >
       <!-- Header with logo and close button -->
-      <div class="flex items-center justify-between p-5 border-b border-gray-800 bg-gradient-to-r from-[#0f0f23] to-[#1a1a2e]">
+      <div class="flex items-center justify-between p-5 border-b border-red-900/50 bg-gradient-to-r from-red-950 to-red-900/80">
         <div class="flex items-center space-x-3">
           <app-logo class="w-8 h-8"></app-logo>
           <span class="text-white font-semibold text-lg">Food Hut</span>
         </div>
         <button
           (click)="close()"
-          class="text-gray-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-gray-800/50 focus:outline-none focus:ring-2 focus:ring-red-500"
+          class="text-red-300/60 hover:text-white transition-colors p-2 rounded-lg hover:bg-red-800/40 focus:outline-none focus:ring-2 focus:ring-red-400"
           aria-label="Close navigation menu"
           [attr.aria-pressed]="isOpen"
         >
@@ -63,20 +63,20 @@ import type { NavigationItem } from "@/types/navigation.types";
 
       <!-- Navigation Items -->
       <div class="flex-1 overflow-y-auto">
-        <ul class="flex flex-col divide-y divide-gray-800">
+        <ul class="flex flex-col divide-y divide-red-900/40">
           @for (item of menuItems; track item.link) {
             <li>
               <a
                 [href]="item.link"
                 [attr.aria-label]="item.ariaLabel! | translate"
-                class="group block text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 py-4 px-6 text-base font-medium flex items-center justify-between"
+                class="group block text-red-100/90 hover:text-white hover:bg-red-800/40 transition-all duration-200 py-4 px-6 text-base font-medium flex items-center justify-between"
                 (click)="onMenuItemClick($event, item)"
                 [attr.tabindex]="isOpen ? '0' : '-1'"
               >
                 <span>{{ item.label | translate }}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="w-4 h-4 text-gray-500 group-hover:text-red-500 transition-colors"
+                  class="w-4 h-4 text-red-400/50 group-hover:text-red-300 transition-colors"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -91,7 +91,7 @@ import type { NavigationItem } from "@/types/navigation.types";
       </div>
 
       <!-- Download Section -->
-      <div class="p-5 border-t border-gray-800 bg-gray-900/50">
+      <div class="p-5 border-t border-red-900/50 bg-red-950/60">
         <download-shortcut [className]="'w-full justify-center py-3 px-4 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-colors duration-200'"></download-shortcut>
       </div>
     </nav>
