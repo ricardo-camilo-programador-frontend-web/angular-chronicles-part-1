@@ -79,7 +79,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
                 [src]="
                   'assets/images/ricardo-camilo-frontend-developer-frontend-engineer-software-engineer-web-developer-vuejs-vue-reactjs-react-javascript-typescript-component-architecture.webp'
                 "
-                [alt]="'Heart circle'"
+                [alt]="'alt.heartCircle' | translate"
                 [className]="'w-8 h-8 mr-2'"
               ></app-image>
 
@@ -142,7 +142,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
 })
 export class IntroWarningModalSection implements AfterViewInit {
   linkedinUsername = "ricardo-camilo-programador-frontend-web-developer";
-  portfolioUrl = "https://persona-nextjs-chronicles-part-2.netlify.app/";
+  portfolioUrl = "https://ricardo-camilo-dev-frontend-web.netlify.app/";
   figmaUsername = "@KamranAlime";
   figmaOriginalDesign = "1103820487891554272";
   analyticsEnabled = false;

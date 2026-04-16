@@ -54,6 +54,56 @@
   "button": {
     "fallback": "Botão"
   },
+  "currency": {
+    "symbol": "R$"
+  },
+  "buyMeCoffee": {
+    "message": "Me pague um café"
+  },
+  "userPreview": {
+    "avatarOf": "avatar de "
+  },
+  "alt": {
+    "dashedArrowPath": "Caminho de seta tracejada",
+    "curvedLines": "Linhas curvas",
+    "citrusSlice": "Fatia de cítrico",
+    "verticalProgressIndicator": "Indicador de progresso vertical",
+    "yellowOverlay": "Sobreposição amarela",
+    "heartCircle": "Círculo de coração",
+    "redBrushStroke": "Traço de pincel vermelho",
+    "search": "Buscar",
+    "arrowRight": "Seta para direita",
+    "fire": "Fogo",
+    "corianderLeaves": "Folhas de coentro",
+    "leafOutline": "Contorno de folha",
+    "happyCustomer": "Cliente feliz",
+    "grilledChickenPlate": "Prato de frango grelhado",
+    "salmonSaladPlate": "Prato de salada de salmão",
+    "grilledSalmonVegetables": "Salmão grelhado com legumes",
+    "buddhaBowlSauce": "Buddha bowl com molho",
+    "semicircle": "Semicírculo",
+    "heartCurvedPath": "Caminho curvo de coração",
+    "dottedArrowUp": "Seta pontilhada para cima",
+    "circularDotsPattern": "Padrão de pontos circular",
+    "scatteredSpices": "Especiarias espalhadas",
+    "curvedDottedArrow": "Seta pontilhada curva",
+    "helixCurve": "Curva hélice",
+    "chefPresentingDish": "Chef apresentando prato",
+    "star": "Estrela",
+    "starEmpty": "Estrela vazia",
+    "rating": "Avaliação",
+    "pineBranch": "Galho de pinheiro",
+    "blackTransparentBackground": "Fundo preto transparente",
+    "getItOnGooglePlay": "Disponível no Google Play",
+    "downloadOnAppStore": "Baixe na App Store",
+    "chefPresentingApp": "Chef apresentando app",
+    "waveLinesAbstract": "Linhas onduladas abstratas",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "happyFace": "Cara feliz",
+    "foodHut": "Food Hut"
+  },
   "intro": {
     "tag": "As Pessoas Confiam em Nós",
     "heading1": "Nós Somos",
@@ -61,6 +111,8 @@
     "heading3": "Quanto a",
     "heading4": "Comida",
     "heading5": "Entrega",
+    "conjunction": "&",
+    "period": ".",
     "description": "Os melhores cozinheiros e entregadores ao seu serviço. Comida quente e saborosa chegará em 60 minutos.",
     "searchPlaceholder": "Buscar comida",
     "searchSrOnly": "Buscar",
@@ -70,6 +122,7 @@
   "aboutUs": {
     "heading1": "Nós somos",
     "heading2": "mais",
+    "conjunction": "que",
     "heading3": "múltiplos",
     "heading4": "serviços",
     "description": "Este é um tipo de restaurante que normalmente serve comida e bebida, além de refrescos leves como produtos de padaria ou lanches. O termo vem da palavra francesa que significa comida.",

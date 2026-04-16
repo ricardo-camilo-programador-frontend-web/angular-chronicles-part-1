@@ -18,7 +18,7 @@ import type { Product } from "@/types/product.types";
       <div class="relative mb-3">
         <app-image
           [src]="'assets/svg/semicircle.svg'"
-          [alt]="'Dashed arrow path'"
+          [alt]="'alt.semicircle' | translate"
           [className]="
             'w-[15rem] h-auto -top-6 left-[1rem] object-contain absolute rotate-180'
           "
@@ -26,12 +26,12 @@ import type { Product } from "@/types/product.types";
 
         <app-image
           [src]="product.image"
-          [alt]="product.name"
+          [alt]="product.name | translate"
           [className]="'w-[12rem] h-[12rem] object-cover rounded-lg mx-auto'"
         />
 
         <p class="text-white text-xs font-bold rounded-full px-2 py-1 bg-yellow-600 w-[4rem] h-[4rem] flex items-center justify-center truncate absolute right-12 -mt-12 border-4 border-white">
-          {{ product.price }} $
+          {{ product.price }} {{ 'currency.symbol' | translate }}
         </p>
       </div>
 
@@ -51,7 +51,7 @@ import type { Product } from "@/types/product.types";
           <div class="flex items-center gap-1">
             <app-image
               [src]="'assets/svg/star.svg'"
-              [alt]="'rating'"
+              [alt]="'alt.rating' | translate"
               [className]="'w-8 h-8'"
             />
             <span>({{ product.rating }})</span>

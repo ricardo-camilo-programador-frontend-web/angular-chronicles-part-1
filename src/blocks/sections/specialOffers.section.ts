@@ -15,13 +15,13 @@ import { I18nService } from "@/services/i18n.service";
     <section id="special-offers-section" class="py-12 px-4 max-w-7xl mx-auto min-h-[38rem] flex flex-col justify-center items-center gap-24 relative">
       <app-image
         [src]="'assets/svg/circular-dots-pattern.svg'"
-        [alt]="'Circular dots pattern'"
+        [alt]="'alt.circularDotsPattern' | translate"
         [className]="'w-[160px] h-auto absolute top-[27rem] -left-[7rem]'"
       ></app-image>
 
       <app-image
         [src]="'assets/svg/pine-branch.svg'"
-        [alt]="'Pine branch'"
+        [alt]="'alt.pineBranch' | translate"
         [className]="'w-[160px] h-auto absolute -bottom-16 -right-[3rem] md:-right-[12rem]'"
       ></app-image>
 

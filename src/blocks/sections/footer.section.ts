@@ -33,7 +33,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
             >
               <app-image
                 [src]="'assets/svg/facebookIcon.svg'"
-                [alt]="'Facebook'"
+                [alt]="'alt.facebook' | translate"
                 [className]="'w-6 h-6'"
               />
             </a>
@@ -45,7 +45,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
             >
               <app-image
                 [src]="'assets/svg/instagramIcon.svg'"
-                [alt]="'Instagram'"
+                [alt]="'alt.instagram' | translate"
                 [className]="'w-6 h-6'"
               />
             </a>
@@ -57,7 +57,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
             >
               <app-image
                 [src]="'assets/svg/twitterIcon.svg'"
-                [alt]="'Twitter'"
+                [alt]="'alt.twitter' | translate"
                 [className]="'w-6 h-6'"
               />
             </a>

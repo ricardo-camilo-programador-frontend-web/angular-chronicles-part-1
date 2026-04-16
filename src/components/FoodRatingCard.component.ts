@@ -1,11 +1,12 @@
 import { Component, Input, inject } from "@angular/core";
 import { ImageComponent } from "./Image.component";
 import { I18nService } from "@/services/i18n.service";
+import { TranslatePipe } from "@/pipes/translate.pipe";
 
 @Component({
   selector: "app-food-rating-card",
   standalone: true,
-  imports: [ImageComponent],
+  imports: [ImageComponent, TranslatePipe],
   template: `
     <div class="absolute inset-0 bg-transparent p-2 mt-[3rem] lg:mt-[5rem] -ml-24 lg:-ml-9 {{ className }}">
       <div
@@ -24,14 +25,14 @@ import { I18nService } from "@/services/i18n.service";
               [src]="
                 star ? '/assets/svg/star.svg' : '/assets/svg/starEmpty.svg'
               "
-              [alt]="star ? 'Star' : 'Star empty'"
+              [alt]="star ? ('alt.star' | translate) : ('alt.starEmpty' | translate)"
               [className]="'w-4 h-4'"
               [title]="foodRatingTitle"
             />
             }
           </div>
 
-          <p class="text-sm text-gray-600">{{ "$" + price }}</p>
+          <p class="text-sm text-gray-600">{{ i18nService.translate('currency.symbol') + price }}</p>
         </div>
       </div>
     </div>
@@ -39,7 +40,7 @@ import { I18nService } from "@/services/i18n.service";
 })
 
 export class FoodRatingCardComponent {
-  private i18nService = inject(I18nService);
+  i18nService = inject(I18nService);
 
   @Input() imageSrc: string = "";
   @Input() name: string = "";

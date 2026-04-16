@@ -54,6 +54,56 @@
   "button": {
     "fallback": "Button"
   },
+  "currency": {
+    "symbol": "$"
+  },
+  "buyMeCoffee": {
+    "message": "Buy me a coffee"
+  },
+  "userPreview": {
+    "avatarOf": "user-avatar of "
+  },
+  "alt": {
+    "dashedArrowPath": "Dashed arrow path",
+    "curvedLines": "Curved lines",
+    "citrusSlice": "Citrus slice",
+    "verticalProgressIndicator": "Vertical progress indicator",
+    "yellowOverlay": "Yellow overlay",
+    "heartCircle": "Heart circle",
+    "redBrushStroke": "Red brush stroke",
+    "search": "Search",
+    "arrowRight": "Arrow right",
+    "fire": "Fire",
+    "corianderLeaves": "Coriander leaves",
+    "leafOutline": "Leaf outline",
+    "happyCustomer": "Happy customer",
+    "grilledChickenPlate": "Grilled chicken plate",
+    "salmonSaladPlate": "Salmon salad plate",
+    "grilledSalmonVegetables": "Grilled salmon vegetables",
+    "buddhaBowlSauce": "Buddha bowl sauce",
+    "semicircle": "Semicircle",
+    "heartCurvedPath": "Heart curved path",
+    "dottedArrowUp": "Dotted arrow up",
+    "circularDotsPattern": "Circular dots pattern",
+    "scatteredSpices": "Scattered spices",
+    "curvedDottedArrow": "Curved dotted arrow",
+    "helixCurve": "Helix curve",
+    "chefPresentingDish": "Chef presenting dish",
+    "star": "Star",
+    "starEmpty": "Star empty",
+    "rating": "Rating",
+    "pineBranch": "Pine branch",
+    "blackTransparentBackground": "Black transparent background",
+    "getItOnGooglePlay": "Get it on Google Play",
+    "downloadOnAppStore": "Download on App Store",
+    "chefPresentingApp": "Chef presenting app",
+    "waveLinesAbstract": "Wave lines abstract",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "happyFace": "Happy face",
+    "foodHut": "Food Hut"
+  },
   "intro": {
     "tag": "People Trust us",
     "heading1": "We're",
@@ -61,6 +111,8 @@
     "heading3": "For",
     "heading4": "Food",
     "heading5": "Delivery",
+    "conjunction": "&",
+    "period": ".",
     "description": "Best cooks and best delivery guys all at your service. Hot tasty food will reach you in 60 minutes.",
     "searchPlaceholder": "Search food",
     "searchSrOnly": "Search",
@@ -70,6 +122,7 @@
   "aboutUs": {
     "heading1": "We are",
     "heading2": "more",
+    "conjunction": "than",
     "heading3": "multiple",
     "heading4": "service",
     "description": "This is a type of restaurant which typically serves food and drink, in addition to light refreshments such as baked goods or snacks. The term comes from the french word meaning food.",

@@ -16,7 +16,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
         >
           <app-image
             [src]="'assets/svg/happyFace.svg'"
-            [alt]="'Happy face'"
+            [alt]="'alt.happyFace' | translate"
             [className]="'w-10 lg:w-full h-auto object-cover'"
           ></app-image>
         </div>
@@ -28,7 +28,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
           <div class="flex items-center gap-1">
             <app-image
               [src]="'assets/svg/star.svg'"
-              [alt]="'Star'"
+              [alt]="'alt.star' | translate"
               [className]="'w-3 lg:w-6 h-auto object-contain'"
             ></app-image>
             <span class="text-xs lg:text-normal text-gray-700 font-medium">{{ rating }}</span>

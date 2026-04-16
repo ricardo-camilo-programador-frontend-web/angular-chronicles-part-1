@@ -1,7 +1,5 @@
-import { Pipe, PipeTransform, inject, DestroyRef } from '@angular/core';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { I18nService } from '@/services/i18n.service';
-import { signal, computed } from '@angular/core';
 
 @Pipe({
   name: 'translate',
@@ -10,12 +8,17 @@ import { signal, computed } from '@angular/core';
 })
 export class TranslatePipe implements PipeTransform {
   private i18nService = inject(I18nService);
-  private locale = this.i18nService.getLocaleSignal();
-  private _key = signal('');
+  private lastKey = '';
+  private lastLocale = '';
+  private cachedResult = '';
 
   transform(key: string): string {
-    this._key.set(key);
-    this.locale(); // trigger re-evaluation on locale change
-    return this.i18nService.translate(key);
+    const currentLocale = this.i18nService.getLocale();
+    if (key !== this.lastKey || currentLocale !== this.lastLocale) {
+      this.lastKey = key;
+      this.lastLocale = currentLocale;
+      this.cachedResult = this.i18nService.translate(key);
+    }
+    return this.cachedResult;
   }
 }
