@@ -15,7 +15,7 @@ Uma descricao clara e concisa do que esta PR faz e por que.
 
 - [ ] 🐛 Bug fix (correcao de problema que afeta producao)
 - [ ] ✨ Feature (nova funcionalidade)
-- [ ] ♻️ Refactor (melhoria de codigo sem mudanca de comportamento)
+- [ ] ♻ Refactor (melhoria de codigo sem mudanca de comportamento)
 - [ ] 📚 Documentacao
 - [ ] 🔧 Chore (tarefas de manutencao)
 - [ ] ⚡ Performance
@@ -139,8 +139,8 @@ Se sim, descreva:
 - ⚡ Impacto em performance (se houver)
 
 ### Riscos
-- ⚠️ Risco 1 (e mitigacao)
-- ⚠️ Risco 2 (e mitigacao)
+- ⚠ Risco 1 (e mitigacao)
+- ⚠ Risco 2 (e mitigacao)
 
 ## 🔍 Review Guidelines
 
@@ -234,7 +234,7 @@ Closes #XXX
 O titulo deve seguir o padrao de commits:
 - `🐛 Fix: ...`
 - `✨ Feature: ...`
-- `♻️ Refactor: ...`
+- `♻ Refactor: ...`
 
 ### Issue
 

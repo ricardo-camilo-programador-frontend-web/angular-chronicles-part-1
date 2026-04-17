@@ -1,11 +1,12 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from "@angular/core";
+import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { isClickOutsideElement } from "@/utils/isClickOutsideElement";
+import { TranslatePipe } from "@/pipes/translate.pipe";
 
 @Component({
   selector: "app-modal",
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   template: `
     <dialog
       #modalRef
@@ -32,7 +33,7 @@ import { isClickOutsideElement } from "@/utils/isClickOutsideElement";
             <button
               (click)="onClose()"
               class="text-gray-500 hover:text-red-500 transition-colors"
-              aria-label="Close modal"
+              [attr.aria-label]="'modal.close' | translate"
             >
               <svg
                 class="w-5 h-5"
@@ -82,5 +83,12 @@ export class ModalComponent {
 
   isClickOutside(event: MouseEvent) {
     return isClickOutsideElement(this.modalRef.nativeElement, event);
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    if (this.isOpen) {
+      this.close();
+    }
   }
 }
