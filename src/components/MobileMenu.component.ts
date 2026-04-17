@@ -8,11 +8,11 @@ import type { NavigationItem } from "@/types/navigation.types";
 @Component({
   selector: "app-mobile-menu",
   standalone: true,
-  imports: [LogoComponent, DownloadShortcutBlock, TranslatePipe],
+  imports: [DownloadShortcutBlock, TranslatePipe],
   template: `
     <!-- Backdrop -->
     <div
-      class="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ease-in-out z-[40]"
+      class="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ease-in-out z-[55]"
       [class.opacity-0]="!isOpen"
       [class.opacity-100]="isOpen"
       [class.pointer-events-none]="!isOpen"
@@ -23,7 +23,7 @@ import type { NavigationItem } from "@/types/navigation.types";
     <!-- Menu Panel -->
     <nav
       #menuPanel
-      class="fixed top-0 left-0 h-full w-[85vw] max-w-[320px] bg-gradient-to-b from-[#2d0a0a] via-red-950 to-[#1a0505] shadow-2xl z-[999] flex flex-col transform transition-transform duration-300 ease-in-out overflow-hidden"
+      class="fixed top-0 left-0 h-full w-[85vw] max-w-[320px] pt-[2rem] bg-gradient-to-b from-[#2d0a0a] via-red-950 to-[#1a0505] shadow-2xl z-[998] flex flex-col transform transition-transform duration-300 ease-in-out overflow-hidden"
       [class.-translate-x-full]="!isOpen"
       [class.translate-x-0]="isOpen"
       [attr.aria-hidden]="!isOpen"
@@ -32,10 +32,9 @@ import type { NavigationItem } from "@/types/navigation.types";
       aria-label="Mobile navigation menu"
       [inert]="!isOpen"
     >
-      <!-- Header with logo and close button -->
-      <div class="flex items-center justify-between p-5 border-b border-red-900/50 bg-gradient-to-r from-red-950 to-red-900/80">
+      <!-- Header with close button -->
+      <div class="flex items-center justify-between px-4 py-4 border-b border-red-900/50 bg-gradient-to-r from-red-950 to-red-900/80">
         <div class="flex items-center space-x-3">
-          <app-logo class="w-8 h-8"></app-logo>
           <span class="text-white font-semibold text-lg">Food Hut</span>
         </div>
         <button
@@ -91,7 +90,7 @@ import type { NavigationItem } from "@/types/navigation.types";
       </div>
 
       <!-- Download Section -->
-      <div class="p-5 border-t border-red-900/50 bg-red-950/60">
+      <div class="px-4 py-4 border-t border-red-900/50 bg-red-950/60">
         <download-shortcut [className]="'w-full justify-center py-3 px-4 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-colors duration-200'"></download-shortcut>
       </div>
     </nav>

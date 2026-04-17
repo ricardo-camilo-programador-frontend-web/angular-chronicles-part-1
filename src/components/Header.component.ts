@@ -16,7 +16,9 @@ import type { NavigationItem } from "@/types/navigation.types";
       class="w-screen mx-auto flex justify-between items-center z-[999] px-4 py-4 fixed top-0 left-0 right-0 bg-gradient-to-b from-white via-white to-[#FFF9F3]/20 backdrop-blur-sm"
     >
       <div class="md:max-w-[900px] lg:max-w-[1400px] mx-auto flex justify-between items-center w-full">
-        <app-logo></app-logo>
+        <div class="relative z-[1000]">
+          <app-logo></app-logo>
+        </div>
 
         <nav class="hidden lg:flex items-center space-x-8">
           @for (item of menuItems; track item.link) {
