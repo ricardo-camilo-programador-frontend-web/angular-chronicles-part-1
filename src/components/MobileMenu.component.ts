@@ -1,5 +1,4 @@
 import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild } from "@angular/core";
-import { LogoComponent } from "@/components/Logo.component";
 import { DownloadShortcutBlock } from "@/blocks/downloadShortcut/DownloadShortcut.block";
 import { TranslatePipe } from "@/pipes/translate.pipe";
 import { HEADER_NAVIGATION_ITEMS } from "@/constants/navigation.constants";
