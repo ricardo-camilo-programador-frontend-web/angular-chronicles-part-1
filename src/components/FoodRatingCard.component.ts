@@ -12,23 +12,27 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
       <div
         class="min-h-[6rem]  flex items-center space-x-2 bg-white w-max min-w-[10rem] p-1 px-3 border border-gray-100 rounded-lg shadow-lg"
       >
-        <app-image
-          [src]="imageSrc"
-          [alt]="name"
-          [className]="'w-12 h-12 rounded'"
-        />
+<app-image
+           [src]="imageSrc"
+           [alt]="name"
+[width]="'48'"
+            [height]="'48'"
+           [className]="'w-12 h-12 rounded'"
+         />
         <div>
           <p class="font-medium">{{ name }}</p>
           <div class="flex items-center space-x-2">
             @for (star of stars; track $index) {
-            <app-image
-              [src]="
-                star ? '/assets/svg/star.svg' : '/assets/svg/starEmpty.svg'
-              "
-              [alt]="star ? ('alt.star' | translate) : ('alt.starEmpty' | translate)"
-              [className]="'w-4 h-4'"
-              [title]="foodRatingTitle"
-            />
+<app-image
+               [src]="
+                 star ? '/assets/svg/star.svg' : '/assets/svg/starEmpty.svg'
+               "
+               [alt]="star ? ('alt.star' | translate) : ('alt.starEmpty' | translate)"
+[width]="'16'"
+                [height]="'16'"
+               [className]="'w-4 h-4'"
+               [title]="foodRatingTitle"
+             />
             }
           </div>
 

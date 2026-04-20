@@ -14,7 +14,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
         <div
           class="flex items-center gap-3 rounded-lg transition-colors"
         >
-          <app-image [src]="item.path" [alt]="item.text | translate" [className]="'w-8 h-8'"></app-image>
+          <app-image [src]="item.path" [alt]="item.text | translate" [width]="'32'" [height]="'32'" [className]="'w-8 h-8'"></app-image>
 
           <span class="text-gray-700">{{ item.text | translate }}</span>
         </div>

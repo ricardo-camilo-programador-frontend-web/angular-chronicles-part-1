@@ -18,7 +18,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
         <h2 class="text-4xl font-bold">
           {{ 'menu.heading1' | translate }}
           <span class="text-red-500">{{ 'menu.heading2' | translate }}</span>
-          <span class="text-amber-400">{{ 'menu.heading3' | translate }}</span>
+          <span class="text-amber-600">{{ 'menu.heading3' | translate }}</span>
         </h2>
         <h3 class="text-3xl font-bold">
           {{ 'menu.heading4' | translate }} <span class="text-red-500">{{ 'menu.heading5' | translate }}</span>

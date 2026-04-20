@@ -1,18 +1,16 @@
-import { CommonModule } from '@angular/common';
 import { Component, Input, inject } from '@angular/core';
 import { I18nService } from '@/services/i18n.service';
 
 @Component({
   selector: 'buy-me-coffee',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   template: `
     <a
       [href]="'https://www.buymeacoffee.com/' + username"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#FFDD00] focus:ring-offset-2"
-      [ngClass]="getButtonClass()"
+      class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-700 text-white transition-transform hover:scale-105 hover:bg-amber-800 focus:outline-none focus:ring-2 focus:ring-amber-700 focus:ring-offset-2"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -48,9 +46,9 @@ export class BuyMeCoffeeComponent {
 
   getButtonClass(): { [key: string]: boolean } {
     return {
-      'bg-[#FFDD00] text-black': this.theme === 'default',
-      'border-2 border-[#FFDD00] text-[#FFDD00]': this.theme === 'outline',
-      'bg-gradient-to-r from-[#FFDD00] to-[#FFA500] text-black': this.theme === 'colored'
+      'bg-amber-700 text-white': this.theme === 'default',
+      'border-2 border-amber-700 text-amber-700': this.theme === 'outline',
+      'bg-gradient-to-r from-amber-700 to-amber-800 text-white': this.theme === 'colored'
     };
   }
 }

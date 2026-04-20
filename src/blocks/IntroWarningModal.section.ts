@@ -21,7 +21,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
     >
       <div class="p-2 space-y-6">
         <div
-          class="p-4 rounded-lg shadow-md bg-gradient-to-r from-red-600 to-red-100"
+          class="p-4 rounded-lg shadow-md bg-gradient-to-r from-red-700 to-red-200"
         >
           <p class="text-lg font-medium text-center text-white">
             {{ 'introWarningModal.welcome' | translate }}
@@ -32,12 +32,13 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
           <div
             class="flex items-center justify-between p-2 rounded-lg bg-gray-50"
           >
-            <span class="text-gray-700"> {{ 'introWarningModal.allowAnalytics' | translate }} </span>
+            <span id="analytics-toggle-label" class="text-gray-700"> {{ 'introWarningModal.allowAnalytics' | translate }} </span>
             <button
               (click)="toggleAnalytics()"
               [class]="getToggleButtonClasses()"
               role="switch"
               [attr.aria-checked]="analyticsEnabled"
+              [attr.aria-labelledby]="'analytics-toggle-label'"
             >
               <span [class]="getToggleSpanClasses()"></span>
             </button>
@@ -45,7 +46,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
 
           <a
             [routerLink]="['/privacy-policy']"
-            class="flex items-center justify-center gap-2 p-1 py-2 transition-colors rounded-lg bg-gray-50 text-blue-500 hover:underline"
+            class="flex items-center justify-center gap-2 p-1 py-2 transition-colors rounded-lg bg-gray-50 text-blue-700 hover:text-blue-800 hover:underline"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -118,7 +119,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
               [href]="'https://www.figma.com/' + figmaUsername"
               target="_blank"
               rel="noopener noreferrer"
-              class="ml-1 text-green-600 hover:text-green-700"
+              class="ml-1 text-green-700 hover:text-green-800"
             >
               {{ figmaUsername }}
             </a>
@@ -130,7 +131,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
               "
               target="_blank"
               rel="noopener noreferrer"
-              class="text-green-600 hover:text-green-700"
+              class="text-green-700 hover:text-green-800"
             >
               {{ 'introWarningModal.viewOriginalDesign' | translate }}
             </a>
@@ -212,7 +213,7 @@ export class IntroWarningModalSection implements AfterViewInit {
 
   getToggleButtonClasses(): string {
     return `relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 ${
-      this.analyticsEnabled ? "bg-red-600" : "bg-gray-200"
+      this.analyticsEnabled ? "bg-red-700" : "bg-gray-200"
     }`;
   }
 
