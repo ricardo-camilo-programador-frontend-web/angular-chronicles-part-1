@@ -68,7 +68,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
           class="flex flex-col sm:flex-row md:flex-nowrap justify-between w-full md:max-w-[20rem] gap-8 md:gap-4"
         >
           <div class="min-w-[10rem]">
-            <h3 class="text-red-500 text-xl font-semibold">{{ 'footer.aboutUs' | translate }}</h3>
+            <h3 class="text-red-700 text-xl font-semibold">{{ 'footer.aboutUs' | translate }}</h3>
             <ul class="space-y-2">
               <li>
                 <a
@@ -114,7 +114,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
           </div>
 
           <div class="min-w-[10rem]">
-            <h3 class="text-red-500 text-xl font-semibold">{{ 'footer.company' | translate }}</h3>
+            <h3 class="text-red-700 text-xl font-semibold">{{ 'footer.company' | translate }}</h3>
             <ul class="space-y-2">
               <li>
                 <a
@@ -160,7 +160,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
 
         <div class="w-full md:max-w-[20rem] flex flex-col gap-4">
           <div class="flex flex-col gap-4 mr-auto">
-            <h3 class="text-red-500 text-xl font-semibold">
+            <h3 class="text-red-700 text-xl font-semibold">
               {{ 'footer.getInTouch' | translate }}
             </h3>
             <p class="text-gray-600">
@@ -180,7 +180,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
 
             <app-button
               [className]="
-                'w-full sm:w-auto px-6 py-2 bg-red-500 text-white hover:bg-[#ff4542] transition-colors rounded-full'
+                'w-full sm:w-auto px-6 py-2 bg-red-700 text-white hover:bg-red-900 transition-colors rounded-full'
               "
             >
               {{ 'footer.subscribe' | translate }}

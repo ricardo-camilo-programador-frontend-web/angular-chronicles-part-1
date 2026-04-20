@@ -48,7 +48,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
           <div class="rounded-lg p-4 md:mx-auto">
             <div class="relative w-screen md:w-1/2 h-[17rem] ">
               <div
-                class="top-0 right-0 bg-red-500 rounded-full w-[25rem] h-[25rem] -z-0 relative"
+                class="top-0 right-0 bg-red-700 rounded-full w-[25rem] h-[25rem] -z-0 relative"
                 style="background-image: url('/assets/images/circular-food-grid.webp'); background-size: cover; background-position: center;"
               ></div>
 
@@ -58,6 +58,8 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
                 <app-image
                   [src]="'assets/svg/semicircle.svg'"
                   [alt]="'alt.semicircle' | translate"
+                  [width]="'400'"
+                  [height]="'200'"
                   [className]="
                     'w-full h-auto inset-0 lg:top-16 object-contain max-h-[31rem] left-12 -bottom-[8rem]'
                   "
@@ -109,10 +111,10 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
           <div class="w-full md:w-1/2 max-w-[43rem] text-black pt-32">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">
               {{ 'aboutUs.heading1' | translate }} <span class="text-red-500">{{ 'aboutUs.heading2' | translate }}</span> {{ 'aboutUs.conjunction' | translate }}<br />
-              <span class="text-amber-400">{{ 'aboutUs.heading3' | translate }}</span> {{ 'aboutUs.heading4' | translate }}
+              <span class="text-amber-600">{{ 'aboutUs.heading3' | translate }}</span> {{ 'aboutUs.heading4' | translate }}
             </h2>
 
-            <p class="text-gray-400 mb-8">
+            <p class="text-gray-600 mb-8">
               {{ 'aboutUs.description' | translate }}
             </p>
 
@@ -120,7 +122,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
 
             <a
               [href]="[getRandomLinkForRedirection()]"
-              class="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-full transition-colors mt-6"
+              class="bg-red-700 hover:bg-red-800 text-white px-8 py-3 rounded-full transition-colors mt-6"
               rel="noopener"
               target="_blank"
             >

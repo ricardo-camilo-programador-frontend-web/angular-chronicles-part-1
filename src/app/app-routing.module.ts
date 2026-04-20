@@ -13,7 +13,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        component: HomeComponent,
+        loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
       },
     ]
   },
@@ -23,7 +23,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        component: PrivacyComponent,
+        loadChildren: () => import('./privacy-policy/privacy.module').then(m => m.PrivacyModule)
       }
     ]
   }

@@ -11,9 +11,10 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
       <app-image
         [src]="'assets/logo.svg'"
         [alt]="'alt.foodHut' | translate"
+        [width]="'112'"
+        [height]="'112'"
         [className]="'w-[7rem]'"
       ></app-image>
-      <span class="text-2xl font-bold ml-2 sr-only">{{ 'logo.srOnly' | translate }}</span>
     </a>
   `,
 })

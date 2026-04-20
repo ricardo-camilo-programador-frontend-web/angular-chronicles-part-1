@@ -82,7 +82,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
           <span class="text-red-500"> {{ 'intro.headingAccent' | translate }}</span>
           <br class="lg:hidden" />
           <br />
-          <span class="text-yellow-500">{{ 'intro.headingPart2' | translate }}</span>
+          <span class="text-amber-600">{{ 'intro.headingPart2' | translate }}</span>
           <app-image
             [src]="'assets/svg/redBrushStroke.svg'"
             [alt]="'alt.redBrushStroke' | translate"
@@ -104,7 +104,8 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
               <span class="sr-only">{{ 'intro.searchSrOnly' | translate }}</span>
               <app-image
                 [src]="'assets/svg/searchIcon.svg'"
-                [alt]="'alt.search' | translate"
+                alt=""
+                aria-hidden="true"
                 [className]="'w-6 h-6'"
               ></app-image>
             </button>
@@ -127,6 +128,8 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
             <app-image
               [src]="'assets/svg/arrowRight.svg'"
               [alt]="'alt.arrowRight' | translate"
+              [width]="'52'"
+              [height]="'52'"
               [className]="'min-w-[3.25rem] h-[3.25rem] mt-2 flex-grow-0'"
             ></app-image>
           </app-button>
@@ -178,6 +181,8 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
           <app-image
             [src]="'assets/svg/semicircle.svg'"
             [alt]="'alt.semicircle' | translate"
+            [width]="'400'"
+            [height]="'200'"
             [className]="
               'w-full h-auto inset-0 top-8 lg:top-12 object-contain max-h-[300px] lg:max-h-[500px] absolute'
             "

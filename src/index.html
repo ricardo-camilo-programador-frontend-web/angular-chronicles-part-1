@@ -1,65 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="utf-8" />
     
-    <!-- SEO Basic -->
-    <title>Food Hut - Delicious Food Delivery | Order Online</title>
-    <meta name="description" content="Order delicious food from your favorite restaurants. Fast delivery, amazing prices, and a wide variety of cuisines including Indian, Italian, Mexican and more.">
-    <meta name="keywords" content="food delivery, online food order, restaurant, Indian food, Italian food, Mexican food, fast delivery">
-    <meta name="author" content="Ricardo Camilo">
-    <link rel="canonical" href="https://food-hut-angular-chronicles-1.netlify.app/">
+    <!-- Basic SEO -->
+    <title>Food Hut - Angular Chronicles | Modern Food Delivery Application</title>
+    <meta name="description" content="Explore delicious food options with Food Hut, built with Angular. Modern web application showcasing Angular capabilities and best practices for food delivery and restaurant experiences." />
+    <meta name="keywords" content="angular, food delivery, restaurant, web development, typescript, food hut, angular chronicles, PWA, progressive web app" />
+    <meta name="author" content="Ricardo Camilo" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://food-hut-angular-chronicles-1.netlify.app/" />
     
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://food-hut-angular-chronicles-1.netlify.app/">
-    <meta property="og:title" content="Food Hut - Delicious Food Delivery">
-    <meta property="og:description" content="Order delicious food from your favorite restaurants. Fast delivery and amazing prices.">
-    <meta property="og:site_name" content="Food Hut">
-    <meta property="og:locale" content="en_US">
+    <!-- Language and Region -->
+    <meta http-equiv="content-language" content="en" />
+    <meta name="geo.region" content="BR" />
+    <meta name="geo.placename" content="Brazil" />
     
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://food-hut-angular-chronicles-1.netlify.app/">
-    <meta name="twitter:title" content="Food Hut - Delicious Food Delivery">
-    <meta name="twitter:description" content="Order delicious food from your favorite restaurants. Fast delivery and amazing prices.">
-    
-    <!-- Viewport -->
+    <!-- Viewport and Theme -->
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#ef4444" />
+    <meta name="theme-color" content="#DC2626" />
+    <meta name="msapplication-TileColor" content="#DC2626" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Food Hut" />
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/svg/logo-icon.svg" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://food-hut-angular-chronicles-1.netlify.app/" />
+    <meta property="og:title" content="Food Hut - Angular Chronicles | Modern Food Delivery Application" />
+    <meta property="og:description" content="Explore delicious food options with Food Hut, built with Angular. Modern web application showcasing Angular capabilities and best practices." />
+    <meta property="og:site_name" content="Food Hut - Angular Chronicles" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://food-hut-angular-chronicles-1.netlify.app/assets/images/food-hut-og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="Food Hut - Angular Chronicles Application" />
     
-    <!-- Fonts Optimization -->
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="preload"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://food-hut-angular-chronicles-1.netlify.app/" />
+    <meta name="twitter:title" content="Food Hut - Angular Chronicles | Modern Food Delivery Application" />
+    <meta name="twitter:description" content="Explore delicious food options with Food Hut, built with Angular. Modern web application showcasing Angular capabilities." />
+    <meta name="twitter:image" content="https://food-hut-angular-chronicles-1.netlify.app/assets/images/food-hut-og.jpg" />
+    <meta name="twitter:image:alt" content="Food Hut - Angular Chronicles Application" />
+    
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Font with display=swap for FOIT prevention -->
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" 
+      rel="stylesheet" 
     />
     
-    <!-- PWA Manifest -->
-    <link
-      rel="manifest"
-      href="manifest.webmanifest"
-      crossorigin="use-credentials"
-    />
+    <!-- Critical inline styles for CLS prevention -->
+    <style>
+      html {
+        font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      
+      body {
+        margin: 0;
+        opacity: 1;
+      }
+    </style>
   </head>
   <body>
     <app-root></app-root>
     <noscript>
-      Please enable JavaScript to continue using this application.
+      <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Arial, sans-serif; text-align: center; padding: 20px;">
+        <h1>JavaScript Required</h1>
+        <p>Please enable JavaScript to continue using this application.</p>
+        <p>Food Hut - Angular Chronicles is a modern web application that requires JavaScript to function properly.</p>
+      </div>
     </noscript>
   </body>
 </html>
