@@ -8,3 +8,6 @@ dist
 .angular
 # Workflow state
 dist/workflow/
+
+# Test coverage
+coverage/
