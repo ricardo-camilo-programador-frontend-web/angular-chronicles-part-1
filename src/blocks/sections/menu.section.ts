@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { Component, ChangeDetectionStrategy, computed, signal } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ProductCardComponent } from "@/components/ProductCard.component";
 import { Product } from "@/types/product.types";
@@ -30,7 +30,7 @@ import { ButtonComponent } from "@/components/Button.component";
           *ngFor="let category of categories; trackBy: trackByCategory"
           [className]="
             'px-6 py-2 rounded-full text-sm transition-all ' +
-            (selectedCategory === category.id
+            (selectedCategory() === category.id
               ? 'bg-red-500 text-white'
               : 'bg-gray-100 hover:bg-gray-200')
           "
@@ -43,9 +43,9 @@ import { ButtonComponent } from "@/components/Button.component";
       <div
         class="hidden md:flex flex-wrap gap-6 gap-y-14 items-center justify-center"
       >
-        <ng-container *ngIf="filteredProducts.length > 0; else noProducts">
+        <ng-container *ngIf="filteredProducts().length > 0; else noProducts">
           <app-product-card
-            *ngFor="let product of filteredProducts; trackBy: trackByProduct"
+            *ngFor="let product of filteredProducts(); trackBy: trackByProduct"
             [product]="product"
           ></app-product-card>
         </ng-container>
@@ -54,8 +54,8 @@ import { ButtonComponent } from "@/components/Button.component";
       <div
         class="flex md:hidden flex-wrap gap-6 gap-y-14 items-center justify-center overflow-hidden min-h-[35rem]"
       >
-        <ng-container *ngIf="filteredProducts.length > 0; else noProducts">
-          <app-product-card [product]="filteredProducts[0]"></app-product-card>
+        <ng-container *ngIf="filteredProducts().length > 0; else noProducts">
+          <app-product-card [product]="filteredProducts()[0]"></app-product-card>
         </ng-container>
       </div>
 
@@ -70,7 +70,15 @@ import { ButtonComponent } from "@/components/Button.component";
   `,
 })
 export class MenuSection {
-  selectedCategory: string | null = null;
+  selectedCategory = signal<string | null>(null);
+
+  filteredProducts = computed(() => {
+    const category = this.selectedCategory();
+    if (category === null) {
+      return this.products;
+    }
+    return this.products.filter((product) => product.category === category);
+  });
 
   categories = [
     { id: "ramen", name: "Ramen" },
@@ -310,18 +318,9 @@ export class MenuSection {
     return String(product.id);
   }
 
-  get filteredProducts() {
-    if (this.selectedCategory === null) {
-      return this.products;
-    }
-
-    return this.products.filter(
-      (product) => product.category === this.selectedCategory
-    );
-  }
-
   selectCategory(categoryId: string) {
-    this.selectedCategory =
-      this.selectedCategory === categoryId ? null : categoryId;
+    this.selectedCategory.set(
+      this.selectedCategory() === categoryId ? null : categoryId
+    );
   }
 }

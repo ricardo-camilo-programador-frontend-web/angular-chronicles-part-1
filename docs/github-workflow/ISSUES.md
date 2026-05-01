@@ -114,7 +114,7 @@ Ideias de como implementar a melhoria.
 ### Tech Debt
 
 ```markdown
-## 🏗️ Area Afetada
+## 🏗 Area Afetada
 [ex: Authentication, State Management, API Layer]
 
 ## 📋 Descricao do Debito

@@ -13,7 +13,7 @@ import { ImageComponent } from "@/components/Image.component";
   template: `
     <app-modal
       [id]="'intro-warning-modal'"
-      [title]="'🍽️ Food Hut - Angular Chronicles'"
+      [title]="'🍽 Food Hut - Angular Chronicles'"
       [isOpen]="isOpen"
       [class]="'w-screen h-screen overflow-hidden overflow-y-scroll z-[9999]'"
       (closeModal)="closeModal()"
@@ -181,7 +181,7 @@ export class IntroWarningModalSection implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    if (!this.checkIfPageIsPrivacyPolicy()) {
+    if (!this.checkIfPageIsPrivacyPolicy() && this.analyticsEnabled) {
       this.loadAnalyticsScript();
     }
   }

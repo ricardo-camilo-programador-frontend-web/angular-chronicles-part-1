@@ -42,7 +42,7 @@ O formato padrao para mensagens de commit e:
 | Emoji | Codigo | Uso |
 |-------|--------|-----|
 | 🐛 | `:bug:` | Bug fix |
-| 🚑️ | `:ambulance:` | Hotfix critico |
+| 🚑 | `:ambulance:` | Hotfix critico |
 | 🩹 | `:adhesive_bandage:` | Fix simples |
 | 🥅 | `:goal_net:` | Tratamento de erros |
 
@@ -51,11 +51,11 @@ O formato padrao para mensagens de commit e:
 | Emoji | Codigo | Uso |
 |-------|--------|-----|
 | 🎨 | `:art:` | Formatacao/estrutura |
-| ♻️ | `:recycle:` | Refatoracao |
-| ⚡️ | `:zap:` | Performance |
+| ♻ | `:recycle:` | Refatoracao |
+| ⚡ | `:zap:` | Performance |
 | 🚨 | `:rotating_light:` | Linter warnings |
 | 💩 | `:poop:` | Codigo ruim (para melhorar) |
-| 🧑‍💻 | `:technologist:` | DX |
+| 🧑💻 | `:technologist:` | DX |
 
 ### Documentacao
 
@@ -63,7 +63,7 @@ O formato padrao para mensagens de commit e:
 |-------|--------|-----|
 | 📝 | `:memo:` | Documentacao |
 | 💬 | `:speech_balloon:` | Textos |
-| ✏️ | `:pencil2:` | Typos |
+| ✏ | `:pencil2:` | Typos |
 | 💡 | `:bulb:` | Comentarios |
 
 ### UI/UX
@@ -71,7 +71,7 @@ O formato padrao para mensagens de commit e:
 | Emoji | Codigo | Uso |
 |-------|--------|-----|
 | 💄 | `:lipstick:` | UI/Style |
-| ♿️ | `:wheelchair:` | Acessibilidade |
+| ♿ | `:wheelchair:` | Acessibilidade |
 | 🚸 | `:children_crossing:` | UX |
 | 📱 | `:iphone:` | Responsividade |
 | 💫 | `:dizzy:` | Animacoes |
@@ -82,8 +82,8 @@ O formato padrao para mensagens de commit e:
 |-------|--------|-----|
 | ➕ | `:heavy_plus_sign:` | Adicionar dep |
 | ➖ | `:heavy_minus_sign:` | Remover dep |
-| ⬆️ | `:arrow_up:` | Upgrade dep |
-| ⬇️ | `:arrow_down:` | Downgrade dep |
+| ⬆ | `:arrow_up:` | Upgrade dep |
+| ⬇ | `:arrow_down:` | Downgrade dep |
 | 📌 | `:pushpin:` | Fixar versao |
 | 🔧 | `:wrench:` | Configuracao |
 
@@ -91,7 +91,7 @@ O formato padrao para mensagens de commit e:
 
 | Emoji | Codigo | Uso |
 |-------|--------|-----|
-| 🔒️ | `:lock:` | Security fix |
+| 🔒 | `:lock:` | Security fix |
 | 🔐 | `:closed_lock_with_key:` | Secrets |
 | 🛂 | `:passport_control:` | Auth/permissoes |
 | 🦺 | `:safety_vest:` | Validacao |
@@ -111,15 +111,15 @@ O formato padrao para mensagens de commit e:
 |-------|--------|-----|
 | 🚀 | `:rocket:` | Deploy |
 | 🧱 | `:bricks:` | Infra |
-| 🏗️ | `:building_construction:` | Arquitetura |
+| 🏗 | `:building_construction:` | Arquitetura |
 
 ### Remocao
 
 | Emoji | Codigo | Uso |
 |-------|--------|-----|
 | 🔥 | `:fire:` | Remover codigo |
-| ⚰️ | `:coffin:` | Dead code |
-| 🗑️ | `:wastebasket:` | Deprecar |
+| ⚰ | `:coffin:` | Dead code |
+| 🗑 | `:wastebasket:` | Deprecar |
 | 🔇 | `:mute:` | Remover logs |
 
 ### Outros
@@ -132,7 +132,7 @@ O formato padrao para mensagens de commit e:
 | 🔀 | `:twisted_rightwards_arrows:` | Merge |
 | 💥 | `:boom:` | Breaking change |
 | 🚧 | `:construction:` | WIP |
-| 🏷️ | `:label:` | Tipos |
+| 🏷 | `:label:` | Tipos |
 
 ## Tipos de Commit
 
@@ -142,8 +142,8 @@ O formato padrao para mensagens de commit e:
 | `fix` | Bug fix | 🐛 |
 | `docs` | Documentacao | 📝 |
 | `style` | Formatacao | 🎨 |
-| `refactor` | Refatoracao | ♻️ |
-| `perf` | Performance | ⚡️ |
+| `refactor` | Refatoracao | ♻ |
+| `perf` | Performance | ⚡ |
 | `test` | Testes | ✅ |
 | `chore` | Manutencao | 🔧 |
 | `ci` | CI/CD | 👷 |

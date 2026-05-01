@@ -12,7 +12,6 @@ import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection
     CommonModule,
     ImageComponent,
     ServiceGridComponent,
-    ImageComponent,
   ],
   template: `
     <section
@@ -110,7 +109,7 @@ import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection
               <span class="text-amber-400">multiple</span> service
             </h2>
 
-            <p class="text-gray-400 mb-8">
+            <p class="text-gray-600 mb-8">
               This is a type of restaurant which typically serves food and
               drink, in addition to light refreshments such as baked goods or
               snacks. The term comes from the french word meaning food.

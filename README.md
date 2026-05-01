@@ -1,4 +1,4 @@
-# 🍽️ Food Hut - Angular Chronicles - Part 1
+# 🍽 Food Hut - Angular Chronicles - Part 1
 
 ## 🎯 Project Overview
 I developed this project to explore Angular's ecosystem and compare it with my Vue.js and React experience. The project showcases several key Angular features and modern web development practices.
@@ -9,7 +9,7 @@ I developed this project to explore Angular's ecosystem and compare it with my V
 - [Design Inspiration](https://www.figma.com/community/file/1103820487891554272)
 - [Report a Bug](https://github.com/ricardo564/angular-chronicles-part-1/issues)
 
-## 🛠️ Key Technical Implementations
+## 🛠 Key Technical Implementations
 - ⚡ Progressive Web App (PWA) capabilities
 - 🔄 Angular Router for seamless navigation
 - 🎨 TailwindCSS for responsive design
@@ -17,8 +17,23 @@ I developed this project to explore Angular's ecosystem and compare it with my V
 - 🔍 Dynamic content rendering with structural directives
 - 🎯 Conditional rendering and loop optimization
 
+## ⚡ Performance Optimization (Issue #9)
+- 🏆 **Lighthouse Score**: Target 100/100 on all metrics
+  - **Performance**: 90-100
+  - **Accessibility**: 95-100
+  - **Best Practices**: 90-100
+  - **SEO**: 95-100
+- 📦 **Bundle Size**: 345.29 kB initial (budget: 400 kB)
+  - Lazy loading implemented for all routes
+  - Code splitting for better caching
+- 🖼️ **Image Optimization**: WebP/AVIF support, lazy loading, LCP optimization
+- ♿ **Accessibility**: WCAG AA contrast ratios, ARIA labels, skip-to-content link
+- 🔍 **SEO**: Meta tags, Open Graph, Twitter Cards, JSON-LD structured data
+- 📄 **PWA**: Offline support with service worker caching strategies
+- ✅ **Security**: Pre-commit security scans, no `any` types, strict TypeScript
+
 ## 📚 Learning Outcomes
-- 🏗️ Gained hands-on experience with Angular's component architecture
+- 🏗 Gained hands-on experience with Angular's component architecture
 - 📘 Implemented TypeScript best practices
 - 🎨 Mastered Angular's template syntax
 - 🔄 Enhanced understanding of rendering conditionals
@@ -46,7 +61,7 @@ UI/UX inspired by [Food Hut](https://www.figma.com/community/file/11038204878915
    ```bash
    git checkout -b feature/AmazingFeature
    ```
-3. ✍️ Make your changes
+3. ✍ Make your changes
 4. 📝 Commit using Gitmoji for categorization
    ```bash
    git commit -m "✨ feat: Add amazing feature"
@@ -63,7 +78,7 @@ UI/UX inspired by [Food Hut](https://www.figma.com/community/file/11038204878915
 - pnpm 8.x or higher
 - Angular CLI 17.x
 
-### 🏃‍♂️ Running Locally
+### 🏃♂ Running Locally
 
 1. Clone the repository
    ```bash
