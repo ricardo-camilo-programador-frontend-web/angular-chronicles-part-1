@@ -80,3 +80,56 @@ UI/UX inspired by [Food Hut](https://www.figma.com/community/file/11038204878915
 4. Navigate to `http://localhost:4200`
 
 ### 🧪 Running Tests
+
+```bash
+# Run tests with coverage
+pnpm run test:coverage
+
+# Run SonarQube analysis (requires SONAR_TOKEN and SONAR_HOST_URL environment variables)
+pnpm run sonar
+
+# Or using Docker (recommended for CI/CD)
+docker run --rm \
+  -v "$PWD:/usr/src" \
+  -w /usr/src \
+  -e SONAR_TOKEN="$SONAR_TOKEN" \
+  -e SONAR_HOST_URL="$SONAR_HOST_URL" \
+  sonarsource/sonar-scanner-cli:latest \
+  -Dsonar.token="$SONAR_TOKEN" \
+  -Dsonar.host.url="$SONAR_HOST_URL"
+```
+
+### 🔍 SonarQube Code Quality Analysis
+
+This project integrates with SonarQube Community Edition for continuous code quality analysis.
+
+#### Setup Instructions
+
+1. **Local Analysis**:
+   ```bash
+   # Set environment variables
+   export SONAR_TOKEN="your_token_here"
+   export SONAR_HOST_URL="http://localhost:9000"
+
+   # Run analysis
+   pnpm run sonar
+   ```
+
+2. **CI/CD Integration**:
+   - Configure GitHub Secrets: `SONAR_TOKEN` and `SONAR_HOST_URL`
+   - Analysis runs automatically on push/PR to main/master/develop branches
+   - See `.github/workflows/sonarqube.yml` for details
+
+#### Dashboard Access
+
+- **SonarQube**: http://localhost:9000/dashboard?id=angular-chronicles-part-1
+- **Project Key**: `angular-chronicles-part-1`
+
+#### Configuration Files
+
+- `sonar-project.properties` - SonarQube configuration
+- `.github/workflows/sonarqube.yml` - CI/CD workflow
+
+For more details, see [Issue #11](https://github.com/ricardo-camilo-programador-frontend-web/angular-chronicles-part-1/issues/11)
+
+### 🧪 Running Tests
