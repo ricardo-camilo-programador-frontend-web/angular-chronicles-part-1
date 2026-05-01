@@ -29,5 +29,12 @@
         ]
       }
     }
-  ]
+  ],
+  "navigationUrls": [
+    "/**",
+    "!/**/*.(png|jpg|jpeg|gif|bmp|webp|avif)",
+    "!/**/*.(svg|css|js|json|html)",
+    "!/**/*.(eot|otf|ttf|woff|woff2)"
+  ],
+  "navigationRequestStrategy": "performance"
 }

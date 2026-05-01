@@ -9,17 +9,40 @@ export class SelectivePreloadingStrategyService implements PreloadingStrategy {
   preloadedModules: string[] = [];
 
   preload(route: Route, load: () => Observable<any>): Observable<any> {
-    if (route.canMatch === undefined && route.data?.['preload'] && route.path != null) {
-      // add the route path to the preloaded module array
+    const shouldPreload = this.shouldPreloadRoute(route);
+    
+    if (shouldPreload && route.path != null) {
       this.preloadedModules.push(route.path);
-
-      // log the route path to the console
       console.log('Preloaded: ' + route.path);
-
       return load();
     } else {
       return of(null);
     }
+  }
+
+  private shouldPreloadRoute(route: Route): boolean {
+    if (!route.path || !route.data) {
+      return false;
+    }
+
+    if (route.data['preload'] === false) {
+      return false;
+    }
+
+    if (route.data['preload'] === true) {
+      return true;
+    }
+
+    const criticalRoutes = ['', 'privacy-policy'];
+    return criticalRoutes.includes(route.path);
+  }
+
+  getPreloadedModules(): string[] {
+    return [...this.preloadedModules];
+  }
+
+  clearPreloadedModules(): void {
+    this.preloadedModules = [];
   }
 }
 

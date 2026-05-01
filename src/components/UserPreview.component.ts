@@ -12,6 +12,8 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
       [src]="'assets/images/' + imagePath"
       [alt]="'userPreview.avatarOf' | translate"
       [title]="'userPreview.avatarOf' | translate"
+      width="96"
+      height="96"
       class="min-w-4 w-[6rem] scale-150 rounded-full object-cover border-4 border-white bg-blue-500"
     />
   `,

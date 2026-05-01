@@ -13,27 +13,215 @@ body {
   font-family: 'Be Vietnam Pro', sans-serif;
 }
 :root {
-  --primary-color: #605DC8;
-  --secondary-color: #8B89E6;
-  --accent-color: #e8e7fa;
-  --shadow-color: #E8E8E8;
+  /* High contrast accessibility-focused colors */
+  --primary-color: #2563EB; /* WCAG AA compliant blue */
+  --primary-hover: #1D4ED8;
+  --primary-focus: #1E40AF;
+  --secondary-color: #64748B; /* Subtle gray */
+  --accent-color: #F1F5F9; /* Light background */
+  --text-primary: #1F2937; /* High contrast text */
+  --text-secondary: #4B5563;
+  --text-contrast: #FFFFFF; /* White for dark backgrounds */
+  --shadow-color: #E5E7EB;
+  --focus-ring: #3B82F6;
+  --error-color: #DC2626;
+  --success-color: #16A34A;
+  --warning-color: #F59E0B;
 }
 
+/* High contrast button styles */
 button.primary {
   padding: 10px;
-  border: solid 1px var(--primary-color);
+  border: solid 2px var(--primary-color);
   background: var(--primary-color);
-  color: white;
+  color: var(--text-contrast);
   border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
+button.primary:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+button.primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring), 0 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+/* Accessible link styles */
+a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-hover);
+  text-decoration-color: var(--primary-hover);
+}
+
+a:focus {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* High contrast text classes */
+.text-high-contrast {
+  color: var(--text-primary);
+}
+
+.text-high-contrast-on-dark {
+  color: var(--text-contrast);
+}
+
+/* Accessibility focus indicators */
+:focus {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Skip to content link for screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sr-only:focus {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: auto;
+  height: auto;
+  padding: 1rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  background: var(--primary-color);
+  color: var(--text-contrast);
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+/* Enhanced scrollbar for accessibility */
 ::-webkit-scrollbar {
   width: 0.8rem;
   height: 0.8rem;
 }
 
+::-webkit-scrollbar-track {
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+
 ::-webkit-scrollbar-thumb {
-  background-image: linear-gradient(180deg, #e41212 0%, #f5b7b7 59%);
-  box-shadow: inset 1rem 1rem 1rem 0 rgba(#fff, 0.5);
-  border-radius: 100px;
+  background: var(--primary-color);
+  border-radius: 4px;
+  border: 2px solid var(--accent-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #0056CC; /* Higher contrast blue */
+    --text-primary: #000000;
+    --text-secondary: #333333;
+  }
+}
+
+/* Mobile-specific image optimizations */
+@media (max-width: 768px) {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .image-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Optimize images for mobile data usage */
+  img[data-src] {
+    filter: blur(5px);
+  }
+  
+  img.loaded {
+    filter: none;
+  }
+  
+  /* Better image aspect ratios for mobile */
+  .mobile-optimized-image {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+  
+  .mobile-optimized-image-portrait {
+    aspect-ratio: 9/16;
+    object-fit: cover;
+  }
+}
+
+/* High DPI/Retina display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+  }
+  
+  a,
+  button,
+  button.primary {
+    transition: none;
+    transform: none;
+  }
+  
+  .image-container img {
+    transition: none;
+  }
+}
+
+/* Data saving mode support */
+@media (prefers-reduced-data: reduce) {
+  img {
+    image-rendering: pixelated;
+  }
+  
+  .image-container img {
+    filter: contrast(1.2) brightness(1.1);
+  }
 }

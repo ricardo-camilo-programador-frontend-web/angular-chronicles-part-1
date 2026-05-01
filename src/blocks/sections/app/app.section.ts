@@ -19,7 +19,7 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
           <div class="w-full lg:w-1/2 z-10 md:ml-16">
             <h2 class="text-4xl font-bold leading-tight mb-6">
               {{ 'app.heading1' | translate }} <span class="text-red-500">{{ 'app.heading2' | translate }}</span> {{ 'app.heading3' | translate }}
-              <span class="text-amber-400">{{ 'app.heading4' | translate }}</span><br />
+              <span class="text-amber-600">{{ 'app.heading4' | translate }}</span><br />
               {{ 'app.heading5' | translate }} <span class="text-red-500">{{ 'app.heading6' | translate }}</span>
             </h2>
 
@@ -62,6 +62,8 @@ import { TranslatePipe } from "@/pipes/translate.pipe";
                 <app-image
                   [src]="'assets/svg/semicircle.svg'"
                   [alt]="'alt.semicircle' | translate"
+                  [width]="'400'"
+                  [height]="'200'"
                   [className]="
                     'w-full h-auto inset-0 lg:top-16 object-contain max-h-[31rem] left-12 -bottom-[8rem]'
                   "
