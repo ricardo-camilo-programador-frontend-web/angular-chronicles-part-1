@@ -1,15 +1,16 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ImageComponent } from "@/components/Image.component";
 import { ButtonComponent } from "@/components/Button.component";
 import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection";
 import { InputTextComponent } from "@/components/InputText.component";
 import { RouterModule } from "@angular/router";
 import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
+import { TranslatePipe } from "@/pipes/translate.pipe";
 
 @Component({
   selector: "app-footer",
   standalone: true,
-  imports: [ImageComponent, ButtonComponent, InputTextComponent, RouterModule, BuyMeCoffeeComponent],
+  imports: [ImageComponent, ButtonComponent, InputTextComponent, RouterModule, BuyMeCoffeeComponent, TranslatePipe],
   template: `
     <footer
       class="bg-white py-12 px-4 mt-auto bottom-0 w-full max-w-[1300px] mx-auto flex flex-col items-center justify-center pt-[15rem] md:pt-[5rem]"
@@ -18,45 +19,45 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
         class="flex flex-col md:flex-row w-full justify-between gap-8"
       >
         <div class="w-full md:max-w-[21rem] flex flex-col gap-4">
-          <h2 class="text-red-500 text-2xl font-bold">Foodhut</h2>
+          <h2 class="text-red-500 text-2xl font-bold">{{ 'footer.companyName' | translate }}</h2>
           <p class="text-gray-600 max-w-xs">
-            Discover delicious meals from local restaurants, delivered right to your doorstep with speed and care.
+            {{ 'footer.description' | translate }}
           </p>
 
           <div class="flex space-x-4">
             <a
-              [href]="[getRandomLinkForRedirection()]"
+              [href]="redirectLinks[0]"
               class="text-[#FDB100] hover:opacity-80"
               rel="noopener"
               target="_blank"
             >
               <app-image
                 [src]="'assets/svg/facebookIcon.svg'"
-                [alt]="'Facebook'"
+                [alt]="'alt.facebook' | translate"
                 [className]="'w-6 h-6'"
               />
             </a>
             <a
-              [href]="[getRandomLinkForRedirection()]"
+              [href]="redirectLinks[1]"
               class="text-[#FDB100] hover:opacity-80"
               rel="noopener"
               target="_blank"
             >
               <app-image
                 [src]="'assets/svg/instagramIcon.svg'"
-                [alt]="'Instagram'"
+                [alt]="'alt.instagram' | translate"
                 [className]="'w-6 h-6'"
               />
             </a>
             <a
-              [href]="[getRandomLinkForRedirection()]"
+              [href]="redirectLinks[2]"
               class="text-[#FDB100] hover:opacity-80"
               rel="noopener"
               target="_blank"
             >
               <app-image
                 [src]="'assets/svg/twitterIcon.svg'"
-                [alt]="'Twitter'"
+                [alt]="'alt.twitter' | translate"
                 [className]="'w-6 h-6'"
               />
             </a>
@@ -67,53 +68,53 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
           class="flex flex-col sm:flex-row md:flex-nowrap justify-between w-full md:max-w-[20rem] gap-8 md:gap-4"
         >
           <div class="min-w-[10rem]">
-            <h3 class="text-red-500 text-xl font-semibold">About Us</h3>
+            <h3 class="text-red-500 text-xl font-semibold">{{ 'footer.aboutUs' | translate }}</h3>
             <ul class="space-y-2">
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  [href]="redirectLinks[3]"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
                 >
-                  About Us
+                  {{ 'footer.aboutUs' | translate }}
                 </a>
               </li>
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  [href]="redirectLinks[4]"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
                 >
-                  Service Us
+                  {{ 'footer.serviceUs' | translate }}
                 </a>
               </li>
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  [href]="redirectLinks[5]"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
                 >
-                  Contact
+                  {{ 'footer.contact' | translate }}
                 </a>
               </li>
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  [href]="redirectLinks[6]"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
                 >
-                  Company
+                  {{ 'footer.company' | translate }}
                 </a>
               </li>
             </ul>
           </div>
 
           <div class="min-w-[10rem]">
-            <h3 class="text-red-500 text-xl font-semibold">Company</h3>
+            <h3 class="text-red-500 text-xl font-semibold">{{ 'footer.company' | translate }}</h3>
             <ul class="space-y-2">
               <li>
                 <a
@@ -122,17 +123,17 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
                   rel="noopener"
                   target="_blank"
                 >
-                  Partnership
+                  {{ 'footer.partnership' | translate }}
                 </a>
               </li>
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  [href]="redirectLinks[7]"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
                 >
-                  Terms of Use
+                  {{ 'footer.termsOfUse' | translate }}
                 </a>
               </li>
               <li>
@@ -141,16 +142,16 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
-                  >Privacy</a
+                  >{{ 'footer.privacyPolicy' | translate }}</a
                 >
               </li>
               <li>
                 <a
-                  [href]="[getRandomLinkForRedirection()]"
+                  [href]="redirectLinks[8]"
                   class="text-gray-600 hover:text-red-500"
                   rel="noopener"
                   target="_blank"
-                  >Sitemap</a
+                  >{{ 'footer.sitemap' | translate }}</a
                 >
               </li>
             </ul>
@@ -160,10 +161,10 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
         <div class="w-full md:max-w-[20rem] flex flex-col gap-4">
           <div class="flex flex-col gap-4 mr-auto">
             <h3 class="text-red-500 text-xl font-semibold">
-              Get in touch
+              {{ 'footer.getInTouch' | translate }}
             </h3>
             <p class="text-gray-600">
-              Subscribe to our newsletter for exclusive deals, new restaurants, and weekly special offers delivered to your inbox.
+              {{ 'footer.newsletterDescription' | translate }}
             </p>
           </div>
 
@@ -173,7 +174,7 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
             <app-input-text
               [inputClassName]="'min-w-[12rem] w-full px-4 py-2 rounded-full bg-gray-200'"
               type="email"
-              placeholder="Email"
+              [placeholder]="'footer.email' | translate"
               class="min-w-[12rem] w-full px-4 py-2 rounded-lg "
             />
 
@@ -182,7 +183,7 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
                 'w-full sm:w-auto px-6 py-2 bg-red-500 text-white hover:bg-[#ff4542] transition-colors rounded-full'
               "
             >
-              Subscribe
+              {{ 'footer.subscribe' | translate }}
             </app-button>
           </div>
         </div>
@@ -190,21 +191,22 @@ import { BuyMeCoffeeComponent } from "@/components/BuyMeCoffee.component";
 
       <div class="mt-12 text-center text-gray-600">
         <a
-          [href]="[getRandomLinkForRedirection()]"
+          [href]="redirectLinks[9]"
           class="hover:text-red-500"
           rel="noopener"
           target="_blank"
         >
-          Copyright © {{ currentYear }} Foodhut.
+          {{ 'footer.copyright' | translate }} © {{ currentYear }} {{ 'footer.companyName' | translate }}.
         </a>
       </div>
     </footer>
   `,
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
   currentYear = new Date().getFullYear();
+  redirectLinks: string[] = [];
 
-  getRandomLinkForRedirection() {
-    return getRandomLinkForRedirection();
+  ngOnInit(): void {
+    this.redirectLinks = Array.from({ length: 10 }, () => getRandomLinkForRedirection());
   }
 }

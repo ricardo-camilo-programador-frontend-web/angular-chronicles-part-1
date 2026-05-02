@@ -3,9 +3,8 @@
   "index": "/index.html",
   "assetGroups": [
     {
-      "name": "app",
+      "name": "🍽 Food Hut - Angular Chronicles - Part 1",
       "installMode": "prefetch",
-      "updateMode": "prefetch",
       "resources": {
         "files": [
           "/favicon.ico",
@@ -14,7 +13,9 @@
           "/public/manifest.webmanifest",
           "/*.css",
           "/*.js",
-          "/*.webmanifest"
+          "/*.webp",
+          "/*.webmanifest",
+          "/*.svg"
         ]
       }
     },
@@ -33,7 +34,6 @@
     {
       "name": "api",
       "urls": ["/**"],
-      "version": 1,
       "cacheConfig": {
         "strategy": "freshness",
         "maxSize": 100,

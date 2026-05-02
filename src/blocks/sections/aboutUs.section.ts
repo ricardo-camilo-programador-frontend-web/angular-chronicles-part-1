@@ -4,6 +4,7 @@ import { ImageComponent } from "@/components/Image.component";
 import { ServiceGridComponent } from "@/components/ServiceGrid.component";
 import { ServiceItem } from "@/types/ServiceItem.types";
 import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection";
+import { TranslatePipe } from "@/pipes/translate.pipe";
 
 @Component({
   selector: "about-us-section",
@@ -12,6 +13,8 @@ import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection
     CommonModule,
     ImageComponent,
     ServiceGridComponent,
+    ImageComponent,
+    TranslatePipe,
   ],
   template: `
     <section
@@ -20,19 +23,19 @@ import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection
     >
       <app-image
         [src]="'assets/svg/circular-dots-pattern.svg'"
-        [alt]="'Circular dots pattern'"
+        [alt]="'alt.circularDotsPattern' | translate"
         [className]="'w-[160px] h-auto absolute top-8 -left-[7rem]'"
       ></app-image>
 
       <app-image
         [src]="'assets/svg/yellow-circle-overlay.svg'"
-        [alt]="'Yellow overlay'"
+        [alt]="'alt.yellowOverlay' | translate"
         [className]="'w-[36rem] h-[26rem] absolute lg:-bottom-[2rem] top-16 lg:-left-36 z-[-1] scale-150'"
       ></app-image>
 
       <app-image
         [src]="'assets/svg/scattered-spices.svg'"
-        [alt]="'Scattered spices'"
+        [alt]="'alt.scatteredSpices' | translate"
         [className]="
           'w-[10rem] mx-auto absolute left-[33rem] lg:left-[25rem] lg:top-[5rem] top-[4rem] z-[50] rotate-60'
         "
@@ -54,7 +57,7 @@ import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection
               >
                 <app-image
                   [src]="'assets/svg/semicircle.svg'"
-                  [alt]="'Dashed arrow path'"
+                  [alt]="'alt.semicircle' | translate"
                   [className]="
                     'w-full h-auto inset-0 lg:top-16 object-contain max-h-[31rem] left-12 -bottom-[8rem]'
                   "
@@ -66,7 +69,7 @@ import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection
               >
                 <app-image
                   [src]="'/assets/images/chef-presenting-dish.webp'"
-                  [alt]="'Chef presenting dish'"
+                  [alt]="'alt.chefPresentingDish' | translate"
                   [className]="
                     'absolute inset-0 top-[1.7rem] w-full  object-contain rounded-b-full'
                   "
@@ -79,7 +82,7 @@ import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection
             >
               <app-image
                 [src]="'/assets/svg/dashedArrowPath.svg'"
-                [alt]="'Curved dotted arrow'"
+                [alt]="'alt.curvedDottedArrow' | translate"
                 [className]="
                   'w-full rounded-b-full'
                 "
@@ -88,7 +91,7 @@ import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection
 
             <app-image
               [src]="'assets/svg/coriander-leaves.svg'"
-              [alt]="'Coriander leaves'"
+              [alt]="'alt.corianderLeaves' | translate"
               [className]="
                 'lg:w-[9rem] w-[8rem] mx-auto absolute left-[18rem] lg:left-[15rem] top-[25rem] lg:top-[20rem] z-[50] rotate-60'
               "
@@ -96,7 +99,7 @@ import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection
 
             <app-image
               [src]="'assets/svg/helix-curve.svg'"
-              [alt]="'Helix curve'"
+              [alt]="'alt.helixCurve' | translate"
               [className]="
                 'w-[6rem] mx-auto absolute left-[30rem] top-[13rem] z-[50] rotate-60 hidden lg:block'
               "
@@ -105,14 +108,12 @@ import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection
 
           <div class="w-full md:w-1/2 max-w-[43rem] text-black pt-32">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">
-              We are <span class="text-red-500">more</span> than<br />
-              <span class="text-amber-400">multiple</span> service
+              {{ 'aboutUs.heading1' | translate }} <span class="text-red-500">{{ 'aboutUs.heading2' | translate }}</span> {{ 'aboutUs.conjunction' | translate }}<br />
+              <span class="text-amber-400">{{ 'aboutUs.heading3' | translate }}</span> {{ 'aboutUs.heading4' | translate }}
             </h2>
 
             <p class="text-gray-600 mb-8">
-              This is a type of restaurant which typically serves food and
-              drink, in addition to light refreshments such as baked goods or
-              snacks. The term comes from the french word meaning food.
+              {{ 'aboutUs.description' | translate }}
             </p>
 
             <app-service-grid [serviceItems]="services"></app-service-grid>
@@ -123,7 +124,7 @@ import { getRandomLinkForRedirection } from "@/utils/getRandomLinkForRedirection
               rel="noopener"
               target="_blank"
             >
-              About Us
+              {{ 'aboutUs.cta' | translate }}
             </a>
           </div>
         </div>
@@ -136,27 +137,27 @@ export class AboutUsSection {
   services: ServiceItem[] = [
     {
       path: "/assets/svg/shopping-cart.svg",
-      text: "Online Order",
+      text: "aboutUs.services.onlineOrder",
     },
     {
       path: "/assets/svg/clock.svg",
-      text: "24/7 Service",
+      text: "aboutUs.services.service247",
     },
     {
       path: "/assets/svg/calendar-check.svg",
-      text: "Pre-Reservation",
+      text: "aboutUs.services.preReservation",
     },
     {
       path: "/assets/svg/calendar-check.svg",
-      text: "Organized Foodhut Place",
+      text: "aboutUs.services.organizedPlace",
     },
     {
       path: "/assets/svg/calendar-check.svg",
-      text: "Super Chef",
+      text: "aboutUs.services.superChef",
     },
     {
       path: "/assets/svg/calendar-check.svg",
-      text: "Clean Kitchen",
+      text: "aboutUs.services.cleanKitchen",
     },
   ];
 

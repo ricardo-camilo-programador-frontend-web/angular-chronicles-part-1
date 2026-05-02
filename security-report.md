@@ -1,6 +1,6 @@
 # 🔍 Relatório de Segurança - Esteganografia e Código Malicioso
 
-**Data:** 01/05/2026, 14:51:37
+**Data:** 14/04/2026, 22:05:17
 **Diretório:** `C:\Users\camillus\Documents\GitHub\angular-chronicles-part-1`
 
 ---
@@ -9,12 +9,12 @@
 
 | Métrica | Valor |
 |---------|-------|
-| Total de Arquivos | 130 |
-| Arquivos Escaneados | 22 |
-| Arquivos com Caracteres | 11 |
-| Total de Caracteres | 90 |
+| Total de Arquivos | 113 |
+| Arquivos Escaneados | 13 |
+| Arquivos com Caracteres | 10 |
+| Total de Caracteres | 63 |
 | Arquivos Críticos | 12 |
-| Arquivos Alto Risco | 8 |
+| Arquivos Alto Risco | 1 |
 | Padrões de Ataque | 1 |
 | Avaliação de Risco | **CRITICO** |
 
@@ -37,12 +37,12 @@
 
 | Arquivo | Tipos | Ocorrências |
 |---------|-------|-------------|
-| `.angular/cache/19.0.4/first-app/vite/deps_temp_ef5879d2/chunk-FPYUTFAA.js` | Zero-Width Characters (2), Specials (24), Variation Selectors (1) | 27 |
-| `.angular/cache/19.0.4/first-app/vite/deps/chunk-FPYUTFAA.js` | Zero-Width Characters (2), Specials (24), Variation Selectors (1) | 27 |
+| `.angular/cache/19.0.4/first-app/vite/deps/chunk-XXQLZ2Y3.js` | Zero-Width Characters (2), Specials (24), Variation Selectors (1) | 27 |
 | `.github/PULL_REQUEST_TEMPLATE.md` | Variation Selectors (1) | 1 |
 | `docs/github-workflow/COMMIT-PATTERN.md` | Variation Selectors (14), Zero-Width Characters (1) | 15 |
 | `docs/github-workflow/ISSUES.md` | Variation Selectors (1) | 1 |
 | `docs/github-workflow/PULL_REQUEST_TEMPLATE.md` | Variation Selectors (4) | 4 |
+| `ngsw-config.json` | Variation Selectors (1) | 1 |
 | `README.md` | Variation Selectors (5), Zero-Width Characters (1) | 6 |
 | `scripts/security/pre-commit-security-hook.ts` |  | 0 |
 | `scripts/security/security-clean.ts` |  | 0 |
@@ -54,21 +54,7 @@
 
 | Arquivo | Tipos | Ocorrências |
 |---------|-------|-------------|
-| `.angular/cache/19.0.4/first-app/vite/deps_temp_ef5879d2/@angular_router.js` |  | 0 |
-| `.angular/cache/19.0.4/first-app/vite/deps_temp_ef5879d2/chunk-COQ3P34I.js` |  | 0 |
-| `.angular/cache/19.0.4/first-app/vite/deps_temp_ef5879d2/chunk-JBKOP2VT.js` | Arabic (1) | 1 |
-| `.angular/cache/19.0.4/first-app/vite/deps_temp_ef5879d2/chunk-VTYDUGPU.js` |  | 0 |
-| `.angular/cache/19.0.4/first-app/vite/deps/@angular_router.js` |  | 0 |
-| `.angular/cache/19.0.4/first-app/vite/deps/chunk-COQ3P34I.js` |  | 0 |
-| `.angular/cache/19.0.4/first-app/vite/deps/chunk-JBKOP2VT.js` | Arabic (1) | 1 |
-| `.angular/cache/19.0.4/first-app/vite/deps/chunk-VTYDUGPU.js` |  | 0 |
-
-### 🟡 MEDIO
-
-| Arquivo | Tipos | Ocorrências |
-|---------|-------|-------------|
-| `.angular/cache/19.0.4/first-app/vite/deps_temp_ef5879d2/@angular_service-worker.js` |  | 0 |
-| `.angular/cache/19.0.4/first-app/vite/deps/@angular_service-worker.js` |  | 0 |
+| `.angular/cache/19.0.4/first-app/vite/deps/@angular_platform-browser.js` | Arabic (1) | 1 |
 
 ---
 
@@ -91,4 +77,4 @@ npx tsx scripts/security/security-scan.ts .
 ```
 
 ---
-**Relatório gerado em:** 01/05/2026, 14:51:37
+**Relatório gerado em:** 14/04/2026, 22:05:17
