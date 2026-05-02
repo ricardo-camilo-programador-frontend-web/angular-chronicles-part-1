@@ -76,7 +76,7 @@ UI/UX inspired by [Food Hut](https://www.figma.com/community/file/11038204878915
 
 - Node.js 18.x or higher
 - pnpm 8.x or higher
-- Angular CLI 17.x
+- Angular CLI 19.2.0
 
 ### 🏃♂ Running Locally
 
